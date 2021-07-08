@@ -13,3 +13,7 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+require('./components/admin/ManageBook/index');
+require('./components/admin/ManageUser/index');
+require('./components/admin/ShowData/index');
+require('./components/admin/layouts/navbar');

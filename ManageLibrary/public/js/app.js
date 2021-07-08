@@ -65873,6 +65873,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 
+__webpack_require__(/*! ./components/admin/ManageBook/index */ "./resources/js/components/admin/ManageBook/index.js");
+
+__webpack_require__(/*! ./components/admin/ManageUser/index */ "./resources/js/components/admin/ManageUser/index.js");
+
+__webpack_require__(/*! ./components/admin/ShowData/index */ "./resources/js/components/admin/ShowData/index.js");
+
+__webpack_require__(/*! ./components/admin/layouts/navbar */ "./resources/js/components/admin/layouts/navbar.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -65957,6 +65965,50 @@ function Example() {
 if (document.getElementById('example')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Example, null), document.getElementById('example'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/ManageBook/index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/admin/ManageBook/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/ManageUser/index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/admin/ManageUser/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/ShowData/index.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/admin/ShowData/index.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/admin/layouts/navbar.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/admin/layouts/navbar.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

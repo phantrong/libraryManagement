@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
-    <h1>Đây là trang chủ welcome, đi kèm với file Example.js</h1>
-    <div id='example'></div>
+    <h1>Đây là trang thống kê, đi kèm với file ShowData/index.js</h1>
+    <div id='ShowData'></div>
 @endsection
 
 @section('script')

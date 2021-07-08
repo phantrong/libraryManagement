@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
-    <h1>Đây là trang chủ welcome, đi kèm với file Example.js</h1>
-    <div id='example'></div>
+    <h1>Đây là trang quản lý người mượn, đi kèm với file ManageUser/index.js</h1>
+    <div id='ManageUser'></div>
 @endsection
 
 @section('script')
