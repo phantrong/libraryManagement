@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <h1>Đây là trang chủ welcome, đi kèm với file Example.js</h1>
+    <!-- <h1>Đây là trang chủ welcome, đi kèm với file Example.js</h1> -->
     <div id='example'></div>
 @endsection
 
