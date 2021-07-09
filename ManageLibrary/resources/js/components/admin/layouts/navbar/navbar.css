@@ -1,4 +1,4 @@
-.wrapper {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,13 +12,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 4px 0 10px 0;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-img {
+.logo {
     width: 150px;
+    margin-top: 12px;
+}
+
+.logo img {
+    width: 100%;
 }
 
 .nav_list {

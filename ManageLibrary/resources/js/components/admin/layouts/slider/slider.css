@@ -1,5 +1,5 @@
 .slider {
-    margin-top: 90px;
+    margin-top: 95px;
 }
 
 .mySlides {
@@ -15,7 +15,7 @@
     width: 100%;
     height: 90vh;
     object-fit: cover;
-    object-position: center;
+    object-position: top center;
 }
 
 .mySlides .text {

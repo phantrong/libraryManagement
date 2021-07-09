@@ -6372,7 +6372,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".wrapper {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 1;\r\n    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);\r\n    background-color: #fff;\r\n}\r\n\r\n.nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding: 10px 0;\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n}\r\n\r\nimg {\r\n    width: 150px;\r\n}\r\n\r\n.nav_list {\r\n    display: flex;\r\n    position: relative;\r\n}\r\n\r\n.nav_list li {\r\n    list-style-type: none;\r\n}\r\n\r\n.nav_list_link {\r\n    position: relative;\r\n    text-decoration: none;\r\n    padding: 24px 20px;\r\n    color: #666;\r\n    display: block;\r\n    font-size: 16px;\r\n    font-weight: 700;\r\n}\r\n\r\n\r\n.nav_list_link:hover {\r\n    color: #dd125f;\r\n}\r\n\r\n.nav_list_link.active {\r\n    color: #dd125f;\r\n}\r\n\r\n.nav_list_link.active::after {\r\n    transform: translateX(-50%) scaleX(1);\r\n}\r\n\r\n.nav_list_link::after {\r\n    position: absolute;\r\n    content: \"\";\r\n    left: 50%;\r\n    bottom: 8px;\r\n    width: 50%;\r\n    height: 4px;\r\n    background: #dd125f;\r\n    border-radius: 15px;\r\n    transform: translateX(-50%) scaleX(0);\r\n    transition: all 0.2s ease;\r\n}\r\n\r\n.nav_list_link:hover::after {\r\n    transform: translateX(-50%) scaleX(1);\r\n}\r\n", ""]);
+exports.push([module.i, ".header {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    z-index: 1;\r\n    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);\r\n    background-color: #fff;\r\n}\r\n\r\n.nav {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding: 4px 0 10px 0;\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.logo {\r\n    width: 150px;\r\n    margin-top: 12px;\r\n}\r\n\r\n.logo img {\r\n    width: 100%;\r\n}\r\n\r\n.nav_list {\r\n    display: flex;\r\n    position: relative;\r\n}\r\n\r\n.nav_list li {\r\n    list-style-type: none;\r\n}\r\n\r\n.nav_list_link {\r\n    position: relative;\r\n    text-decoration: none;\r\n    padding: 24px 20px;\r\n    color: #666;\r\n    display: block;\r\n    font-size: 16px;\r\n    font-weight: 700;\r\n}\r\n\r\n\r\n.nav_list_link:hover {\r\n    color: #dd125f;\r\n}\r\n\r\n.nav_list_link.active {\r\n    color: #dd125f;\r\n}\r\n\r\n.nav_list_link.active::after {\r\n    transform: translateX(-50%) scaleX(1);\r\n}\r\n\r\n.nav_list_link::after {\r\n    position: absolute;\r\n    content: \"\";\r\n    left: 50%;\r\n    bottom: 8px;\r\n    width: 50%;\r\n    height: 4px;\r\n    background: #dd125f;\r\n    border-radius: 15px;\r\n    transform: translateX(-50%) scaleX(0);\r\n    transition: all 0.2s ease;\r\n}\r\n\r\n.nav_list_link:hover::after {\r\n    transform: translateX(-50%) scaleX(1);\r\n}\r\n", ""]);
 
 // exports
 
@@ -6391,7 +6391,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".slider {\r\n    margin-top: 90px;\r\n}\r\n\r\n.mySlides {\r\n    display: none;\r\n    position: relative;\r\n}\r\n\r\n.mySlides.active {\r\n    display: block;\r\n}\r\n\r\n.slider img {\r\n    width: 100%;\r\n    height: 90vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.mySlides .text {\r\n    position: absolute;\r\n    bottom: 67px;\r\n    left: 0;\r\n    width: 40%;\r\n    height: 40px;\r\n    background-color: #dd125f;\r\n    color: #fff;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.mySlides .text::before {\r\n    position: absolute;\r\n    content: \"\";\r\n    right: -40px;\r\n    top: 0;\r\n    border: 20px solid transparent;\r\n    border-left: 20px solid #dd125f;\r\n}\r\n\r\n.mySlides .text p {\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n}\r\n\r\n.prev, .next {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    top: 50%;\r\n    padding: 18px;\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 20px;\r\n    transition: 0.6s ease;\r\n    border-radius: 0 3px 3px 0;\r\n    -webkit-user-select: none;\r\n       -moz-user-select: none;\r\n        -ms-user-select: none;\r\n            user-select: none;\r\n}\r\n\r\n.next {\r\n    right: 0;\r\n}\r\n\r\n.prev {\r\n    left: 0;\r\n}\r\n\r\n.prev:hover, .next:hover {\r\n    background-color: rgba(0,0,0,0.8);\r\n}\r\n\r\n.fade {\r\n    -webkit-animation-name: fade;\r\n    -webkit-animation-duration: 1.5s;\r\n    animation-name: fade;\r\n    animation-duration: 1.5s;\r\n}\r\n  \r\n@-webkit-keyframes fade {\r\n    from {opacity: .4} \r\n    to {opacity: 1}\r\n}\r\n  \r\n@keyframes fade {\r\n    from {opacity: .4} \r\n    to {opacity: 1}\r\n}", ""]);
+exports.push([module.i, ".slider {\r\n    margin-top: 95px;\r\n}\r\n\r\n.mySlides {\r\n    display: none;\r\n    position: relative;\r\n}\r\n\r\n.mySlides.active {\r\n    display: block;\r\n}\r\n\r\n.slider img {\r\n    width: 100%;\r\n    height: 90vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    -o-object-position: top center;\r\n       object-position: top center;\r\n}\r\n\r\n.mySlides .text {\r\n    position: absolute;\r\n    bottom: 67px;\r\n    left: 0;\r\n    width: 40%;\r\n    height: 40px;\r\n    background-color: #dd125f;\r\n    color: #fff;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.mySlides .text::before {\r\n    position: absolute;\r\n    content: \"\";\r\n    right: -40px;\r\n    top: 0;\r\n    border: 20px solid transparent;\r\n    border-left: 20px solid #dd125f;\r\n}\r\n\r\n.mySlides .text p {\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n}\r\n\r\n.prev, .next {\r\n    cursor: pointer;\r\n    position: absolute;\r\n    top: 50%;\r\n    padding: 18px;\r\n    color: white;\r\n    font-weight: bold;\r\n    font-size: 20px;\r\n    transition: 0.6s ease;\r\n    border-radius: 0 3px 3px 0;\r\n    -webkit-user-select: none;\r\n       -moz-user-select: none;\r\n        -ms-user-select: none;\r\n            user-select: none;\r\n}\r\n\r\n.next {\r\n    right: 0;\r\n}\r\n\r\n.prev {\r\n    left: 0;\r\n}\r\n\r\n.prev:hover, .next:hover {\r\n    background-color: rgba(0,0,0,0.8);\r\n}\r\n\r\n.fade {\r\n    -webkit-animation-name: fade;\r\n    -webkit-animation-duration: 1.5s;\r\n    animation-name: fade;\r\n    animation-duration: 1.5s;\r\n}\r\n  \r\n@-webkit-keyframes fade {\r\n    from {opacity: .4} \r\n    to {opacity: 1}\r\n}\r\n  \r\n@keyframes fade {\r\n    from {opacity: .4} \r\n    to {opacity: 1}\r\n}", ""]);
 
 // exports
 
@@ -66763,12 +66763,11 @@ var navbar = /*#__PURE__*/function (_Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "nav"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
+        href: "#",
+        className: "logo"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "../img/logo.png"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -66785,7 +66784,7 @@ var navbar = /*#__PURE__*/function (_Component) {
       }, "LOGIN")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav_list_link",
         href: "#"
-      }, "CONTACT"))))));
+      }, "CONTACT")))));
     }
   }]);
 
