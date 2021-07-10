@@ -1,0 +1,5 @@
+@import url('./header.css');
+@import url('./navbar.admin.css');
+.main-page {
+    display: flex;
+}
