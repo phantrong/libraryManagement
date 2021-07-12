@@ -1,0 +1,22 @@
+<div id="slider" class="slider">
+    <div class="mySlides fadeup active">
+        <img class="slide-img" src="{{ asset('images/slidebook1.jpg') }}" alt="slidebook1"></img>
+        <div class="slide-text">
+            <p> Our Library is Digital </p>
+        </div>
+    </div>
+    <div class="mySlides fadeup">
+        <img class="slide-img" src="{{ asset('images/slidebook2.jpg') }}" alt="slidebook2"></img>
+        <div class="slide-text">
+            <p> Our Library </p>
+        </div>
+    </div>
+    <div class="mySlides fadeup">
+        <img class="slide-img" src="{{ asset('images/slidebook3.jpg') }}" alt="slidebook3"></img>
+        <div class="slide-text">
+            <p> Open New World</p>
+        </div>
+    </div>
+    <a class="prev" onClick={ this.prevSlides }>&#10094;</a>
+    <a class="next" onClick={ this.nextSlides }>&#10095;</a>
+</div>
