@@ -1,13 +1,11 @@
-<div class="navbar-welcome">
-    <div class="header">
-        <nav class="nav">
-            <a href="#" class="logo"><img src="{{ asset('images/logo.png') }}"></a>
-            <ul class="nav_list">
-                <li><a class="nav_list_link active" href="#">HOME</a></li>
-                <li><a class="nav_list_link" href="#">BOOKS</a></li>
-                <li><a class="nav_list_link" href="#">LOGIN</a></li>
-                <li><a class="nav_list_link" href="#">CONTACT</a></li>
-            </ul>
-        </nav>
-    </div>
+<div id="header" class="header">
+    <nav class="nav container">
+        <a href="#" class="logo"><img src="{{ asset('images/logo.png') }}"></a>
+        <ul class="nav_list">
+            <li><a class="home smooth nav_list_link active" href="#home">TRANG CHỦ</a></li>
+            <li><a class="content smooth nav_list_link" href="#content">TỦ SÁCH</a></li>
+            <li><a class="smooth nav_list_link" href="#">ĐĂNG NHẬP</a></li>
+            <li><a class="contact smooth nav_list_link" href="#contact">LIÊN HỆ</a></li>
+        </ul>
+    </nav>
 </div>

@@ -37444,6 +37444,39 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/contact.welcome.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/contact.welcome.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/content.welcome.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/content.welcome.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/footer.welcome.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/footer.welcome.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/header.scss":
 /*!************************************!*\
   !*** ./resources/sass/header.scss ***!
@@ -37488,9 +37521,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/sass/navbar.admin.scss":
+/***/ "./resources/sass/navbar,admin.scss":
 /*!******************************************!*\
-  !*** ./resources/sass/navbar.admin.scss ***!
+  !*** ./resources/sass/navbar,admin.scss ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -37499,20 +37532,59 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/navbar.welcome.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/navbar.welcome.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/slider.welcome.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/slider.welcome.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/welcome.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/welcome.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/manage.book.scss ./resources/sass/manage.data.scss ./resources/sass/manage.user.scss ./resources/sass/navbar.admin.scss ./resources/sass/_variables.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/contact.welcome.scss ./resources/sass/content.welcome.scss ./resources/sass/footer.welcome.scss ./resources/sass/header.scss ./resources/sass/manage.book.scss ./resources/sass/manage.data.scss ./resources/sass/manage.user.scss ./resources/sass/navbar,admin.scss ./resources/sass/navbar.welcome.scss ./resources/sass/slider.welcome.scss ./resources/sass/welcome.scss ./resources/sass/_variables.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\contact.welcome.scss */"./resources/sass/contact.welcome.scss");
+__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\content.welcome.scss */"./resources/sass/content.welcome.scss");
+__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\footer.welcome.scss */"./resources/sass/footer.welcome.scss");
 __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\header.scss */"./resources/sass/header.scss");
 __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.book.scss */"./resources/sass/manage.book.scss");
 __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.data.scss */"./resources/sass/manage.data.scss");
 __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\manage.user.scss */"./resources/sass/manage.user.scss");
-__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\navbar.admin.scss */"./resources/sass/navbar.admin.scss");
+__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\navbar,admin.scss */"./resources/sass/navbar,admin.scss");
+__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\navbar.welcome.scss */"./resources/sass/navbar.welcome.scss");
+__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\slider.welcome.scss */"./resources/sass/slider.welcome.scss");
+__webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\welcome.scss */"./resources/sass/welcome.scss");
 module.exports = __webpack_require__(/*! C:\xampp\XAMPP\htdocs\libraryManagement\resources\sass\_variables.scss */"./resources/sass/_variables.scss");
 
 
