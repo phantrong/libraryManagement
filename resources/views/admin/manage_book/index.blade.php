@@ -14,5 +14,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/admin/manage_book/index.js') }}"></script>
+    <script src="{{ asset('js/manage_book.js') }}"></script>
 @endsection

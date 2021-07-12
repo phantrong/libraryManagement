@@ -1,4 +1,14 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/admin/layouts.js": "/js/admin/layouts.js?id=308fbf2bc952ca357109",
+    "/js/admin/manage_book.js": "/js/admin/manage_book.js?id=9f621eb3895272ca89c3",
+    "/js/admin/manage_show_data.js": "/js/admin/manage_show_data.js?id=a7cef0ba6f46f9cbe54a",
+    "/js/admin/manage_user.js": "/js/admin/manage_user.js?id=717f5d11ae863f71b7f2",
+    "/js/app.js": "/js/app.js?id=1b07f1a87ffc58f205da",
+    "/css/app.css": "/css/app.css?id=9a73419a33490fbaf7a1",
+    "/css/header.css": "/css/header.css?id=aed5476f760838e06cef",
+    "/css/manage.book.css": "/css/manage.book.css?id=670878fb4fe5bf1e7900",
+    "/css/manage.data.css": "/css/manage.data.css?id=185759b2f42b449ec487",
+    "/css/manage.user.css": "/css/manage.user.css?id=48f1dcac1a65e0e95f3e",
+    "/css/navbar.admin.css": "/css/navbar.admin.css?id=b9656b59f0ccc1b623c5",
+    "/css/_variables.css": "/css/_variables.css?id=d41d8cd98f00b204e980"
 }

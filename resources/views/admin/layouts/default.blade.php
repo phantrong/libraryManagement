@@ -12,7 +12,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/default.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/navbar.admin.css') }}" type="text/css">
     @yield('css')
 </head>
 
