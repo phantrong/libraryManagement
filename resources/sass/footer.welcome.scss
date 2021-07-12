@@ -1,4 +1,4 @@
-.footer {
+#footer {
     padding: 80px 0 0;
     background-color: #fff;
     .footer-wrapper {
@@ -30,6 +30,7 @@
     }
     .footer-list {
         list-style-type: none;
+        padding-left: 0;
     }
     .footer-item__link {
         color: #000;
