@@ -1,4 +1,4 @@
-<div class="footer slideanim">
+<div id="footer">
     <div class="container">
         <div class="footer-wrapper row ">
             <div class="footer-intro col-lg-3 col-xl-3 col-md-6 col-sm-6">

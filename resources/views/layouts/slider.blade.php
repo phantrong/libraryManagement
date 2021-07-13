@@ -1,4 +1,4 @@
-<div id="slider" class="slider">
+<div id="slider">
     <div class="mySlides fadeup active">
         <img class="slide-img" src="{{ asset('images/slidebook1.jpg') }}" alt="slidebook1">
         <div class="slide-text">
