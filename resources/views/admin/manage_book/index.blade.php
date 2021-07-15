@@ -50,6 +50,12 @@
                                     <span>100.000</span>
                                     <p>Huan Roise</p>
                                 </div>
+                                <div class="container__box-showbook-action">
+                                                                <img src="https://img.icons8.com/emoji/20/000000/eye-emoji.png"/>
+                                                                <img src="https://img.icons8.com/ios-filled/20/000000/uninstalling-updates.png"/>
+                                                                <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/>
+                                                             </div>
+                                
                             </div>
 
                             <div class="col-xl-2" id="C2">
@@ -61,6 +67,11 @@
                                     <span>100.000</span>
                                     <p>Huan Roise</p>
                                 </div>
+                                <div class="container__box-showbook-action">
+                                                                <img src="https://img.icons8.com/emoji/20/000000/eye-emoji.png"/>
+                                                                <img src="https://img.icons8.com/ios-filled/20/000000/uninstalling-updates.png"/>
+                                                                <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/>
+                                                             </div>
                             </div>
 
                             <div class="col-xl-2" id="C2">
@@ -72,6 +83,11 @@
                                     <span>100.000</span>
                                     <p>Huan Roise</p>
                                 </div>
+                                <div class="container__box-showbook-action">
+                                                                <img src="https://img.icons8.com/emoji/20/000000/eye-emoji.png"/>
+                                                                <img src="https://img.icons8.com/ios-filled/20/000000/uninstalling-updates.png"/>
+                                                                <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/>
+                                                             </div>
                             </div>
 
                             <div class="col-xl-2" id="C2">
@@ -83,6 +99,11 @@
                                     <span>100.000</span>
                                     <p>Huan Roise</p>
                                 </div>
+                                <div class="container__box-showbook-action">
+                                                                <img src="https://img.icons8.com/emoji/20/000000/eye-emoji.png"/>
+                                                                <img src="https://img.icons8.com/ios-filled/20/000000/uninstalling-updates.png"/>
+                                                                <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/>
+                                                             </div>
                             </div>
 
                             <div class="col-xl-2" id="C2">
@@ -94,6 +115,11 @@
                                     <span>100.000</span>
                                     <p>Huan Roise</p>
                                 </div>
+                                <div class="container__box-showbook-action">
+                                                                <img src="https://img.icons8.com/emoji/20/000000/eye-emoji.png"/>
+                                                                <img src="https://img.icons8.com/ios-filled/20/000000/uninstalling-updates.png"/>
+                                                                <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/>
+                                                             </div>
                             </div>
 
                             <div class="col-xl-2" id="C2">
@@ -105,6 +131,11 @@
                                     <span>100.000</span>
                                     <p>Huan Roise</p>
                                 </div>
+                                <div class="container__box-showbook-action">
+                                                                <img src="https://img.icons8.com/emoji/20/000000/eye-emoji.png"/>
+                                                                <img src="https://img.icons8.com/ios-filled/20/000000/uninstalling-updates.png"/>
+                                                                <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/>
+                                                             </div>
                             </div>
 
                             <div class="col-xl-2" id="C2">
@@ -116,6 +147,11 @@
                                     <span>100.000</span>
                                     <p>Huan Roise</p>
                                 </div>
+                                <div class="container__box-showbook-action">
+                                                                <img src="https://img.icons8.com/emoji/20/000000/eye-emoji.png"/>
+                                                                <img src="https://img.icons8.com/ios-filled/20/000000/uninstalling-updates.png"/>
+                                                                <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/>
+                                                             </div>
                             </div>
 
                         
