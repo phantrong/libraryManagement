@@ -26,6 +26,10 @@ const slider = {
             }
         }
     },
+    autoload: function() {
+        this.nextSlide();
+        this.loadCurSlide();
+    },
     handle: function() {
         const _this = this;
         this.prev.onclick = function() {
@@ -40,6 +44,9 @@ const slider = {
     start: function() {
         this.loadCurSlide();
         this.handle();
+        setInterval(function() {
+            slider.autoload();
+        },5000)
     }
 }
 slider.start();
