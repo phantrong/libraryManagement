@@ -1,3 +1,30 @@
-.ManageData {
-    color: blue;
+.dashboard__content {
+    margin-left: 230px;
+    flex-wrap: wrap;
+    background-color: #e9ecef;
+    transition: margin-left ease-in-out 0.4s;
+    height: inherit;
+    .dashboard__content-header-box span {
+        font-size: 14px;
+    }
+    .dashboard__content-header-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .dashboard__content-content-header {
+        border-bottom: 2px solid red;
+        padding: 15px 10px 10px 10px;
+    }
+    .dashboard__content-content {
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+        margin: 0 15px;
+        max-width: 100%;
+        height: inherit;
+    }
+    .dashboard__content-content-boxct {
+        height: inherit;
+    }
 }
