@@ -1,3 +1,8 @@
+**** code tôi thêm 15-7: 
++ ae vào file .env: đổi tên db_name và pass để kết nối với sql của em, rồi sang vscode chạy: php artisan migrate. -> sẽ có bảng db (nhưng chưa có dữ liệu)
++ tôi có tạo vài file login, thư sẽ để ý và cop code vào đó. folder auth là login cho người dùng, còn trong admin là cho admin
++ mở đường dẫn login thì chỉ cần /login
+
 +giờ ae khi pull code từ develop về chỉ cần chạy: npm run development -- --watch
 
 +anh em sẽ chỉ làm việc với folder resource không động đến file public:
