@@ -4,11 +4,11 @@
 
 @section('css')
     {{-- chèn thêm link css ở đây --}}
-    <link rel="stylesheet" href="{{ asset('css/manage.list.book.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/manage.book.css') }}" type="text/css">
 @endsection
 
 @section('content')
-    <div class="manage-list-book">Nội dung màn l</div>
+    <div class="addbook__content">Nội dung màn edit</div>
 @endsection
 
 @section('script')
