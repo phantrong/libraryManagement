@@ -1,7 +1,7 @@
 // Variables
-@import 'variables';
+@import "variables";
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 .navbar-welcome {
     .header {
         position: fixed;
@@ -75,4 +75,38 @@
 
 .main-page {
     display: flex;
+}
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    font-family: "Times New Roman", Times, serif;
+}
+.book {
+    position: relative;
+    height: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
