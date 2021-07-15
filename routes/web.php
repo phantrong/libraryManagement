@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,15 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
 
 Route::prefix('admin/')
     ->name('admin.')
     ->group(function () {
-        Route::resource("/", "HomeController");
-        Route::resource("/book", "BookController");
-        Route::resource("/user", "UserController");
-        Route::resource("/data", "DataController");
+        Route::get('/login', 'AdminController@showLoginForm')->name('login');
+        Route::post('/login', 'AdminController@loginPost')->name('loginPost');
+        Route::get('/logout', function () {
+            Auth::guard('admin')->logout();
+            return redirect()->route('admin.login');
+        })->name('admin.logout');
+
+        Route::middleware('admin')->group(function () {
+        });
+        Route::resource("book", "BookController");
+        Route::resource("user", "UserController");
+        Route::resource("data", "DataController");
     });
