@@ -3,15 +3,16 @@
     top: 0;
     left: 0;
     right: 0;
+    height: 86px;
     z-index: 1;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
     background-color: #fff;
     .nav {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 4px 0 8px 0;
+        padding: 5px 0 5px 0;
         margin: 0 auto;
+        flex-wrap: nowrap;
     }
     .logo {
         width: 150px;
@@ -19,5 +20,257 @@
     }
     .logo img {
         width: 100%;
+    }
+    .nav-search {
+        flex: 1;
+    }
+    .form-search-book {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0 20px;
+    }
+    .search-input {
+        width: 500px;
+        height: 50px;
+        outline: none;
+        border: 1px solid #ccc;
+        border-right: none;
+        background-color: #fff;
+        color: #000;
+        padding: 8px 25px;
+        font-size: 16px;
+        font-weight: 500;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    .btn-search {
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border: none;
+        width: 90px;
+        height: 50px;
+        background-color: #dd125f;
+    }
+    .icon-search {
+        width: 20px;
+        height: 20px;
+        color: #fff;
+        fill: #fff;
+    }
+
+    .nav-cart {
+        width: 76px;
+        position: relative;
+        padding: 15px;
+        margin: 0 10px 0;
+    }
+    .icon-cart {
+        height: 30px;
+        width: 30px;
+        color: #dd125f;
+        cursor: pointer;
+    }
+    .nav-cart-notice {
+        background-color: #dd125f;
+        color: #fff;
+        padding: 1px 8px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        position: absolute;
+        top: 3px;
+        right: 14px;
+    }
+    .nav-cart:hover .nav-cart-list {
+        display: block;
+    }
+    .nav-cart-list {
+        display: none;
+        position: absolute;
+        width: 350px;
+        top: calc(100%);
+        right: 2px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 1px 5px 0 #ccc;
+        transform-origin: calc(100% - 20px) top;
+        animation: growUp linear 0.3s;
+    }
+    .nav-cart-list::before {
+        content: "";
+        border-width: 13px;
+        border-style: solid;
+        border-color: transparent transparent #f5f5f5 transparent;
+        position: absolute;
+        top: -27px;
+        right: 30px;
+        cursor: pointer;
+    }
+    .no-cart {
+        display: none;
+    }
+    .nav-cart--no-cart-text {
+        text-align: center;
+        margin: 20px;
+        font-size: 16px;
+        color: #999;
+        font-weight: 500;
+    }
+    .nav-cart--no-cart-img {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+    .nav-cart-heading {
+        text-align: left;
+        margin: 16px;
+        font-size: 16px;
+        color: #333;
+        font-weight: 400;
+        display: block;
+    }
+    .nav-cart-list-item {
+        border-top: 1px solid #f5f5f5;
+        padding-left: 0;
+        margin: 0;
+        max-height: 60vh;
+        overflow-y: auto;
+        list-style: none;
+    }
+    .nav-cart-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+    }
+    .nav-cart-item:hover {
+        background-color: #f5f5f5;
+    }
+    .nav_cart-item-img {
+        width: 42px;
+        height: 42px;
+        border: 1px solid #c4c0c0;
+        border-radius: 2px;
+        margin: 0 16px;
+    }
+    .nav-cart-item-info {
+        width: 100%;
+    }
+    .nav-cart-item-name {
+        text-align: left;
+        margin: 0;
+        font-size: 14px;
+        color: #dd125f;
+        font-weight: 600;
+        padding-right: 20px;
+        line-height: 18px;
+        max-height: 36px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+    .nav-cart-item-body {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 12px;
+        margin-top: 4px;
+        align-items: center;
+    }
+    .nav-cart-item-desc {
+        font-size: 12px;
+        color: #888;
+        line-height: 12px;
+    }
+    .nav-cart-item-remove {
+        font-size: 14px;
+    }
+    .nav-cart-item-remove:hover {
+        color: #dd125f;
+        cursor: pointer;
+    }
+    .nav-cart-view {
+        float: right;
+        margin: 12px 12px 12px 0;
+        min-width: 120px;
+        height: 36px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        font-size: 12px;
+        border-radius: 2px;
+        padding: 0;
+        color: #fff;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        line-height: 16px;
+        background-color: #dd125f;
+    }
+    // user 
+    .nav-user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .nav-user:hover {
+        cursor: pointer;
+    }
+    .nav-user:hover .nav-user-menu {
+        display: block;
+    }
+    .nav-user-img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        margin-right: 6px;
+    }
+    .nav-user-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 16px);
+        background-color: #fff;
+        padding: 0;
+        list-style-type: none;
+        width: calc(100% + 20px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transform-origin: calc(100% - 50px) top;
+        animation: growUp linear 0.3s;
+    }
+    .nav-user-menu::after {
+        content: "";
+        position: absolute;
+        top: -26px;
+        right: 33%;
+        border-width: 13px 13px;
+        border-style: solid;
+        border-color: transparent transparent #f5f5f5 transparent;
+    }
+    .nav-user-item:hover a{
+        background-color: #f5f5f5;
+        color: #dd125f;
+    }
+    .nav-user-item a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 12px;
+        display: block;
+    }
+
+    @keyframes growUp {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 }

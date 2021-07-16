@@ -13,7 +13,7 @@
         margin: 0 80px;
         font-size: 16px;
         line-height: 24px;
-        color: #000;
+        color: #333;
         margin-bottom: 20px;
     }
     .content-shelf {
@@ -76,8 +76,7 @@
     }
     .book-sort-to {
         font-size: 16px;
-        color: #000;
-        font-weight: 500;
+        color: #333;
         line-height: 18px;
         margin-right: 8px;
     }
@@ -138,7 +137,7 @@
     .book-name {
         margin: 10px 10px 6px;
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 18px;
         color: #dd125f;
         height: 36px;
@@ -154,7 +153,7 @@
     .book-author-name {
         display: block;
         font-size: 14px;
-        color: #000;
+        color: #333;
     }
     .book-item-action {
         display: flex;
@@ -193,7 +192,7 @@
         border-radius: 50%;
         display:block;
         line-height: 30px;
-        font-weight: 550;
+        font-weight: 500;
     }
     .pagination-item.active .pagination-item__link {
         background: #dd125f;

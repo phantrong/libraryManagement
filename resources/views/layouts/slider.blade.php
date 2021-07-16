@@ -17,6 +17,6 @@
             <p> Open New World</p>
         </div>
     </div>
-    <a class="prev" onClick={ this.prevSlides }>&#10094;</a>
-    <a class="next" onClick={ this.nextSlides }>&#10095;</a>
+    <a class="prev" >&#10094;</a>
+    <a class="next" >&#10095;</a>
 </div>

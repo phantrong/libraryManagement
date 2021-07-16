@@ -1,21 +1,4 @@
 body {
-    @media (min-width: 1200px) {
-        .section {
-            padding-left: 10px;
-            padding-right: 10px;
-            max-width: 1200px;
-        }
-    }
-
-    .col-xl-2-4 {
-        flex: 0 0 20%;
-        max-width: 20%;
-    }
-
-    .col-xl-9-6 {
-        flex: 0 0 80%;
-        max-width: 80%;
-    }
 
     #home {
         height: 86px;

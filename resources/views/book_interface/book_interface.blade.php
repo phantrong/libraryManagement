@@ -7,18 +7,17 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/contact.welcome.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/footer.welcome.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/content.welcome.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/book_interface.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/navbar.book.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/content.book.css')}}" type="text/css">
+
 </head>
 
 <body>
     @include('book_interface.navbar')
     <div id="home" class="section"></div>
-    @include('layouts.content')
-    @include('layouts.contact')
+    @include('book_interface.content')
     @include('layouts.footer')
     <a class="toTop smooth" href="#home">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="toTop-icon bi bi-arrow-up" viewBox="0 0 16 16">
