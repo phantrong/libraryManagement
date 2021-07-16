@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAuthsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateAuthsTable extends Migration
      */
     public function up()
     {
-        Schema::create('auths', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->date('birth')->nullable();
-            $table->string('country');
-            $table->foreignId('created_by')->nullable()->constrained('admins');
-            $table->foreignId('updated_by')->nullable()->constrained('admins');
+            $table->foreignId('book_id')->constrained('books');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateAuthsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('auths');
+        Schema::dropIfExists('images');
     }
 }

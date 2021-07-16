@@ -17,12 +17,13 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->foreignId('auth_id')->nullable()->constrained('auths');
+            $table->string('auth_id');
             $table->string('publisher')->nullable();
             $table->string('translator')->nullable();
             $table->string('country')->nullable();
             $table->integer('quantity');
             $table->float('price');
+            $table->integer('year_start');
             $table->foreignId('created_by')->nullable()->constrained('admins');
             $table->foreignId('updated_by')->nullable()->constrained('admins');
             $table->timestamps();

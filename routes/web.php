@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ShowBookController@welcome')->name('welcome');
+Route::get('/welcome/singlebook', 'ShowBookController@singlebook')->name('welcome.singlebook');
+
 
 Auth::routes();
 

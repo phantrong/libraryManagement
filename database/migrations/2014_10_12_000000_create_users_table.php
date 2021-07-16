@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->date('birth');
             $table->string('phone');
             $table->string('email');
+            $table->tinyInteger('is_borrow')->default(0);
             $table->timestamps();
         });
     }
