@@ -21,22 +21,40 @@
 
             </div>
 
-            <div class="addbook__content-content-boxct col-md-12 col-xl-12 col-sm-12 col-12">
+            <form class="addbook__content-content-boxct col-md-12 col-xl-12 col-sm-12 col-12">
                 <div class="row">
 
                     <div class="col-md-3  col-xl-3 col-sm-12 col-12 maincontainer__thethird-col3">
-                        <div class="maincontainer__thethird-col3-boxct">
-                            <div class="maincontainer__thethird-choosepicture">
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8uZmGLYC1EDdxJKt6RRft6haNwkcIFGIohw&usqp=CAU" />
+                        <div class="row">
+                            <div class="maincontainer__thethird-col3-boxct col-xl-12">
+                                <div class="maincontainer__thethird-choosepicture">
+                                    <img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8uZmGLYC1EDdxJKt6RRft6haNwkcIFGIohw&usqp=CAU" />
+                                </div>
+
+                                <div class="maincontainer__thethird-choosepicture-button">
+                                    <div class="input-group input-group-lg maincontainer__thethird-choosepicture-button-box">
+                                        <div>
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">Mặt trước của sách</span>
+                                        </div>
+                                        <input type="file" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="maincontainer__thethird-choosepicture-button">
-                                <div class="input-group input-group-lg maincontainer__thethird-choosepicture-button-box">
-                                    <div>
-                                        <span class="input-group-text" id="inputGroup-sizing-lg">Puslisher</span>
+                            <div class="maincontainer__thethird-col3-boxct1 col-xl-12">
+                                <div class="maincontainer__thethird-choosepicture">
+                                    <img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8uZmGLYC1EDdxJKt6RRft6haNwkcIFGIohw&usqp=CAU" />
+                                </div>
+
+                                <div class="maincontainer__thethird-choosepicture-button">
+                                    <div class="input-group input-group-lg maincontainer__thethird-choosepicture-button-box">
+                                        <div>
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">Mặt sau của sách</span>
+                                        </div>
+                                        <input type="file" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                                     </div>
-                                    <input type="file" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                                 </div>
                             </div>
                         </div>
@@ -48,17 +66,17 @@
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
                                 <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">ISBN</span>
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Quốc gia</span>
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default">
-                                    <button type="button" class="btn btn-dark">Search</button>
+                                    
                                 </div>
 
                             </div>
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-category">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Category</span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Thể loại</span>
                                 </div>
                                 <select class="maincontainer__thethird-category-select">
                                     <option selected>Select</option>
@@ -73,7 +91,7 @@
                             <div class="col-sm-12 col-12 col-md-12 col-xl-12 ">
                                 <div class="input-group input-group-lg aoaoao">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-lg">Book Tiltle *</span>
+                                        <span class="input-group-text" id="inputGroup-sizing-lg">Tên sách</span>
                                     </div>
                                     <input type="text" class="form-control" aria-label="Large"
                                         aria-describedby="inputGroup-sizing-sm">
@@ -86,7 +104,7 @@
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
                                 <div class="input-group input-group-lg maincontainer__thethird-auther">
                                     <div class="grid">
-                                        <span class="input-group-text" id="inputGroup-sizing-lg">Authers</span>
+                                        <span class="input-group-text" id="inputGroup-sizing-lg">Tác giả</span>
                                     </div>
                                     <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                                 </div>
@@ -94,7 +112,7 @@
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
                                 <div class="input-group input-group-lg maincontainer__thethird-puslish">
                                     <div class="grid">
-                                        <span class="input-group-text" id="inputGroup-sizing-lg">Puslisher</span>
+                                        <span class="input-group-text" id="inputGroup-sizing-lg">Nhà xuất bản</span>
                                     </div>
                                     <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                                 </div>
@@ -145,13 +163,20 @@
                             </div>
                         </div>
 
+                        <div>
+                            <button type="submit" class="btn btn-dark addbook-button">Thêm sách</button>
+                        </div>  
+
 
                     </div>
 
 
                 </div>
-            </div>
 
+               
+                
+            </form>
+            
         </section>
     </div>
 @endsection

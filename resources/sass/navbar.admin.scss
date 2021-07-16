@@ -53,7 +53,7 @@
         border-bottom: 1px solid white;
     }
     .toolbar__catagory {
-        padding-left: 20px;
+        // padding-left: 20px;
     }
     .toolbar__catagory-list {
         list-style: none;
@@ -62,14 +62,19 @@
     }
     .toolbar__catagory-item {
         margin: 10px 0 10px 0;
+        color: white;
     }
-    .toolbar__catagory-item:hover {
-        background-color: rgb(213, 219, 224);
+    // .toolbar__catagory-item:hover {
+    //     background-color: rgb(213, 219, 224);
+    // }
+    .toolbar__catagory-link:hover {
+        background-color: rgba(213, 219, 224, 0.2);
     }
     .toolbar__catagory-link {
         color: aliceblue;
         display: flex;
         align-items: center;
+        padding-left: 20px;
     }
     .toolbar__catagory-link p {
         margin: 0;
@@ -95,6 +100,7 @@
     .shadows {
         display: inline-block;
         white-space: nowrap;
+        overflow-x: hidden;
         // animation: fadeOut ease-in-out 0.4s forwards;
     }
 
@@ -106,6 +112,56 @@
     }
     .pew1:hover .shadows {
         animation: fadeOut ease-in-out 0.4s forwards;
+    }
+
+    .toolbar__catagory-link-img2 {
+        height: 16px !important;
+        width: 16px !important;
+        margin-left: 60px;
+    }
+    .toolbar__catagory-item-list {
+        overflow: hidden;
+        border-left: 3px solid whitesmoke;
+        color: white;
+        list-style: none;
+        height: 0;
+        // transform: translate(-8%);
+        transition: height 0.4s ease-in-out;
+        width: inherit;
+        overflow-x: hidden;
+        transform: padding-left 0.4s ease-in-out;
+        margin-left: 4px;
+        padding-left: 0;
+    }
+    .activeHeight {
+        height: 70px;
+    }
+
+    .toolbar__catagory-item-list li {
+        padding: 6px 0 6px 0;
+        width: 100%;
+
+        height: 30px;
+    }
+    .toolbar__catagory-item-list li img {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .toolbar__catagory-item-list li a {
+        display: flex;
+        padding-left: 35px;
+        color: white;
+        transition: padding-left 0.4s ease-in-out;
+    }
+    .toolbar__catagory-item-list li a p {
+        padding: 3px 0 0 10px;
+    }
+    .toolbar__catagory-item-list li a:hover {
+        text-decoration: none;
+    }
+    .toolbar__catagory-item-list li:hover {
+        background-color: rgba(213, 219, 224, 0.2);
     }
 }
 .activeWidth .shadows {
@@ -119,6 +175,11 @@
 }
 .activeWidth .shadows {
     animation: fadeIn ease-in-out 0.4s forwards;
+}
+
+/*active color */
+.pew1 .activeColor {
+    background-color: #dc3545;
 }
 
 @media (max-width: 575.98px) {
