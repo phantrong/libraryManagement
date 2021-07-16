@@ -19,7 +19,7 @@
                         
                         <div class="shadows">
                             <p >Admin</p><br>
-                            <p >super admin</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -27,16 +27,33 @@
                 <div class="toolbar__catagory">
                     <ul class="toolbar__catagory-list">
                         <li class="toolbar__catagory-item">
-                            <a href="" class="toolbar__catagory-link">
-                                <img src="https://img.icons8.com/dotty/80/000000/chess-clock.png"/>                                            
+                            <a href="/admin/data" class="toolbar__catagory-link">
+                                <img src="https://img.icons8.com/wired/64/000000/statistics.png"/>                                            
                                 <p class="shadows">Dashboard</p>
                             </a>
                         </li>
                         <li class="toolbar__catagory-item">
-                            <a href="" class="toolbar__catagory-link">
+                            <a  class="toolbar__catagory-link">
                                <img src="https://img.icons8.com/dotty/80/000000/chess-clock.png"/>                                            
-                                <p class="shadows">Receipts</p>
+                                <p class="shadows">Manage book</p>
+                                <img class="toolbar__catagory-link-img2" src="https://img.icons8.com/material-sharp/16/000000/chevron-down.png"/>
                             </a>
+                            <ul class="toolbar__catagory-item-list">
+                                <li> 
+                                    
+                                    <a  href="book/create"> 
+                                        <img src="https://img.icons8.com/windows/25/000000/checked-checkbox--v1.png"/>
+                                        <p class="shadows">Add Book</p>
+                                    </a>    
+                                </li>
+                                <li> 
+                                        
+                                    <a> 
+                                        <img src="https://img.icons8.com/windows/25/000000/checked-checkbox--v1.png"/>
+                                        <p class="shadows">Edit Book</p>
+                                    </a>    
+                                </li>
+                            </ul>
                         </li>
                         <li class="toolbar__catagory-item">
                             <a href="" class="toolbar__catagory-link">
