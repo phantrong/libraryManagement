@@ -1,5 +1,5 @@
-<div id="contact" class="section">
-    <div class="container slideanim">
+<div id="contact">
+    <div class="container slideanim section">
         <h2 class="contact-heading"> Liên hệ </h2>
         <p class="contact-desc"> Công nghệ vận chuyển tiên tiến, giao hàng nhanh chóng, đảm bảo chất lượng và yêu cầu tuyệt đối cho người dùng </p>
         <div class="contact-info row">
@@ -24,17 +24,17 @@
                 </div>
             </div>
             <div class="your-contact col-6">
-                <form action="">
+                <form action="" target="_self" id="contactForm">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                             <div class="form-contact-control your-name">
-                                <input type="text" class="name-input form-input" placeholder=" ">
+                                <input type="text" class="name-input form-input" placeholder=" " required>
                                 <label class="name-label form-label">Họ tên</label>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                             <div class="form-contact-control your-email">
-                                <input type="text" class="email-input form-input" placeholder=" ">
+                                <input type="email" class="email-input form-input" placeholder=" " required>
                                 <label class="email-label form-label">Email</label>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-contact-control your-subject">
-                                <input type="text" class="subject-input form-input" placeholder=" ">
+                                <input type="text" class="subject-input form-input" placeholder=" " required>
                                 <label class="subject-label form-label">Chủ đề</label>
                             </div>
                         </div>
@@ -50,12 +50,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-contact-control your-mess">
-                                <textarea class="mess-input form-input" placeholder=" " rows="5"></textarea>
+                                <textarea class="mess-input form-input" placeholder=" " rows="5" required></textarea>
                                 <label class="mess-label form-label">Message</label>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-danger form-send">Gửi</button>
+                    <input type="submit" class="btn btn-danger form-send" value="Gửi"></input>
                 </form>   
             </div>
         </div>

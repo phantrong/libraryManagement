@@ -1,4 +1,5 @@
 #content {
+
     padding: 100px 0;
     text-align: center;
     .content-heading {
@@ -12,7 +13,7 @@
         margin: 0 80px;
         font-size: 16px;
         line-height: 24px;
-        color: #000;
+        color: #333;
         margin-bottom: 20px;
     }
     .content-shelf {
@@ -20,6 +21,10 @@
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         padding: 20px 0;
     }
+    .content-shelf-sidebar {
+        padding: 0 10px;
+    }
+
     .sidebar-list {
         list-style: none;
         width: 100%;
@@ -27,7 +32,7 @@
     }
     .sidebar-item {
         border: 1px solid #ccc;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 700;
         padding: 10px;
         margin-bottom: 8px;
@@ -44,6 +49,10 @@
     .book-filter-search {
         height: 100%;
         width: 100%;
+        padding: 0 10px;
+    }
+    .filter-sort-wrapper {
+        padding: 0 10px;
     }
     .book-search {
         outline: none;
@@ -67,8 +76,7 @@
     }
     .book-sort-to {
         font-size: 16px;
-        color: #000;
-        font-weight: 500;
+        color: #333;
         line-height: 18px;
         margin-right: 8px;
     }
@@ -101,6 +109,7 @@
     }
     .book-wrapper {
         margin-top: 16px;
+        padding: 0 10px;
     }
     .book-item {
         background-color: #fff;
@@ -128,7 +137,7 @@
     .book-name {
         margin: 10px 10px 6px;
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 18px;
         color: #dd125f;
         height: 36px;
@@ -144,7 +153,7 @@
     .book-author-name {
         display: block;
         font-size: 14px;
-        color: #000;
+        color: #333;
     }
     .book-item-action {
         display: flex;
@@ -161,77 +170,36 @@
     .book-sold {
         padding-top: 3px;
     }
-    .btn-read-more {
-        margin-top: 40px;
-        margin-bottom: 30px;
-        font-size: 16px;
-        font-weight: 500;
-        padding: 8px 20px;
-    }
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
-    background-color: #fff;
-    .nav {
+    .pagination {
         display: flex;
-        justify-content: space-between;
+        list-style: none;
         align-items: center;
-        padding: 4px 0 8px 0;
-        margin: 0 auto;
+        justify-content: center;
+        margin-top: 50px;
     }
-    .logo {
-        width: 150px;
-        margin-top: 10px;
-    }
-    .logo img {
-        width: 100%;
-    }
-    .nav_list {
+    .pagination-item {
         display: flex;
-        position: relative;
-        margin-bottom: 0;
+        align-items: center;
+        justify-content: center;
     }
-    .nav_list li {
-        list-style-type: none;
-    }
-    .nav_list_link {
-        position: relative;
+    .pagination-item__link {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
         text-decoration: none;
-        padding: 24px 20px;
-        color: #666;
-        display: block;
-        font-size: 14px;
-        font-weight: 700;
+        font-size: 16px;
+        color: #333;
+        border-radius: 50%;
+        display:block;
+        line-height: 30px;
+        font-weight: 500;
     }
-    .nav_list_link:hover {
-        color: #dd125f;
-        text-decoration: none;
-    }
-    .nav_list_link.active {
-        color: #dd125f;
-    }
-    .nav_list_link.active::after {
-        transform: translateX(-50%) scaleX(1);
-    }
-    .nav_list_link::after {
-        position: absolute;
-        content: "";
-        left: 50%;
-        bottom: 10px;
-        width: 50%;
-        height: 4px;
+    .pagination-item.active .pagination-item__link {
         background: #dd125f;
-        border-radius: 15px;
-        transform: translateX(-50%) scaleX(0);
-        transition: all 0.2s ease;
+        color: #fff;
     }
-    .nav_list_link:hover::after {
-        transform: translateX(-50%) scaleX(1);
+    .pagination-item:hover .pagination-item__link {
+        background: rgb(221, 18, 95,0.5);
+        color: #fff;
     }
 }

@@ -3,6 +3,24 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+@media (min-width: 1200px) {
+    .section {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 1200px;
+    }
+}
+
+.col-xl-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.col-xl-9-6 {
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
 .welcome {
     margin-top: 12%;
 }
@@ -21,7 +39,8 @@
 html,
 body {
     height: 100%;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
 }
 .book {
     position: relative;
