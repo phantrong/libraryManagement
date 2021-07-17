@@ -2,7 +2,7 @@
     transition: width ease-in-out 0.4s;
     width: 230px;
     z-index: 1;
-    position: absolute;
+    position: fixed;
     top: 0;
     height: inherit;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);

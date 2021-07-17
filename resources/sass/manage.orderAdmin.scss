@@ -3,23 +3,33 @@
     padding-left: 20px;
     color: black;
     font-weight: 700;
-    text-transform: uppercase;
 }
 thead {
     background-color: #ffed86 !important  ;
 }
+.orderbook__content-dashboard {
+    background-color: white;
+    margin: 20px 15px 20px 15px;
+    padding: 20px;
+}
+.orderbook__content-dashboard-margin {
+    margin: auto;
+}
 thead tr th {
     /* border-bottom: 2px solid #ffed86 !important; */
     border: 0;
-    border-right: 1px solid black;
+    // border-right: 1px solid black;
+}
+.order__table {
+    height: auto !important;
+    box-shadow: 10px -10px 12px -4px rgb(0 0 0 / 19%) !important;
+}
+.max__width-order-table {
+    width: 100%;
+    padding: 0;
+    height: 100%;
 }
 
-tbody tr td {
-    border: 1px solid black;
-}
-tbody tr th {
-    border: 1px solid black;
-}
 .cot {
     overflow-y: scroll;
     height: 50px;
@@ -90,8 +100,8 @@ tbody tr th {
     display: none;
 }
 .table__order {
-    margin-top: 20px;
-    padding: 0 10px 0 10px;
+    padding: 0;
+    margin: 0;
 }
 .admin__order-col-listbook {
     display: flex;
@@ -109,4 +119,51 @@ tbody tr th {
 
 .background-payed {
     background-color: rgba(10, 238, 29, 0.4) !important;
+}
+
+.maincontainer__dashboard-typeImg-info-box {
+    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    border-radius: 0.25rem;
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 1rem;
+    min-height: 80px;
+    padding: 0.5rem;
+    position: relative;
+    width: 100%;
+}
+
+.maincontainer__dashboard-typeImg-info-box-quantity {
+    display: flex;
+    flex-direction: column;
+}
+
+.maincontainer__dashboard-typeImg-info-box-quantity span {
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.maincontainer__dashboard-typeImg-info-box-quantity span:nth-child(2) {
+    font-weight: 700;
+}
+
+.maincontainer__dashboard-typeImg {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    border-bottom: red 2px solid;
+}
+
+@media (min-width: 768px) {
+    .pewpew .col-xl-2 {
+        flex: 0 0 20%;
+        max-width: 20%;
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+    .color-red {
+        color: red;
+        display: inline-block;
+    }
 }
