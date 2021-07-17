@@ -68,9 +68,9 @@
                             </a>
                         </li>
                         <li class="toolbar__catagory-item">
-                            <a href="" class="toolbar__catagory-link">
+                            <a href="/admin/order" class="toolbar__catagory-link">
                                <img src="https://img.icons8.com/dotty/80/000000/chess-clock.png"/>                                          
-                                <p class="shadows">Manage user</p>
+                                <p class="shadows">Manage order</p>
                             </a>
                         </li>
                     </ul>
