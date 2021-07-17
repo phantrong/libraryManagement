@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImagesTable extends Migration
+class CreateOrderdetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('orderdetails', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained('orders');
             $table->foreignId('book_id')->constrained('books');
-            $table->string('path');
-            $table->timestamp('created_at')->default(now());
+            $table->integer('quantity');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('orderdetails');
     }
 }
