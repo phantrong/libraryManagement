@@ -34,4 +34,5 @@ Route::prefix('admin/')
         Route::resource("book", "BookController");
         Route::resource("user", "UserController");
         Route::resource("data", "DataController");
+        Route::resource("order", "OrderAdminController");
     });
