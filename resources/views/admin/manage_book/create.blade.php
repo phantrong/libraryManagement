@@ -62,6 +62,49 @@
 
 
                     <div class="col-sm-12 col-12 col-md-9  col-xl-9  maincontainer__thethird-col8">
+
+                    <div class="row no-gutters">
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
+                                <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Tác giả</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Default"
+                                        aria-describedby="inputGroup-sizing-default">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
+                                <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Nhà xuất bản</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Default"
+                                        aria-describedby="inputGroup-sizing-default">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+
+                        <div class="row no-gutters">
+                            <div class="col-sm-12 col-12 col-md-12 col-xl-12 ">
+                                <div class="input-group input-group-lg aoaoao">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-lg">Tên sách</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Large"
+                                        aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        
+
                         <div class="row no-gutters">
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
                                 <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
@@ -87,39 +130,8 @@
                             </div>
                         </div>
 
-                        <div class="row no-gutters">
-                            <div class="col-sm-12 col-12 col-md-12 col-xl-12 ">
-                                <div class="input-group input-group-lg aoaoao">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-lg">Tên sách</span>
-                                    </div>
-                                    <input type="text" class="form-control" aria-label="Large"
-                                        aria-describedby="inputGroup-sizing-sm">
-                                </div>
-                            </div>
 
-                        </div>
-
-                        <div class="row no-gutters">
-                            <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
-                                <div class="input-group input-group-lg maincontainer__thethird-auther">
-                                    <div class="grid">
-                                        <span class="input-group-text" id="inputGroup-sizing-lg">Tác giả</span>
-                                    </div>
-                                    <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
-                                <div class="input-group input-group-lg maincontainer__thethird-puslish">
-                                    <div class="grid">
-                                        <span class="input-group-text" id="inputGroup-sizing-lg">Nhà xuất bản</span>
-                                    </div>
-                                    <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row no-gutters">
+                        <!-- <div class="row no-gutters">
                             <div class=" col-sm-12 col-12 col-md-12 col-xl-12">
                                 <div class="input-group input-group-lg">
                                     <div class="input-group-prepend">
@@ -129,9 +141,27 @@
                                         aria-describedby="inputGroup-sizing-sm">
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="row no-gutters">
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
+                                <div class="input-group input-group-lg maincontainer__thethird-auther">
+                                    <div class="grid">
+                                        <span class="input-group-text" id="inputGroup-sizing-lg">Giá</span>
+                                    </div>
+                                    <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
+                                <div class="input-group input-group-lg maincontainer__thethird-puslish">
+                                    <div class="grid">
+                                        <span class="input-group-text" id="inputGroup-sizing-lg">Số lượng</span>
+                                    </div>
+                                    <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="row no-gutters">
+                        <!-- <div class="row no-gutters">
                             <div class=" col-sm-12 col-12 col-md-12 col-xl-12">
                                 <div class="input-group input-group-lg">
                                     <div class="input-group-prepend">
@@ -141,12 +171,38 @@
                                         aria-describedby="inputGroup-sizing-sm">
                                 </div>
                             </div>
+                        </div> -->
+
+                        <div class="row no-gutters">
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
+                                <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Dịch giả</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Default"
+                                        aria-describedby="inputGroup-sizing-default">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
+                                <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Năm xuất bản</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Default"
+                                        aria-describedby="inputGroup-sizing-default">
+                                    
+                                </div>
+                            </div>
+                            
                         </div>
+
 
                         <div class="row no-gutters">
                             <div class=" col-sm-12 col-12 col-md-12 col-xl-12">
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                                    <label for="exampleFormControlTextarea1">Nội dung</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                             </div>
@@ -164,7 +220,7 @@
                         </div>
 
                         <div>
-                            <button type="submit" class="btn btn-dark addbook-button">Thêm sách</button>
+                            <button type="submit" class="btn btn-success addbook-button">Thêm sách</button>
                         </div>  
 
 
