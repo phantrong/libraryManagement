@@ -47,7 +47,17 @@
                     </tbody>
                 </table>
             </div>
+            <div class="book-num">
+                <button class="book-btn-sub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="book-icon-num bi bi-dash-lg" viewBox="0 0 16 16"><path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z"/></svg>
+                </button>
+                <input type="text" class="book-num-input" value="1">
+                <button class="book-btn-add">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="book-icon-num bi bi-plus-lg" viewBox="0 0 16 16"><path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/></svg>
+                </button>
+            </div>
             <button class="add-cart">Thêm vào giỏ hàng</button>
+            <button class="view-cart">Xem giỏ hàng</button>
         </div>
     </div>
     <div class="book-review">

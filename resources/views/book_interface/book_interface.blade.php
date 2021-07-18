@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="{{ asset('css/book_interface.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/navbar.book.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/content.book.css')}}" type="text/css">
-
+    <link rel="stylesheet" href="{{ asset('css/cart.css')}}" type="text/css">
 </head>
 
 <body>
     @include('book_interface.navbar')
     <div id="home" class="section"></div>
+    @include('book_interface.cart')
     @include('book_interface.content')
     @include('layouts.footer')
     <a class="toTop smooth" href="#home">
