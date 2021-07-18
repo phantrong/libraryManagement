@@ -7,6 +7,12 @@
     .dashboard__content-header-box span {
         font-size: 14px;
     }
+    .dashboard__content-header-box span span {
+        color: #3490dc;
+    }
+    .dashboard__content-header {
+        padding: 15px;
+    }
     .dashboard__content-header-box {
         display: flex;
         align-items: center;
@@ -26,6 +32,9 @@
     }
     .dashboard__content-content-boxct {
         height: inherit;
+    }
+    .dashboard__content-content-boxct .row .col-3 {
+        margin-top: 15px;
     }
 
     /*ribbon*/
@@ -58,6 +67,9 @@
     }
     .dashboard-money-content-search {
         display: flex;
+    }
+    .dashboard-money-content-search label {
+        background-color: #3f9ae5;
     }
     .custom-select1 {
         width: 50% !important;
@@ -125,6 +137,9 @@
     .dashboard__content-dashboardMoney-search button {
         color: black;
         font-size: 14px;
+    }
+    .dashboard__content-dashboardMoney .col-xl-4 {
+        margin-left: 15px;
     }
     .dashboard__content-dashboardMoney-search label {
         background-color: #3490dc;

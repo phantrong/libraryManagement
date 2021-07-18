@@ -4,9 +4,9 @@
         <img src="https://img.icons8.com/material-outlined/24/000000/circled-chevron-down.png"/>
         <div class="maincontainer__profile-box">
             <ul class="maincontainer__profile-box-list">
-                <li class="maincontainer__profile-box-item"><img src="https://img.icons8.com/glyph-neue/25/000000/down-right.png"/>View Home</li>
-                <li class="maincontainer__profile-box-item"><img src="https://img.icons8.com/doodle/25/000000/user.png"/>Profile</li>
-                <li class="maincontainer__profile-box-item"><img src="https://img.icons8.com/doodle/25/000000/delete-sign.png"/>Logout</li>
+                <li class="maincontainer__profile-box-item"><img src="https://img.icons8.com/glyph-neue/20/000000/down-right.png"/>View Home</li>
+                
+                <li class="maincontainer__profile-box-item"><img src="https://img.icons8.com/doodle/20/000000/delete-sign.png"/>Logout</li>
             </ul>
         </div>
     </div>

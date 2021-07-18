@@ -7,6 +7,12 @@
     .listbook__content-header-box span {
         font-size: 14px;
     }
+    .listbook__content-header-box span span {
+        color: #3490dc;
+    }
+    .listbook__content-header {
+        padding: 15px;
+    }
     .listbook__content-header-box {
         display: flex;
         align-items: center;
@@ -15,6 +21,9 @@
     .listbook__content-content-header {
         border-bottom: 2px solid red;
         padding: 15px 10px 10px 10px;
+    }
+    .listbook__content-content-header a {
+        padding: 5px 15px 5px 15px;
     }
     .container__box-showbook-action {
         text-align: right;
@@ -25,7 +34,7 @@
         box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
         margin: 0 15px;
         max-width: 100%;
-        height: inherit;
+        height: auto;
     }
     .listbook__content-content-boxct {
         height: inherit;
@@ -207,6 +216,38 @@
     .book-item:hover .book-item-a {
         display: block;
     }
+    .pagination {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .pagination-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .pagination-item__link {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #333;
+        border-radius: 50%;
+        display: block;
+        line-height: 30px;
+        font-weight: 500;
+    }
+    .pagination-item.active .pagination-item__link {
+        background: #dd125f;
+        color: #fff;
+    }
+    .pagination-item:hover .pagination-item__link {
+        background: rgb(221, 18, 95, 0.5);
+        color: #fff;
+    }
 }
 
 @keyframes fadeIn1 {
@@ -228,5 +269,61 @@
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+.activeWidth .listbook__content {
+    margin-left: 72px;
+}
+
+@media (max-width: 575.98px) {
+    .listbook__content {
+        margin-left: 0;
+    }
+    .listbook__content {
+        min-height: 962px;
+        height: inherit;
+        /* height: 100%; */
+    }
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+    .listbook__content {
+        min-height: 962px;
+        height: inherit;
+        /* height: 100%; */
+        margin-left: 0;
+    }
+}
+
+@keyframes transformI {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .listbook__content {
+        margin-left: 0;
+    }
+}
+
+/* // Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1009px) and (min-width: 992px) {
+    .listbook__content {
+        margin-left: 72px;
+        transition: margin-left 0.4s ease-in-out;
+    }
+    .activeWidth .listbook__content {
+        margin-left: 230px;
+        transition: margin-left 0.4s ease-in-out;
     }
 }

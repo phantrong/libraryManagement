@@ -12,7 +12,7 @@
         <section class="addbook__content-header col-md-12 col-xl-12">
             <div class="addbook__content-header-box">
                 <h1 class="addbook__content-header-box-ct">Order Book</h1>
-                <span>Home|orderbook</span>
+                <span><span>Home</span> / Order book</span>
             </div>
         </section>
         

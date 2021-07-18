@@ -1,7 +1,7 @@
 .pew1 {
     transition: width ease-in-out 0.4s;
     width: 230px;
-    z-index: 1;
+    z-index: 4;
     position: fixed;
     top: 0;
     height: inherit;
@@ -24,9 +24,7 @@
     .shadows p {
         margin: 0;
     }
-    .pew1:hover .toolbar__profile-box-img img {
-        transform: scale(1);
-    }
+
     .toolbar__profile-box {
         text-align: center;
         height: 83px;
@@ -106,18 +104,11 @@
 
     /*activeWidth*/
 
-    .pew1:hover {
-        width: 230px;
-        z-index: 2;
-    }
-    .pew1:hover .shadows {
-        animation: fadeOut ease-in-out 0.4s forwards;
-    }
-
     .toolbar__catagory-link-img2 {
         height: 16px !important;
         width: 16px !important;
         margin-left: 60px;
+        transition: transform 0.2s ease-in;
     }
     .toolbar__catagory-item-list {
         overflow: hidden;
@@ -133,8 +124,12 @@
         margin-left: 4px;
         padding-left: 0;
     }
-    .activeHeight {
-        height: 70px;
+    .activeHeight .toolbar__catagory-item-list {
+        height: 100px;
+    }
+
+    .activeHeight .toolbar__catagory-link-img2 {
+        transform: rotate(-90deg);
     }
 
     .toolbar__catagory-item-list li {
@@ -176,10 +171,19 @@
 .activeWidth .shadows {
     animation: fadeIn ease-in-out 0.4s forwards;
 }
-
+.pew1:hover {
+    width: 230px;
+    z-index: 4;
+}
+.pew1:hover .toolbar__profile-box-img img {
+    transform: scale(1);
+}
 /*active color */
 .pew1 .activeColor {
     background-color: #dc3545;
+}
+.activeWidth .pew1:hover .shadows {
+    animation: fadeOut ease-in-out 0.4s forwards;
 }
 
 @media (max-width: 575.98px) {
@@ -219,7 +223,8 @@
 @media (max-width: 1009px) and (min-width: 992px) {
     .pew1 {
         width: 72px;
-        transition: width 0.4s ease-in-out;
+        transition: width ease-in-out 0.4s !important;
+        transition: transform ease-in-out 0.4s;
     }
     .shadows {
         animation: fadeIn ease-in-out 0.4s forwards;
@@ -239,6 +244,14 @@
 
     .activeWidth .toolbar__profile-box-img img {
         transform: scale(1);
+    }
+    .pew1:hover .shadows {
+        animation: fadeOut ease-in-out 0.4s forwards;
+    }
+    .pew1:hover {
+        width: 230px;
+        z-index: 4;
+        transition: width 0.4s ease-in-out;
     }
 }
 
