@@ -33,8 +33,8 @@ $(document).ready(function() {
         });
     });
 
-    
-    $('#contactForm').submit(function () {
+
+    $('#contactForm').submit(function() {
         alert('Gửi thành công');
         $('.form-input').val("");
         return false;

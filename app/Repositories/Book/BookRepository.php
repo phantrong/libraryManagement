@@ -20,19 +20,20 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
     {
         $books = $this->model;
         if (array_key_exists('category', $fillter)) {
-            $books->where('category', $fillter['category']);
+            $books = $books->where('category', $fillter['category']);
+        }
+        if (array_key_exists('name', $fillter)) {
+            $books = $books->where('name', 'like', '%' . $fillter['name'] . '%');
         }
         if (array_key_exists('sort', $fillter)) {
             if ($fillter['sort']) {
-                $books->orderBy('name');
+                $books = $books->orderBy('name');
             } else {
-                $books->orderByDesc('name');
+                $books = $books->orderByDesc('name');
             }
         }
-        if (array_key_exists('name', $fillter)) {
-            $books->where('name', 'like', '%' . $fillter['name'] . '%');
-        }
-        return $this->model->orderByDesc('updated_at')->paginate($this->perPage);
+        $books = $books->orderByDesc('updated_at')->paginate($this->perPage);
+        return $books;
     }
 
     public function getTextCategory($int)
