@@ -27,6 +27,7 @@ class CreateBooksTable extends Migration
             $table->foreignId('created_by')->constrained('admins');
             $table->foreignId('updated_by')->nullable()->constrained('admins');
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

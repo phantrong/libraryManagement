@@ -21,9 +21,11 @@ class CreateOrdersTable extends Migration
             $table->dateTime('time_pay')->nullable();
             $table->integer('status')->default(1);
             $table->string('address');
+            $table->text('note');
             $table->foreignId('created_by')->constrained('admins');
             $table->foreignId('updated_by')->nullable()->constrained('admins');
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

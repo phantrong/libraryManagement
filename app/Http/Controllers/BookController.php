@@ -106,7 +106,16 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.manage_book.edit');
+        $book = $this->bookRepository->find($id);
+        if (!$book) {
+            return abort(404);
+        }
+        $images = $book->images()->get();
+        $content = $book->content()->get();
+        dd($images);
+        return view('admin.manage_book.edit', [
+            'book' => $book,
+        ]);
     }
 
     /**

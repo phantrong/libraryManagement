@@ -12,7 +12,7 @@
         <section class="addbook__content-header col-md-12 col-xl-12">
             <div class="addbook__content-header-box">
                 <h1 class="addbook__content-header-box-ct">Add Book</h1>
-                <span>Home|addbook</span>
+                <span><a href="{{ route('admin.book.index') }}">Home</a> / Add Book</span>
             </div>
         </section>
 
