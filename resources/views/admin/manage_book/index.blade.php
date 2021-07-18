@@ -12,12 +12,13 @@
         <section class="listbook__content-header col-md-12 col-xl-12">
             <div class="listbook__content-header-box">
                 <h1 class="listbook__content-header-box-ct">List Book</h1>
-                <span>Home|listbook</span>
+                <span><span>Home</span> / List book</span>
             </div>
         </section>
 
         <section class="listbook__content-content">
             <div class="listbook__content-content-header">
+                <a href="/admin/book/create" class="btn btn-dark">Thêm sách </a>
             </div>
 
             <div class="listbook__content-content-boxct col-md-12 col-xl-12 col-sm-12 col-12">
@@ -174,12 +175,215 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="book-wrapper col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="book-item">
+                        <a href="/admin/book/edit" class="book-item-a">
+                         <img src="https://img.icons8.com/bubbles/50/000000/edit.png"/>
+                        </a>
+                        <a href="" class="book-item-link">
+                            <div class="book-img" style="background-image: url({{ asset('images/book1.jpg') }});"></div>
+                            <h4 class="book-name">A short history of everything</h4>
+                        </a>
+                        <div class="book-item-author">
+                            <span class="book-author-name">Author: Phan Đức Trung</span>
+
+                        </div>
+                        <div class="book-item-action">
+                            <div class="book-rating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                            </div>
+                            <span class="book-sold">Còn hàng</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-wrapper col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="book-item">
+                        <a href="/admin/book/edit" class="book-item-a">
+                         <img src="https://img.icons8.com/bubbles/50/000000/edit.png"/>
+                        </a>
+                        
+                        <a href="" class="book-item-link">
+                            <div class="book-img" style="background-image: url({{ asset('images/book1.jpg') }});"></div>
+                            <h4 class="book-name">A short history of everything</h4>
+                        </a>
+                        <div class="book-item-author">
+                            <span class="book-author-name">Author: Phan Đức Trung</span>
+
+                        </div>
+                        <div class="book-item-action">
+                            <div class="book-rating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                            </div>
+                            <span class="book-sold">Còn hàng</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-wrapper col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="book-item">
+                        <a href="/admin/book/edit" class="book-item-a">
+                         <img src="https://img.icons8.com/bubbles/50/000000/edit.png"/>
+                        </a>
+                        <a href="" class="book-item-link">
+                            <div class="book-img" style="background-image: url({{ asset('images/book1.jpg') }});"></div>
+                            <h4 class="book-name">A short history of everything</h4>
+                        </a>
+                        <div class="book-item-author">
+                            <span class="book-author-name">Author: Phan Đức Trung</span>
+
+                        </div>
+                        <div class="book-item-action">
+                            <div class="book-rating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                            </div>
+                            <span class="book-sold">Còn hàng</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-wrapper col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="book-item">
+                        <a href="/admin/book/edit" class="book-item-a">
+                         <img src="https://img.icons8.com/bubbles/50/000000/edit.png"/>
+                        </a>
+                        
+                        <a href="" class="book-item-link">
+                            <div class="book-img" style="background-image: url({{ asset('images/book1.jpg') }});"></div>
+                            <h4 class="book-name">A short history of everything</h4>
+                        </a>
+                        <div class="book-item-author">
+                            <span class="book-author-name">Author: Phan Đức Trung</span>
+
+                        </div>
+                        <div class="book-item-action">
+                            <div class="book-rating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon book-rating-icon-gold bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="book-rating-icon bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                            </div>
+                            <span class="book-sold">Còn hàng</span>
+                        </div>
+                    </div>
+                </div>
                 
               
             </div>
-            <button class="btn-read-more btn btn-primary">
-                Xem thêm
-            </button>
+
+            <ul class="pagination">
+                <li class="pagination-item">
+                    <a href="" class="pagination-item__link">
+                        &#10094;
+                    </a>
+                </li>
+                <li class="pagination-item active"><a href="" class="pagination-item__link">1</a></li>
+                <li class="pagination-item"><a href="" class="pagination-item__link">2</a></li>
+                <li class="pagination-item"><a href="" class="pagination-item__link">3</a></li>
+                <li class="pagination-item"><a href="" class="pagination-item__link">4</a></li>
+                <li class="pagination-item"><a href="" class="pagination-item__link">5</a></li>
+                <li class="pagination-item">
+                    <a href="" class="pagination-item__link">
+                        &#10095;
+                    </a>
+                </li>
+            </ul>
+
+            
+            
+        
         </div>
     </div>
             </div>

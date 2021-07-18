@@ -70,6 +70,12 @@
     .addbook__content-header-box span {
         font-size: 14px;
     }
+    .addbook__content-header-box span span {
+        color: #5e72e4;
+    }
+    .addbook__content-header-box h1 {
+        font-size: 24px;
+    }
     .maincontainer__profile {
         padding-right: 1.5%;
         /* margin-left: auto; */
@@ -120,7 +126,7 @@
     /*content*/
     /*header*/
     .addbook__content-header {
-        padding: 15px 5px;
+        padding: 15px;
     }
     .addbook__content-header-box {
         display: flex;
@@ -231,7 +237,6 @@
     margin-left: 72px;
 }
 
-
 /*activeWidth*/
 
 .activeWidth .addbook__content {
@@ -278,7 +283,6 @@
     }
 }
 
-
 /* // Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
@@ -299,7 +303,6 @@
     }
 }
 
-
 /* // Medium devices (tablets, less than 992px) */
 
 @media (max-width: 991.98px) and (min-width: 768px) {
@@ -307,7 +310,6 @@
         margin-left: 0;
     }
 }
-
 
 /* // Large devices (desktops, less than 1200px) */
 

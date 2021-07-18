@@ -9,10 +9,11 @@
 
 @section('content')
 <div class="dashboard__content">
+
             <section class="dashboard__content-header col-md-12 col-xl-12">
                 <div class="dashboard__content-header-box">
                     <h1 class="dashboard__content-header-box-ct">Dash Board</h1>
-                    <span>Home|Dash Board</span>
+                    <span><span>Home</span> / Dash Board</span>
                 </div>
             </section>
             
@@ -106,17 +107,17 @@
 
             <section class="dashboard__content-dashboardMoney"> 
                 <div class="row">
-                <div class="col-xl-12 dashboard-money-content-header"> 
-                    <!-- <h1>Thống kê tiền sách theo các phân loại</h1> -->
-                    <h1 class="ribbon">
-                    <strong class="ribbon-content">Thống kê tiền sách theo các phân loại</strong>
-                </h1>
-                </div>
+                    <div class="col-xl-12 dashboard-money-content-header"> 
+                        <!-- <h1>Thống kê tiền sách theo các phân loại</h1> -->
+                        <h1 class="ribbon">
+                        <strong class="ribbon-content">Thống kê tiền sách theo các phân loại</strong>
+                    </h1>
+                    </div>
                 
                 <div class="col-xl-4">
                     <div class="dashboard-money-content-search">
                         <div>
-                        <label class="input-group-text" for="typeofbook">Tìm theo</label>
+                            <label class="input-group-text" for="typeofbook">Tìm theo</label>
                         </div>
                         <select class="custom-select custom-select1" id="typeofbook">
                         <option selected>Chọn</option>
@@ -128,7 +129,7 @@
                         <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">Tìm</button>
+                            <button class="btn btn-info" type="button">Tìm</button>
                         </div>
                         </div>
                     </div>

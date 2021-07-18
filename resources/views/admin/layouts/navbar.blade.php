@@ -1,4 +1,4 @@
-<aside class="pew1">
+    <aside class="pew1">
    
             <div class="toolbar">
                 <div class="toolbar-namelibrary">
@@ -32,13 +32,21 @@
                                 <p class="shadows">Dashboard</p>
                             </a>
                         </li>
-                        <li class="toolbar__catagory-item">
+                        <li class="toolbar__catagory-item" id="manage__book">
                             <a  class="toolbar__catagory-link">
                                <img src="https://img.icons8.com/dotty/80/000000/chess-clock.png"/>                                            
                                 <p class="shadows">Manage book</p>
-                                <img class="toolbar__catagory-link-img2" src="https://img.icons8.com/material-sharp/16/000000/chevron-down.png"/>
+                                <img class="toolbar__catagory-link-img2" src="https://img.icons8.com/ios-glyphs/16/000000/chevron-left.png"/>
+                                <!-- <img class="toolbar__catagory-link-img2" src="https://img.icons8.com/material-sharp/16/000000/chevron-down.png"/> -->
                             </a>
                             <ul class="toolbar__catagory-item-list">
+                                <li> 
+                                    
+                                    <a  href="/admin/book"> 
+                                        <img src="https://img.icons8.com/windows/25/000000/checked-checkbox--v1.png"/>
+                                        <p class="shadows">List Book</p>
+                                    </a>    
+                                </li>
                                 <li> 
                                     
                                     <a  href="book/create"> 
