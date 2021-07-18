@@ -1,5 +1,6 @@
 **** code tôi thêm 15-7: 
-+ ae vào file .env: đổi tên db_name và pass để kết nối với sql của em, rồi sang vscode chạy: php artisan migrate. -> sẽ có bảng db (nhưng chưa có dữ liệu)
++ ae vào file .env: đổi tên db_name và pass để kết nối với sql của ae -> rồi chạy: php artisan config:cache
++ rồi sang vscode chạy: php artisan migrate:fresh --seed. -> sẽ có bảng db
 + tôi có tạo vài file login, thư sẽ để ý và cop code vào đó. folder auth là login cho người dùng, còn trong admin là cho admin
 + mở đường dẫn login thì chỉ cần /login
 
