@@ -4,6 +4,7 @@ namespace App\Repositories\Book;
 
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
+use App\Models\Book;
 
 class BookRepository extends BaseRepository implements BookRepositoryInterface
 {
@@ -12,7 +13,7 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
     //lấy model tương ứng
     public function getModel()
     {
-        return \App\Models\Book::class;
+        return Book::class;
     }
 
     public function getListBook($fillter = [])

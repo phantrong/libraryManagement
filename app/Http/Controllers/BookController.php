@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Repositories\BookRepository;
+use App\Repositories\Book\BookRepository;
 
 class BookController extends Controller
 {
