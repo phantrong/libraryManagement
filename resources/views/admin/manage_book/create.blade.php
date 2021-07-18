@@ -63,7 +63,7 @@
 
                     <div class="col-sm-12 col-12 col-md-9  col-xl-9  maincontainer__thethird-col8">
 
-                    <div class="row no-gutters">
+                        <div class="row no-gutters">
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
                                 <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
                                     <div class="input-group-prepend">
@@ -219,7 +219,7 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div class="aothatsuluon">
                             <button type="submit" class="btn btn-success addbook-button">Thêm sách</button>
                         </div>  
 
