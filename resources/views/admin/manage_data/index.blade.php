@@ -87,63 +87,74 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <canvas id="myChart">
+
+                            </canvas>
+                        </div>
+                        <div class="col-xl-6">
+                            <canvas id="mayChart1">
+
+                            </canvas>
+                        </div>
+                    </div>
                 </div>
 
             </section>
 
             <section class="dashboard__content-dashboardMoney"> 
-                    <div class="row">
-                    <div class="col-xl-12 dashboard-money-content-header"> 
-                        <!-- <h1>Thống kê tiền sách theo các phân loại</h1> -->
-                        <h1 class="ribbon">
-                        <strong class="ribbon-content">Thống kê tiền sách theo các phân loại</strong>
-                    </h1>
-                    </div>
-                    
-                    <div class="col-xl-4 dashboard__content-dashboardMoney-search">
-                        <div class="dashboard-money-content-search">
-                            <div>
-                            <label class="input-group-text" for="typeofbook">Tìm theo</label>
-                            </div>
-                            <select class="custom-select custom-select1" id="typeofbook">
-                            <option selected>Chọn</option>
-                            <option value="1">Thể loại sách</option>
-                            <option value="2">Tác giả</option>
-                            <option value="3">Nhà xuất bản</option>
-                            </select>
-
-                            <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary btn-primary" type="button">Tìm</button>
-                            </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                
-
-                    
-                    
-                    
-
-                    <div class="col-xl-4 dashboard-money-content-total">
-                    <div class="col-xl-5">
-                        
-                    </div>
-                        <div class="col-xl-6">
-                            <span>Tổng tiền sách:</span>
-                            <span>100.000.000</span>
-                            <span>đ</span>
-                        </div>
-                        
-                    </div>
+                <div class="row">
+                <div class="col-xl-12 dashboard-money-content-header"> 
+                    <!-- <h1>Thống kê tiền sách theo các phân loại</h1> -->
+                    <h1 class="ribbon">
+                    <strong class="ribbon-content">Thống kê tiền sách theo các phân loại</strong>
+                </h1>
                 </div>
+                
+                <div class="col-xl-4">
+                    <div class="dashboard-money-content-search">
+                        <div>
+                        <label class="input-group-text" for="typeofbook">Tìm theo</label>
+                        </div>
+                        <select class="custom-select custom-select1" id="typeofbook">
+                        <option selected>Chọn</option>
+                        <option value="1">Thể loại sách</option>
+                        <option value="2">Tác giả</option>
+                        <option value="3">Nhà xuất bản</option>
+                        </select>
+
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Tìm</button>
+                        </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-xl-12 dashboard-money-content-total">
+
+                    <div class="col-xl-2">
+                    <span>Tổng tiền sách:</span>
+                    <span>100.000.000</span>
+                    <span>đ</span>
+                </div>
+                    <div class="col-xl-5">
+                        <canvas id="myChart2">
+
+                        </canvas>
+                    </div>
+
+                </div>
+            </div>
             </section>
         </div>
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/admin/manage_data.js') }}"></script>
+
+    <script src="{{ asset('js/admin/manage_show_data.js') }}"></script>
 @endsection
