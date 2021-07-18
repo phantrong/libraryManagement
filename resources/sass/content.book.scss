@@ -81,7 +81,33 @@
             }
         }
     }
-    .add-cart {
+    .book-num {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0 0;
+        .book-num-input {
+            width: 50px;
+            height: 32px;
+            text-align: center;
+            font-size: 16px;
+            outline: none;
+            border: 1px solid #999;
+            border-left: none;
+            border-right: none;
+        }
+        .book-btn-sub, .book-btn-add {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #999;
+            outline: none;
+            background-color: #fff;
+        }
+        .book-icon-num {
+            width: 12px;
+            color: #333;
+        }
+    }
+    .add-cart, .view-cart {
         height: 40px;
         min-width: 200px;
         padding: 10px;
@@ -93,8 +119,10 @@
         color: #fff;
         border-radius: 3px;
         margin-top: 40px;
+        margin-right: 20px;
+        margin-left: 20px;
     }
-    .add-cart:hover {
+    .add-cart:hover, .view-cart:hover {
         opacity: 0.7;
     }
     .book-review {
@@ -121,6 +149,10 @@
             color: #333;
             font-size: 30px;
             text-align: left;
+        }
+        .same-category-list {
+            background-color: #fff;
+            margin: 0;
         }
     }
 }
