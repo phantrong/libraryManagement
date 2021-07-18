@@ -7,6 +7,18 @@
     background-color: #e9ecef;
     transition: margin-left ease-in-out 0.4s;
     height: inherit;
+    .alert-danger {
+        padding: 0;
+        color: red;
+        background-color: white;
+        border: none;
+        margin: -20px 0px 0px 0px;
+        font-size: 12px;
+        height: 20px;
+    }
+    .no-gutters {
+        display: flex;
+    }
     .form-upload {
         display: flex;
         flex-direction: column;
@@ -24,13 +36,12 @@
             cursor: inherit;
         }
         img {
-            width: 130px;
-            height: 160px;
+            width: 180px;
+            height: 200px;
             position: absolute;
-            margin-top: -48px;
+            margin-top: -73px;
             border: none;
             border-radius: 10px;
-            object-fit: cover;
         }
         .btn-ct-primary {
             border: 2px solid #5e72e4;

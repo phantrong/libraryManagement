@@ -14,9 +14,10 @@ interface BookRepositoryInterface extends RepositoryInterface
     public function getListBook();
 
     /**
-     * getListCategory
+     * getTextCategory
      *
-     * @return void
+     * @param  int $int
+     * @return string
      */
-    public function getListCategory();
+    public function getTextCategory($int);
 }

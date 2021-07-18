@@ -28,7 +28,10 @@ class BookRequest extends FormRequest
             'auth' => 'required',
             'quantity' => 'required',
             'price' => 'required',
-            'year_start' => 'required|max:4|min:4'
+            'year_start' => 'required|max:4|min:4',
+            'content' => 'required',
+            'image1' => 'required',
+            'image2' => 'required',
         ];
 
         return $rules;
@@ -42,6 +45,11 @@ class BookRequest extends FormRequest
             'quantity.required' => '*Bạn chưa nhập số lượng cuốn sách.',
             'price.required' => '*Bạn chưa nhập giá cuốn sách.',
             'year_start.required' => '*Bạn chưa nhập năm xuất bản.',
+            'year_start.max' => '*Năm xuất bản không hợp lệ',
+            'year_start.min' => '*Năm xuất bản không hợp lệ',
+            'content.required' => '*Bạn chưa nhập nội dung cuốn sách.',
+            'image1.required' => '*Bạn chưa upload ảnh mặt trước.',
+            'image2.required' => '*Bạn chưa upload ảnh mặt sau.',
         ];
     }
 }

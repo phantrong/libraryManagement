@@ -35,9 +35,28 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
         return $this->model->orderByDesc('updated_at')->paginate($this->perPage);
     }
 
-    public function getListCategory()
+    public function getTextCategory($int)
     {
-        return DB::table('users')->select('category')->distinct()->get();
+        switch ($int) {
+            case 1:
+                return Book::TYPE_ONE;
+            case 2:
+                return Book::TYPE_TWO;
+            case 3:
+                return Book::TYPE_THREE;
+            case 4:
+                return Book::TYPE_FOUR;
+            case 5:
+                return Book::TYPE_FIVE;
+            case 6:
+                return Book::TYPE_SIX;
+            case 7:
+                return Book::TYPE_SEVEN;
+            case 8:
+                return Book::TYPE_EIGHT;
+            default:
+                return Book::TYPE_DEFAULT;
+        }
     }
 
     public function getListBookByName($name)

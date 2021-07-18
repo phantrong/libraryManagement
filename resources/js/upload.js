@@ -14,7 +14,7 @@ $(".btn-upload").on('click', function() {
                 let formData = new FormData();
                 formData.append("file", file);
 
-                axios.post('upload', formData)
+                axios.post('/upload', formData)
                     .then(res => {
                         linkimg.val(res.data.url);
                         img.attr('src', res.data.url);

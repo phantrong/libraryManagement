@@ -16,6 +16,7 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id')->constrained('books');
+            $table->tinyInteger('type_face');
             $table->string('path');
             $table->timestamp('created_at')->default(now());
         });

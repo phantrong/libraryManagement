@@ -16,7 +16,7 @@ class CreateContentsTable extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id')->constrained('books');
-            $table->string('content_book');
+            $table->text('content_book');
             $table->timestamp('created_at')->default(now());
         });
     }

@@ -25,7 +25,7 @@ class CreateBooksTable extends Migration
             $table->integer('price');
             $table->integer('year_start');
             $table->foreignId('created_by')->constrained('admins');
-            $table->foreignId('updated_by')->constrained('admins');
+            $table->foreignId('updated_by')->nullable()->constrained('admins');
             $table->timestamps();
         });
     }

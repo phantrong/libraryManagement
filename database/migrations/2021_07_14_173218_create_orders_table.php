@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->integer('status')->default(1);
             $table->string('address');
             $table->foreignId('created_by')->constrained('admins');
-            $table->foreignId('updated_by')->constrained('admins');
+            $table->foreignId('updated_by')->nullable()->constrained('admins');
             $table->timestamps();
         });
     }
