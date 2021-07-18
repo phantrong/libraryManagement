@@ -1,4 +1,5 @@
 require('./create');
+require('./edit');
 
 document.addEventListener('DOMContentLoaded', function() {
 

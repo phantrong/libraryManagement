@@ -110,11 +110,13 @@ class BookController extends Controller
         if (!$book) {
             return abort(404);
         }
+        $book['category'] = $this->bookRepository->getIndexCategory($book->category);
         $images = $book->images()->get();
         $content = $book->content()->get();
-        dd($images);
         return view('admin.manage_book.edit', [
             'book' => $book,
+            'images' => $images,
+            'content' => $content
         ]);
     }
 
@@ -127,7 +129,46 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //edit book
+        $book = $request->only(
+            'name',
+            'auth',
+            'quantity',
+            'price',
+            'year_start'
+        );
+        $book['category'] = $this->bookRepository->getTextCategory($request->category);
+        if ($request->publisher) {
+            $book['publisher'] = $request->publisher;
+        }
+        if ($request->translator) {
+            $book['translator'] = $request->translator;
+        }
+        if ($request->country) {
+            $book['country'] = $request->country;
+        }
+        $book['update_by'] = Auth::guard('admin')->id() ? Auth::guard('admin')->id() : 1;
+        $bookNew = $this->bookRepository->update($id, $book);
+        //edit content_book
+        Content::where('book_id', $id)->delete();
+        $content['content_book'] = $request->content;
+        $content['book_id'] = $bookNew->id;
+        $content['created_at'] = now();
+        Content::insert($content);
+        //edit image mat trc
+        Image::where('book_id', $id)->delete();
+        $image1['book_id'] = $bookNew->id;
+        $image1['type_face'] = 0;
+        $image1['path'] = $request->image1;
+        $image1['created_at'] = now();
+        Image::insert($image1);
+        //edit image mat sau
+        $image2['book_id'] = $bookNew->id;
+        $image2['type_face'] = 1;
+        $image2['path'] = $request->image2;
+        $image2['created_at'] = now();
+        Image::insert($image2);
+        return redirect()->route('admin.book.index');
     }
 
     /**
@@ -138,6 +179,6 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->bookRepository->delete($id);
     }
 }

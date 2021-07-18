@@ -59,6 +59,30 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
         }
     }
 
+    public function getIndexCategory($text)
+    {
+        switch ($text) {
+            case Book::TYPE_ONE:
+                return 1;
+            case Book::TYPE_TWO:
+                return 2;
+            case Book::TYPE_THREE:
+                return 3;
+            case Book::TYPE_FOUR:
+                return 4;
+            case Book::TYPE_FIVE:
+                return 5;
+            case Book::TYPE_SIX:
+                return 6;
+            case Book::TYPE_SEVEN:
+                return 7;
+            case Book::TYPE_EIGHT:
+                return 8;
+            default:
+                return 0;
+        }
+    }
+
     public function getListBookByName($name)
     {
         return $this->model->where('name', 'like', '%' . $name . '%')->paginate($this->perPage);

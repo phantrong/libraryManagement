@@ -20,16 +20,19 @@
             <div class="addbook__content-content-header">
             </div>
             <form class="addbook__content-content-boxct col-md-12 col-xl-12 col-sm-12 col-12" method="POST"
-                action="{{ route('admin.book.update', $book->id) }}" id="form-create-book">
+                action="{{ route('admin.book.update', $book->id) }}" id="form-edit-book">
                 @csrf
                 <input type="hidden" name="_method" value="PUT">
+                <input type='hidden' name='book_id' value={{ $book->id }}>
                 <div class="row">
                     <div class="col-md-3  col-xl-3 col-sm-12 col-12 maincontainer__thethird-col3">
                         <div class="row">
                             <div class="maincontainer__thethird-col3-boxct col-xl-12">
                                 <div class="form-upload">
-                                    <input class="link-img" name="image1" value="{{ old('image1') }}" readonly>
-                                    <img src="{{ asset(old('image1')) }}" class="{{ old('image1') ? '' : 'hidden' }}">
+                                    <input class="link-img" name="image1" value="{{ old('image1', $images[0]->path) }}"
+                                        readonly>
+                                    <img src="{{ asset(old('image1', $images[0]->path)) }}"
+                                        class="{{ old('image1', $images[0]->path) ? '' : 'hidden' }}">
                                     <input type="file" class="hidden">
                                     <div class="note">Ảnh mặt trước của sách</div>
                                     <div class="alert alert-upload">{{ $errors->first('image1') }}</div>
@@ -39,8 +42,10 @@
 
                             <div class="maincontainer__thethird-col3-boxct1 col-xl-12">
                                 <div class="form-upload">
-                                    <input class="link-img" name="image2" value="{{ old('image2') }}" readonly>
-                                    <img src="{{ asset(old('image2')) }}" class="{{ old('image2') ? '' : 'hidden' }}">
+                                    <input class="link-img" name="image2" value="{{ old('image2', $images[1]->path) }}"
+                                        readonly>
+                                    <img src="{{ asset(old('image2', $images[1]->path)) }}"
+                                        class="{{ old('image2', $images[1]->path) ? '' : 'hidden' }}">
                                     <input type="file" class="hidden">
                                     <div class="note">Ảnh mặt sau của sách</div>
                                     <div class="alert alert-upload">{{ $errors->first('image2') }}</div>
@@ -59,7 +64,7 @@
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default" name="auth"
-                                        value="{{ old('auth') }}" maxlength="30"
+                                        value="{{ old('auth', $book->auth) }}" maxlength="30"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                 </div>
                             </div>
@@ -70,7 +75,7 @@
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default" name="publisher"
-                                        value="{{ old('publisher') }}" maxlength="50"
+                                        value="{{ old('publisher', $book->publisher) }}" maxlength="50"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                     <div class="alert alert-upload">{{ $errors->first('publisher') }}</div>
                                 </div>
@@ -88,8 +93,8 @@
                                         <span class="input-group-text" id="inputGroup-sizing-lg">Tên sách</span>
                                     </div>
                                     <input type="text" class="form-control" aria-label="Large"
-                                        aria-describedby="inputGroup-sizing-sm" name="name" value="{{ old('name') }}"
-                                        maxlength="50"
+                                        aria-describedby="inputGroup-sizing-sm" name="name"
+                                        value="{{ old('name', $book->name) }}" maxlength="50"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                 </div>
                             </div>
@@ -108,7 +113,7 @@
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default" name="country"
-                                        value="{{ old('country') }}" maxlength="30"
+                                        value="{{ old('country', $book->country) }}" maxlength="30"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 
                                 </div>
@@ -119,23 +124,32 @@
                                     <span class="input-group-text" id="inputGroup-sizing-default">Thể loại</span>
                                 </div>
                                 <select class="maincontainer__thethird-category-select" name='category'>
-                                    <option value="1" {{ old('category') == 1 ? 'selected' : '' }}>Sách Chính trị – pháp
+                                    <option value="1" {{ old('category', $book->category) == 1 ? 'selected' : '' }}>Sách
+                                        Chính trị – pháp
                                         luật</option>
-                                    <option value="2" {{ old('category') == 2 ? 'selected' : '' }}>Sách Khoa học công
+                                    <option value="2" {{ old('category', $book->category) == 2 ? 'selected' : '' }}>Sách
+                                        Khoa học công
                                         nghệ – Kinh tế</option>
-                                    <option value="3" {{ old('category') == 3 ? 'selected' : '' }}>Sách Văn học nghệ
+                                    <option value="3" {{ old('category', $book->category) == 3 ? 'selected' : '' }}>Sách
+                                        Văn học nghệ
                                         thuật</option>
-                                    <option value="4" {{ old('category') == 4 ? 'selected' : '' }}>Sách Văn hóa xã hội –
+                                    <option value="4" {{ old('category', $book->category) == 4 ? 'selected' : '' }}>Sách
+                                        Văn hóa xã hội –
                                         Lịch sử</option>
-                                    <option value="5" {{ old('category') == 5 ? 'selected' : '' }}>Sách Giáo trình
+                                    <option value="5" {{ old('category', $book->category) == 5 ? 'selected' : '' }}>Sách
+                                        Giáo trình
                                     </option>
-                                    <option value="6" {{ old('category') == 6 ? 'selected' : '' }}>Sách Truyện, tiểu
+                                    <option value="6" {{ old('category', $book->category) == 6 ? 'selected' : '' }}>Sách
+                                        Truyện, tiểu
                                         thuyết</option>
-                                    <option value="7" {{ old('category') == 7 ? 'selected' : '' }}>Sách Tâm lý, tâm linh,
+                                    <option value="7" {{ old('category', $book->category) == 7 ? 'selected' : '' }}>Sách
+                                        Tâm lý, tâm linh,
                                         tôn giáo</option>
-                                    <option value="8" {{ old('category') == 8 ? 'selected' : '' }}>Sách thiếu nhi
+                                    <option value="8" {{ old('category', $book->category) == 8 ? 'selected' : '' }}>Sách
+                                        thiếu nhi
                                     </option>
-                                    <option value="0" {{ !old('category') ? 'selected' : '' }}>Khác</option>
+                                    <option value="0" {{ !old('category', $book->category) ? 'selected' : '' }}>Khác
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -146,7 +160,8 @@
                                         <span class="input-group-text" id="inputGroup-sizing-lg">Giá (VNĐ)</span>
                                     </div>
                                     <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-                                        name="price" value="{{ old('price') }}" data-type="currency" maxlength="9"
+                                        name="price" value="{{ old('price', $book->price) }}" data-type="currency"
+                                        maxlength="9"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                 </div>
                             </div>
@@ -156,7 +171,8 @@
                                         <span class="input-group-text" id="inputGroup-sizing-lg">Số lượng (quyển)</span>
                                     </div>
                                     <input type="text" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-                                        name="quantity" value="{{ old('quantity') }}" data-type="currency" maxlength="9"
+                                        name="quantity" value="{{ old('quantity', $book->quantity) }}"
+                                        data-type="currency" maxlength="9"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                 </div>
                             </div>
@@ -178,7 +194,7 @@
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default" name="translator"
-                                        value="{{ old('translator') }}" maxlength="30"
+                                        value="{{ old('translator', $book->translator) }}" maxlength="30"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                 </div>
                             </div>
@@ -190,7 +206,8 @@
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default" name="year_start"
-                                        value="{{ old('year_start') }}" maxlength="4" data-type="currency"
+                                        value="{{ old('year_start', $book->year_start) }}" maxlength="4"
+                                        data-type="currency"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                 </div>
                             </div>
@@ -209,7 +226,7 @@
                                     <label for="exampleFormControlTextarea1">Nội dung</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"
                                         maxlength="4000"
-                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">{{ old('content') }}</textarea>
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">{{ old('content', $content[0]->content_book) }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -218,24 +235,47 @@
                                 <div class="alert alert-danger">{{ $errors->first('content') }}</div>
                             </div>
                         </div>
-                        <div class="aothatsuluon create-book">
+                        <div class="aothatsuluon edit-book">
                             <button type="button" class="btn btn-success addbook-button" data-toggle="modal"
-                                data-target="#myModal-create-book">Thêm sách</button>
+                                data-target="#myModal-edit-book">Sửa sách</button>
+                            <button type="button" class="btn btn-success addbook-button delete-btn" data-toggle="modal"
+                                data-target="#myModal-delete-book">Xóa sách</button>
                         </div>
-                        <div class="modal js-default-ok-popup modal-alert-create-book" id="myModal-create-book">
+                        <div class="modal js-default-ok-popup modal-alert-edit-book" id="myModal-edit-book">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Thêm sách</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Sửa sách</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Bạn thật sự muốn thêm sách với thông tin đã nhập?
+                                        Bạn thật sự muốn sửa sách với thông tin đã nhập?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-create-book">Thêm</button>
+                                        <button type="button" class="btn btn-primary btn-edit-book">Sửa</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal js-default-ok-popup modal-alert-delete-book" id="myModal-delete-book">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Xóa sách</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Bạn thật sự muốn xóa cuốn sách?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"
+                                            class="btn btn-primary btn-delete-book delete-btn">Xóa</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Quay
+                                            lại</button>
                                     </div>
                                 </div>
                             </div>
