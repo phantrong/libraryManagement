@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->dateTime('time_promise_pay')->nullable();
             $table->dateTime('time_pay')->nullable();
             $table->integer('status')->default(1);
+            $table->string('address');
             $table->foreignId('created_by')->constrained('admins');
             $table->foreignId('updated_by')->constrained('admins');
             $table->timestamps();

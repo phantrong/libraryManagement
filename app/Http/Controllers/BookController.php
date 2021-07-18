@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Repositories\BookRepository;
 
 class BookController extends Controller
 {
+    private $bookRepository;
 
+    public function __construct(BookRepository $bookRepository)
+    {
+        $this->bookRepository = $bookRepository;
+    }
 
 
     /**
@@ -37,7 +44,27 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $book = $request->only(
+            'category',
+            'name',
+            'auth',
+            'quantity',
+            'price',
+            'year_start'
+        );
+        if ($request->publisher) {
+            $book['publisher'] = $request->publisher;
+        }
+        if ($request->translator) {
+            $book['translator'] = $request->translator;
+        }
+        if ($request->country) {
+            $book['country'] = $request->country;
+        }
+        $book['created_by'] = Auth::guard('admin')->id;
+        $this->bookRepository->create($book);
+
+        return redirect()->route('admin.book.index');
     }
 
     /**

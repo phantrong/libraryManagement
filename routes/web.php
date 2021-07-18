@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'ShowBookController@welcome')->name('welcome');
 Route::get('/welcome/singlebook', 'ShowBookController@singlebook')->name('welcome.singlebook');
-
+Route::post('/upload', 'UploadController@index')->name('upload');
 
 Auth::routes();
 
