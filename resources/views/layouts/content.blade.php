@@ -161,23 +161,7 @@
                         </div>
                     @endforeach
                 </div>
-                <ul class="pagination">
-                    <li class="pagination-item">
-                        <a href="" class="pagination-item__link">
-                            &#10094;
-                        </a>
-                    </li>
-                    <li class="pagination-item active"><a href="" class="pagination-item__link">1</a></li>
-                    <li class="pagination-item"><a href="" class="pagination-item__link">2</a></li>
-                    <li class="pagination-item"><a href="" class="pagination-item__link">3</a></li>
-                    <li class="pagination-item"><a href="" class="pagination-item__link">4</a></li>
-                    <li class="pagination-item"><a href="" class="pagination-item__link">5</a></li>
-                    <li class="pagination-item">
-                        <a href="" class="pagination-item__link">
-                            &#10095;
-                        </a>
-                    </li>
-                </ul>
+                {{ $books->links() }}
             @else
                 <h3 class="note">Không có sách nào phù hợp!</h3>
             @endif

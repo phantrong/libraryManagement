@@ -20,7 +20,7 @@ class ShowBookController extends Controller
         $name = '';
         $sort = -1;
         $fillter = [];
-        if ($request->get('category') != -1) {
+        if ($request->get('category') != -1 && $request->get('category') != null) {
             $fillter['category'] = $this->bookRepository->getTextCategory($request->category);
             $category = $request->get('category');
         }
