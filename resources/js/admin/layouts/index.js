@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     //activeHeight for list item 
-    $('.toolbar__catagory-link-img2').click(() => {
+    $('#manage__book').click(() => {
         
         const leng = $('#manage__book').attr('class').split(' ').length;
         
