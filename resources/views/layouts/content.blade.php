@@ -1,4 +1,4 @@
-<div id="content" class="section container slideanim">
+<div id="content" class="section container slideanim sec-act">
     <h2 class="content-heading">TỦ SÁCH</h2>
     <p class="content-desc">Danh mục hàng hóa phong phú, nhiều sản phẩm độc quyền,
         được chọn lọc kỹ càng đã tạo nên sự khác biệt của Nhà Sách Hoàng Gia Chelsea

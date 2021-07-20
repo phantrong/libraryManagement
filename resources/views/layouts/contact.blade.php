@@ -1,4 +1,4 @@
-<div id="contact">
+<div id="contact" class="sec-act">
     <div class="container slideanim section">
         <h2 class="contact-heading"> Liên hệ </h2>
         <p class="contact-desc"> Công nghệ vận chuyển tiên tiến, giao hàng nhanh chóng, đảm bảo chất lượng và yêu cầu tuyệt đối cho người dùng </p>

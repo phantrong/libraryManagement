@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/navbar.book.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/content.book.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/cart.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/slider-view-img.book.css')}}" type="text/css">
 </head>
 
 <body>
@@ -19,6 +20,7 @@
     <div id="home" class="section"></div>
     @include('book_interface.cart')
     @include('book_interface.content')
+    @include('book_interface.slider-view-img')
     @include('layouts.footer')
     <a class="toTop smooth" href="#home">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="toTop-icon bi bi-arrow-up" viewBox="0 0 16 16">
