@@ -1,4 +1,4 @@
-// $(function() {
+$(function() {
     let ctx = document.getElementById('myChart')
 let myChart = new Chart(ctx, {
     type: 'line',
@@ -90,8 +90,52 @@ let config = {
     type: 'pie',
     data: data2,
   };
-  let myChart2 = new Chart(ctx2, config)
+  let myChart2 = new Chart(ctx2, config);
+
+
+  let dtt;
+  let typeofbooks = $('#typeofbook')
+  typeofbooks.change (function(){
+   
+    $.ajaxSetup({
+      beforeSend: function(xhr, type) {
+          if (!type.crossDomain) {
+              xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+            }
+        },
+    });
+    $.ajax({
+      type: 'POST',
+      url: 'http://127.0.0.1:8000/search',
+      data: {
+        [$(this).attr('name')]: $(this).val(),
+      },
+      success: function(res) {
+        dtt = res;
+        // sessionStorage.setItem('name', JSON.stringify(res));
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+
+      }
+    })
+    
+  })
+ //type book
+
+ $('#searchinput').on('keyup', function() {
+   
+    if($(this).val() == '') return; 
+    else {
+      let rsSearch = dtt.reduce((arr, value) => {
+        return arr.concat(value.name.substr(0,$(this).val().length) == $(this).val() ? `<li>${value.name}</li>` : undefined).filter(x => x!= undefined);
+      },[]);
+    document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = rsSearch.join('');
+    }
+    console.log(1);
+ })
 
 
 
-// })
+})
+
+

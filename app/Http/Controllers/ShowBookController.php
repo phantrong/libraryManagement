@@ -39,6 +39,7 @@ class ShowBookController extends Controller
             'name' => $name,
             'sort' => $sort
         ]);
+        
     }
 
     public function singlebook()

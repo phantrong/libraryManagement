@@ -34,7 +34,7 @@
                         </li>
                         <li class="toolbar__catagory-item" id="manage__book">
                             <a  class="toolbar__catagory-link">
-                               <img src="https://img.icons8.com/dotty/80/000000/chess-clock.png"/>                                            
+                            <img src="https://img.icons8.com/wired/80/000000/book.png"/>                                           
                                 <p class="shadows">Manage book</p>
                                 <img class="toolbar__catagory-link-img2" src="https://img.icons8.com/ios-glyphs/16/000000/chevron-left.png"/>
                                 <!-- <img class="toolbar__catagory-link-img2" src="https://img.icons8.com/material-sharp/16/000000/chevron-down.png"/> -->
@@ -64,9 +64,9 @@
                             </ul>
                         </li>
                         <li class="toolbar__catagory-item">
-                            <a href="" class="toolbar__catagory-link">
-                               <img src="https://img.icons8.com/dotty/80/000000/chess-clock.png"/>                                            
-                                <p class="shadows">Manage notes</p>
+                            <a href="/admin/user" class="toolbar__catagory-link">
+                            <img src="https://img.icons8.com/dotty/80/000000/user.png"/>                                           
+                                <p class="shadows">Manage user</p>
                             </a>
                         </li>
                         <li class="toolbar__catagory-item">
@@ -77,7 +77,7 @@
                         </li>
                         <li class="toolbar__catagory-item">
                             <a href="/admin/order" class="toolbar__catagory-link">
-                               <img src="https://img.icons8.com/dotty/80/000000/chess-clock.png"/>                                          
+                            <img src="https://img.icons8.com/dotty/80/000000/purchase-order.png"/>                                          
                                 <p class="shadows">Manage order</p>
                             </a>
                         </li>
