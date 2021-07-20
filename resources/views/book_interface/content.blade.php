@@ -10,8 +10,8 @@
                 <img src="{{ asset('images/book1.jpg') }}" alt="">
             </div>
             <div class="book-review-img">
-                <img src="{{ asset('images/book1.jpg') }}" alt="">
-                <img src="{{ asset('images/book1.jpg') }}" alt="">
+                <img src="{{ asset('images/book1.jpg') }}" alt="" class="list-img active">
+                <img src="{{ asset('images/book2.jpg') }}" alt="" class="list-img">
             </div>
         </div>
         <div class="book-main col-xl-8 col-lg-8">

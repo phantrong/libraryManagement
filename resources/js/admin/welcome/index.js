@@ -1,9 +1,10 @@
 require('./slider')
 require('./scroll_smooth')
+require('../book_interface/cart')
 
 // nav li đổi active khi scroll từng element
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.section');
+    const sections = document.querySelectorAll('.sec-act');
     const navLia = document.querySelectorAll('.nav li a')
     let current = '';
     sections.forEach((section) => {
@@ -39,4 +40,11 @@ $(document).ready(function() {
         $('.form-input').val("");
         return false;
     });
+
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('.load').fadeOut(1000);
+            $('.main-section').fadeIn(1000);
+        }, 2000)
+    })
 });

@@ -1,5 +1,6 @@
+@import './navbar.book.scss';
+
 #header {
-    
     position: fixed;
     top: 0;
     left: 0;
@@ -21,6 +22,11 @@
     }
     .logo img {
         width: 100%;
+    }
+    .wrapper-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .nav_list {
         display: flex;
@@ -64,5 +70,8 @@
     }
     .nav_list_link:hover::after {
         transform: translateX(-50%) scaleX(1);
+    }
+    .nav-cart, .nav-user {
+        margin-top: -6px;
     }
 }
