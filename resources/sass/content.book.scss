@@ -134,10 +134,15 @@
         margin-top: 40px;
         margin-right: 20px;
         margin-left: 20px;
+        line-height: 1.4;
     }
+
     .add-cart:hover, .view-cart:hover {
-        opacity: 0.7;
+        background-color: #fff;
+        color: #dd125f;
+        border: 1px solid #dd125f;
     }
+    
     .book-review {
         padding: 40px 0;
         .book-review-heading {

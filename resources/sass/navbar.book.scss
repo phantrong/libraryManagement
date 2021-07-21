@@ -55,6 +55,12 @@
         height: 50px;
         background-color: #dd125f;
     }
+    .search-input:focus {
+        border-color: #dd125f;
+    }
+    .btn-search:hover {
+        opacity: 0.7;
+    }
     .icon-search {
         width: 20px;
         height: 20px;
@@ -200,12 +206,12 @@
     .nav-cart-view {
         float: right;
         margin: 12px 12px 12px 0;
-        min-width: 120px;
-        height: 36px;
+        min-width: 150px;
+        height: 40px;
         cursor: pointer;
         outline: none;
         border: none;
-        font-size: 12px;
+        font-size: 14px;
         border-radius: 2px;
         padding: 0;
         color: #fff;
@@ -214,7 +220,12 @@
         align-items: center;
         text-decoration: none;
         line-height: 16px;
-        background-color: #dd125f;
+    background-color: #dd125f;
+    }
+    .nav-cart-view:hover {
+        background-color: #fff;
+        border: 1px solid #dd125f;
+        color: #dd125f;
     }
     // user 
     .nav-user {

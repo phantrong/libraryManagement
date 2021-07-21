@@ -48,11 +48,14 @@
         <div class="content-shelf-main col-xl-9-6 col-lg-9 col-md-9 col-sm-12">
             <div class="book-filter row">
                 <div class="book-filter-search col-xl-9-6 col-lg-9 col-md-8 col-sm-9">
-                    <form action="{{ route('welcome') }}" class="form-list-book">
-                        <input type="hidden" name='category' value="{{ isset($category) ? $category : '' }}">
-                        <input type="text" name='name' value="{{ $name }}" class="book-search"
-                            placeholder="Tìm kiếm">
-                        <button type="submit" class="search-name"><img src="{{ asset('images/search-icon.png') }}">
+                    <form action="{{ route('welcome') }}" class="form-search-book">
+                        <input type="text" name="name" class="search-input" placeholder="Nhập vào tìm kiếm theo tên sách">
+                        <button class="btn-search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke-width="6" fill="currentColor"
+                                class="icon-search bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
                         </button>
                     </form>
                 </div>
