@@ -93,7 +93,8 @@ let config = {
   let myChart2 = new Chart(ctx2, config);
 
 
-  let dtt;
+  let dtt = [];
+  let typedata;
   let typeofbooks = $('#typeofbook')
   typeofbooks.change (function(){
    
@@ -112,7 +113,8 @@ let config = {
       },
       success: function(res) {
         dtt = res;
-        // sessionStorage.setItem('name', JSON.stringify(res));
+        typedata = Object.keys((res[0]))[0];
+        console.log(res);
       },
       error: function(jqXHR, textStatus, errorThrown) {
 
@@ -123,16 +125,35 @@ let config = {
  //type book
 
  $('#searchinput').on('keyup', function() {
-   
-    if($(this).val() == '') return; 
-    else {
-      let rsSearch = dtt.reduce((arr, value) => {
-        return arr.concat(value.name.substr(0,$(this).val().length) == $(this).val() ? `<li>${value.name}</li>` : undefined).filter(x => x!= undefined);
-      },[]);
-    document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = rsSearch.join('');
+    
+    if(dtt.length == 0){
+    
+      document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = '<li>please choose type to search</li>';
+
+      return;
+    } else {
+
+        if($(this).val() == '') document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = '<li>type some thing</li>';
+        else {
+        let rsSearch = dtt.reduce((arr, value) => {
+          
+          return arr.concat( value[typedata].toLowerCase().search($(this).val().toLocaleLowerCase()) != -1 ? `<li>${value[typedata]}</li>` : undefined).filter(x => x!= undefined);
+        },[]);
+        
+      document.querySelector('.dashboard-money-content-search-listsearch-list').innerHTML = Array.from(new Set(rsSearch)).join('');
+     
+        }
     }
-    console.log(1);
+   
  })
+
+
+$('#searchinput').on('focusout', function() {
+  document.querySelector('.dashboard-money-content-search-listsearch ').style.display = 'none';
+})
+$('#searchinput').on('focusin', function() {
+  document.querySelector('.dashboard-money-content-search-listsearch ').style.display = 'block';
+})
 
 
 
