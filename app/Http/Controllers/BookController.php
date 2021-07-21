@@ -183,6 +183,9 @@ class BookController extends Controller
     }
 
     public function searchDataByAjax (Request $request) {
-       
+        $valueRequest = $request -> category;
+        if($valueRequest == 1) return  $this->bookRepository->searchDataAjax('category');
+        else if($valueRequest == 2) return  $this->bookRepository->searchDataAjax('auth');
+        else return  $this->bookRepository->searchDataAjax('publisher');
     }
 }

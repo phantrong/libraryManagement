@@ -37,3 +37,5 @@ Route::prefix('admin/')
         Route::resource("data", "DataController");
         Route::resource("order", "OrderAdminController");
     });
+
+    Route::post('/search', 'BookController@searchDataByAjax');
