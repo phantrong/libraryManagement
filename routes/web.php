@@ -61,3 +61,13 @@ Route::prefix('admin/')
         Route::resource("order", "OrderAdminController");
         Route::post('order/changestatus', "OrderAdminController@changeStatusToBorrowing");
     });
+
+    Route::prefix('ajax/')
+    ->name('ajax.')
+    ->group(function () {
+        Route::get('/dashboardData', 'AjaxController@getDataAjax');
+        Route::post('/search', 'AjaxController@searchDataByAjax');
+        Route::post('/totalMoney', 'AjaxController@getTotalAjax');
+        Route::post('/dashBoardOfMonth', 'AjaxController@dashBoardOfMonth');
+        Route::post('/datefromto', 'AjaxController@dashBoardFromTo');
+    });

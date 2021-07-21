@@ -93,4 +93,10 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
     {
         return $this->model->where('category', $category)->paginate(6);
     }
+
+    //search in show data page
+    public function searchDataAjax($request)
+    {
+        return $this->model->select($request)->distinct()->get();
+    }
 }
