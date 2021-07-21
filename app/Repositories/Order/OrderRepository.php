@@ -15,7 +15,7 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
         return \App\Models\Order::class;
     }
 
-    public function getListOrderByStatus($status)
+    public function getListOrderByStatus($status = '')
     {
         if ($status) {
             return $this->model->where('status', $status)->paginate($this->perPage);
