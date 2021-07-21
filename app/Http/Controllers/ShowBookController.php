@@ -39,11 +39,18 @@ class ShowBookController extends Controller
             'name' => $name,
             'sort' => $sort
         ]);
-        
     }
 
-    public function singlebook()
+    public function singlebook(Request $request, $id)
     {
-        return view('book_interface.book_interface');
+        $book = $this->bookRepository->find($id);
+        if (!$book) {
+            return abort(404);
+        }
+        $listbook = $this->bookRepository->getListBookByCategory($book->category);
+        return view('book_interface.book_interface', [
+            'book' => $book,
+            'listbook' => $listbook,
+        ]);
     }
 }

@@ -109,9 +109,9 @@
                     @foreach ($books as $book)
                         <div class="book-wrapper col-xl-2-4 col-lg-3 col-md-4 col-sm-6">
                             <div class="book-item">
-                                <a href="" class="book-item-link">
+                                <a href="{{ route('welcome.singlebook', $book->id) }}" class="book-item-link">
                                     <div class="book-img"
-                                        style="background-image: url({{ asset($book->images()->get()[0]->path) }});">
+                                        style="background-image: url({{ $book->images()->get()[0]->path }});">
                                     </div>
                                     <h4 class="book-name">{{ $book->name }}</h4>
                                 </a>

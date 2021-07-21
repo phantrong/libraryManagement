@@ -88,4 +88,9 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
     {
         return $this->model->where('name', 'like', '%' . $name . '%')->paginate($this->perPage);
     }
+
+    public function getListBookByCategory($category)
+    {
+        return $this->model->where('category', $category)->paginate(6);
+    }
 }
