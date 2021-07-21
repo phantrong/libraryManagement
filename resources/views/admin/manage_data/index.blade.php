@@ -105,7 +105,7 @@
 
             </section>
 
-            <section class="dashboard__content-dashboardMoney"> 
+            <label class="dashboard__content-dashboardMoney" for="testtest"> 
                 <div class="row">
                     <div class="col-xl-12 dashboard-money-content-header"> 
                         <!-- <h1>Thống kê tiền sách theo các phân loại</h1> -->
@@ -119,7 +119,8 @@
                         <div>
                             <label class="input-group-text" for="typeofbook">Tìm theo</label>
                         </div>
-                        <select class="custom-select custom-select1" id="typeofbook">
+                        @csrf
+                        <select class="custom-select custom-select1" id="typeofbook" name="category">
                         <option selected>Chọn</option>
                         <option value="1">Thể loại sách</option>
                         <option value="2">Tác giả</option>
@@ -127,10 +128,16 @@
                         </select>
 
                         <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-info" type="button">Tìm</button>
-                        </div>
+                            
+                            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="searchinput">
+                            <div class="input-group-append">
+                                <button class="btn btn-info" type="button">Tìm</button>
+                            </div>
+                            <div class="dashboard-money-content-search-listsearch">
+                                <ul class="dashboard-money-content-search-listsearch-list">
+                                   
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
@@ -151,7 +158,7 @@
 
                 </div>
             </div>
-            </section>
+            </label>
         </div>
 @endsection
 

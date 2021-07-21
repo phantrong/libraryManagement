@@ -181,4 +181,8 @@ class BookController extends Controller
     {
         $this->bookRepository->delete($id);
     }
+
+    public function searchDataByAjax (Request $request) {
+       
+    }
 }
