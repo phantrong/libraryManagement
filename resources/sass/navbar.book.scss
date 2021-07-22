@@ -67,13 +67,11 @@
         color: #fff;
         fill: #fff;
     }
-
     .nav-logged-in {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
     .nav-cart {
         width: 76px;
         position: relative;
@@ -227,6 +225,11 @@
         border: 1px solid #dd125f;
         color: #dd125f;
     }
+    .nav-cart-view:hover {
+        background-color: #fff;
+        border: 1px solid #dd125f;
+        color: #dd125f;
+    }
     // user 
     .nav-user {
         display: flex;
@@ -267,7 +270,7 @@
         border-style: solid;
         border-color: transparent transparent #f5f5f5 transparent;
     }
-    .nav-user-item:hover a{
+    .nav-user-item:hover a {
         background-color: #f5f5f5;
         color: #dd125f;
     }
@@ -279,7 +282,6 @@
         padding: 12px 12px;
         display: block;
     }
-
     @keyframes growUp {
         from {
             transform: scale(0);

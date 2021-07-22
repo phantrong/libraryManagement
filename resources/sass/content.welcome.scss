@@ -266,11 +266,13 @@
         background: rgb(221, 18, 95, 0.5);
         color: #fff;
     }
-    .page-item[rel~='prev'] .page-link, .page-item[rel~='next'] .page-link {
+    .page-item[rel~='prev'] .page-link,
+    .page-item[rel~='next'] .page-link {
         font-size: 20px;
         line-height: 27px;
     }
-    .page-item.disabled .page-link, .page-item.disabled .page-link{
+    .page-item.disabled .page-link,
+    .page-item.disabled .page-link {
         background-color: transparent;
         color: #333;
     }
