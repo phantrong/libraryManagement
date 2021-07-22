@@ -55,19 +55,23 @@
         height: 50px;
         background-color: #dd125f;
     }
+    .search-input:focus {
+        border-color: #dd125f;
+    }
+    .btn-search:hover {
+        opacity: 0.7;
+    }
     .icon-search {
         width: 20px;
         height: 20px;
         color: #fff;
         fill: #fff;
     }
-
     .nav-logged-in {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
     .nav-cart {
         width: 76px;
         position: relative;
@@ -200,12 +204,12 @@
     .nav-cart-view {
         float: right;
         margin: 12px 12px 12px 0;
-        min-width: 120px;
-        height: 36px;
+        min-width: 150px;
+        height: 40px;
         cursor: pointer;
         outline: none;
         border: none;
-        font-size: 12px;
+        font-size: 14px;
         border-radius: 2px;
         padding: 0;
         color: #fff;
@@ -215,6 +219,11 @@
         text-decoration: none;
         line-height: 16px;
         background-color: #dd125f;
+    }
+    .nav-cart-view:hover {
+        background-color: #fff;
+        border: 1px solid #dd125f;
+        color: #dd125f;
     }
     // user 
     .nav-user {
@@ -256,7 +265,7 @@
         border-style: solid;
         border-color: transparent transparent #f5f5f5 transparent;
     }
-    .nav-user-item:hover a{
+    .nav-user-item:hover a {
         background-color: #f5f5f5;
         color: #dd125f;
     }
@@ -268,7 +277,6 @@
         padding: 12px 12px;
         display: block;
     }
-
     @keyframes growUp {
         from {
             transform: scale(0);

@@ -19,7 +19,7 @@
         height: 100%;
     }
     .book-main-img {
-        position: relative;     
+        position: relative;
         display: block;
         max-width: 400px;
         max-height: 400px;
@@ -90,7 +90,7 @@
                 font-weight: 500;
             }
             tr:nth-child(2n) {
-                background-color:rgb(250, 250, 250);
+                background-color: rgb(250, 250, 250);
             }
         }
     }
@@ -108,7 +108,8 @@
             border-left: none;
             border-right: none;
         }
-        .book-btn-sub, .book-btn-add {
+        .book-btn-sub,
+        .book-btn-add {
             width: 32px;
             height: 32px;
             border: 1px solid #999;
@@ -120,7 +121,8 @@
             color: #333;
         }
     }
-    .add-cart, .view-cart {
+    .add-cart,
+    .view-cart {
         height: 40px;
         min-width: 200px;
         padding: 10px;
@@ -134,9 +136,13 @@
         margin-top: 40px;
         margin-right: 20px;
         margin-left: 20px;
+        line-height: 1.4;
     }
-    .add-cart:hover, .view-cart:hover {
-        opacity: 0.7;
+    .add-cart:hover,
+    .view-cart:hover {
+        background-color: #fff;
+        color: #dd125f;
+        border: 1px solid #dd125f;
     }
     .book-review {
         padding: 40px 0;

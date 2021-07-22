@@ -2,6 +2,15 @@ require('./slider')
 require('./scroll_smooth')
 require('../book_interface/cart')
 
+$(document).ready(function() {
+    let url = window.location.href;
+    if (url.indexOf('welcome') != -1) {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#content").offset().top
+        }, 0);
+    }
+});
+
 // nav li đổi active khi scroll từng element
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('.sec-act');
@@ -40,11 +49,4 @@ $(document).ready(function() {
         $('.form-input').val("");
         return false;
     });
-
-    $(window).on('load', function() {
-        setTimeout(function() {
-            $('.load').fadeOut(1000);
-            $('.main-section').fadeIn(1000);
-        }, 2000)
-    })
 });
