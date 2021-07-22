@@ -54,7 +54,6 @@
     .form-contact-control {
         width: 100%;
         margin-bottom: 20px;
-        position: relative;
     }
     .form-input {
         background-color: #333;
@@ -69,7 +68,7 @@
     }
     .form-label {
         position: absolute;
-        left: 8px;
+        left: 20px;
         top: 11px;
         padding: 0 6px;
         color: #fff;
@@ -83,7 +82,7 @@
     .form-input:focus~.form-label,
     .form-input:not(:placeholder-shown)~.form-label {
         top: -10px;
-        left: 8px;
+        left: 28px;
         font-size: 13px;
         background-color: #333;
         border-radius: 3px;
