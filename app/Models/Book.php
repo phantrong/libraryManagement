@@ -6,6 +6,7 @@ use App\Models\Content;
 use App\Models\Image;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Book extends Model
 {
@@ -43,5 +44,10 @@ class Book extends Model
     public function images()
     {
         return $this->hasMany(Image::class);
+    }
+
+    public function getName($book_id)
+    {
+        return DB::table('books')->select('name')->where('id', $book_id)->first()->name;
     }
 }

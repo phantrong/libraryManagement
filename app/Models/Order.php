@@ -10,8 +10,8 @@ class Order extends Model
     use SoftDeletes;
 
     const STATUS_CONFIRM = 1;
-    const STATUS_BORROWING = 2;
-    const STATUS_OVERDUE = 3;
+    const STATUS_OVERDUE = 2;
+    const STATUS_BORROWING = 3;
     const STATUS_BORROWED = 4;
 
     protected $fillable = [

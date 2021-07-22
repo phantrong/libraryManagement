@@ -18,8 +18,13 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     public function getListUser($fillter = [])
     {
         if (array_key_exists('name', $fillter)) {
-            return $this->model->where('name', 'like', '%' . $$fillter['name'] . '%')->paginate($this->perPage);
+            return $this->model->where('name', 'like', '%' . $fillter['name'] . '%')->paginate($this->perPage);
         }
         return $this->model->paginate($this->perPage);
+    }
+
+    public function getUserByUserName($username)
+    {
+        return $this->model->where('username', $username)->first();
     }
 }

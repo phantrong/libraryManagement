@@ -18,8 +18,6 @@ class BookController extends Controller
         $this->bookRepository = $bookRepository;
     }
 
-
-
     /**
      * index
      *

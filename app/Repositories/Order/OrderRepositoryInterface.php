@@ -14,9 +14,19 @@ interface OrderRepositoryInterface extends RepositoryInterface
     public function getModel();
 
     /**
-     * getListOrderByStatus
+     * getListOrderByUser
      *
      * @return object
      */
-    public function getListOrderByStatus($status);
+    public function getListOrderByUser($userIds);
+
+
+    /**
+     * changeStatusOver
+     *
+     * @param  object $order
+     * @param  bool $type
+     * @return object
+     */
+    public function changeStatusOver($order, $type);
 }
