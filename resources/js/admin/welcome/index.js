@@ -41,10 +41,10 @@ $(document).ready(function() {
         return false;
     });
 
-    $(window).on('load', function() {
+    /* $(window).on('load', function() {
         setTimeout(function() {
             $('.load').fadeOut(1000);
             $('.main-section').fadeIn(1000);
         }, 2000)
-    })
+    }) */
 });

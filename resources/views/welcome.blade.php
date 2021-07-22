@@ -18,9 +18,9 @@
 </head>
 
 <body>
-    <div class="load">
+    <!-- <div class="load">
         <div></div>
-    </div>
+    </div> -->
     <div class="main-section">
         @include('layouts.navbar')
         <div id="home" class="section sec-act"></div>
