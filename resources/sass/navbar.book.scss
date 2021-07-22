@@ -218,7 +218,12 @@
         align-items: center;
         text-decoration: none;
         line-height: 16px;
-        background-color: #dd125f;
+    background-color: #dd125f;
+    }
+    .nav-cart-view:hover {
+        background-color: #fff;
+        border: 1px solid #dd125f;
+        color: #dd125f;
     }
     .nav-cart-view:hover {
         background-color: #fff;
