@@ -17,7 +17,7 @@ Route::get('/', 'ShowBookController@welcome')->name('home');
 Route::get('/welcome', 'ShowBookController@welcome')->name('welcome');
 Route::get('/welcome/singlebook/{id}', 'ShowBookController@singlebook')->name('welcome.singlebook');
 Route::post('/upload', 'UploadController@index')->name('upload');
-
+Route::get('/user/profile', 'UserController@getViewProfile') ->name('profile');
 Auth::routes();
 
 Route::prefix('admin/')

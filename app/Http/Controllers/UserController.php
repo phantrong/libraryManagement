@@ -81,4 +81,8 @@ class UserController extends Controller
     {
         //
     }
+
+    public function getViewProfile() {
+        return view('user.ProfileUser.index');
+    }
 }
