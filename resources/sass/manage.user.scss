@@ -4,7 +4,61 @@
     background-color: #e9ecef;
     transition: margin-left ease-in-out 0.4s;
     height: inherit;
-
+    --per-table : 5%;  
+    .per-5 {
+        flex: var(--per-table);
+        max-width: var(--per-table);
+    }
+    .per-10 {
+        max-width: calc(var(--per-table) * 2);
+        flex: calc(var(--per-table) * 2);
+    }
+    .per-15 {
+        max-width: calc(var(--per-table) * 3);
+        flex: calc(var(--per-table) * 3);
+    }
+    .per-20 {
+        max-width: calc(var(--per-table) * 4);
+        flex: calc(var(--per-table) * 4);
+    }
+    .table th { 
+        padding: 20px 4px;
+        text-align: center;
+        border: none;
+    }
+    .table td {
+        padding: 16px 4px;
+        line-height: 18px;
+        word-wrap: break-word;
+        text-align: center;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .table .row:last-child {
+        border-bottom: 1px solid #f5f5f5;
+    }
+    
+    .table {
+        display: block;
+        padding-bottom: 30px;
+    }
+    thead, tbody {
+        display: block;
+    }
+    .row-tb {
+        margin: 0 auto;
+        border: 1px solid #f5f5f5;
+        border-bottom: none;
+    }
+    .background-notBorrow {
+        display: block;
+    }
+    .admin__order-handle img{
+        width: 24px;
+        height: 24px;
+    }
     .manageuser__content-header-box span {
         font-size: 14px;
     }
@@ -69,6 +123,10 @@
     thead {
         background-color: #ffed86 !important  ;
     }
+    .background-notBorrow {
+        width: 100%;
+        display: flex;
+    }
     .manageuser__content-dashboard {
         background-color: white;
         margin: 20px 15px 20px 15px;
@@ -83,16 +141,30 @@
         box-shadow: 10px -10px 12px -4px rgb(0 0 0 / 19%) !important;
     }
     .manageuser__content-table-quantityrow {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: block;
+        text-align: center;
+    }
+    .manageuser__content-table-quantityrow span {
+        display: block;
     }
     .manageuser__content-content-searchUser {
-        padding: 20px 0 50px 20px;
+        padding: 20px 0 30px 15px;
         width: 50%;
     }
     .manageuser__content-content-searchUser span {
         background-color: #17a2b8;
+    }
+    .input-group-prepend {
+        cursor: pointer;
+    }
+    #inputGroup-sizing-lg {
+        font-size: 16px;
+        color: #fff;
+        outline: none;
+        border: none;
+    }
+    .form-control {
+        box-shadow:none;
     }
 }
 

@@ -136,25 +136,70 @@
         </section>
 
         <section class="addbook__content-content order__table">
-            <div class="row table__order addbook__content-content-boxct col-md-12 col-xl-12 col-sm-12 col-12">
+            <div class="table__order addbook__content-content-boxct container-fluid">
                 <table class="table table-striped">
                     <thead>
-                        <tr>
-                            <th scope="col">STT</th>
-                            <th scope="col">UserId</th>
-                            <th scope="col" class="admin__order-col-listbook">
-                                <span>ListBook</span>
-                            </th>
-                            <th scope="col" class="admin__order-col">Ngày mượn</th>
-                            <th scope="col" class="admin__order-col">Ngày hứa trả</th>
-                            <th scope="col" class="admin__order-col">Ngày trả</th>
-                            <th scope="col" class="admin__order-col">Địa chỉ</th>
-                            <th scope="col" class="admin__order-col">Note</th>
-                            <th scope="col" class="admin__order-col">Trạng thái</th>
-                            <th scope="col" class="admin__order-col">Handle</th>
+                        <tr class="row row-tb">
+                            <th scope="col" class="per-5">STT</th>
+                            <th scope="col" class="per-10">UserId</th>
+                            <th scope="col" class="admin__order-col-listbook per-15">ListBook</th>
+                            <th scope="col" class="admin__order-col per-10">Ngày mượn</th>
+                            <th scope="col" class="admin__order-col per-10">Ngày hẹn</th>
+                            <th scope="col" class="admin__order-col per-10">Ngày trả</th>
+                            <th scope="col" class="admin__order-col per-15">Địa chỉ</th>
+                            <th scope="col" class="admin__order-col per-10">Note</th>
+                            <th scope="col" class="admin__order-col per-5">Trạng thái</th>
+                            <th scope="col" class="admin__order-col per-10">Handle</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr class="row row-tb">
+                            <td scope="col" class="per-5">1</td>
+                            <td scope="col" class="per-10">US001</td>
+                            <td scope="col" class="admin__order-col-listbook per-15">
+                                <div class="admin__order-listbook">
+                                    <ul class="admin__order-list cot">
+                                        <li class="admin__order-item">
+                                            <span>Giấc mơ trong em là một ngày ngủ mà không tỉnh</span>
+                                            <span class="color-red">x3</span>
+                                        </li>
+                                        <li class="admin__order-item">
+                                            <span>Con quỷ đói bụng</span>
+                                            <span class="color-red">x2</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td scope="col" class="admin__order-col per-10">
+                                <div class="admin__order-dateBorrow">
+                                    <input type="text" disabled name="dateborrow" value="2013-01-08">
+                                </div>
+                            </td>
+                            <td scope="col" class="admin__order-col per-10">
+                                <div class="admin__order-datePromise">
+                                    <input type="text" disabled name="datepromise" value="2013-01-08">
+                                </div>
+                            </td>
+                            <td scope="col" class="admin__order-col per-10">
+                                <div class="admin__order-datePay">
+                                    <input type="text" disabled name="datepay" value="2013-01-08">
+                                </div>
+                            </td>
+                            <td scope="col" class="admin__order-col per-15">Ngõ 63, Trần Quốc Vượng, Dịch Vọng Hậu</td>
+                            <td scope="col" class="admin__order-col per-10">Đặt trước cổng nhà cho mình nhé</td>
+                            <td scope="col" class="admin__order-col per-5">Đang mượn</td>
+                            <td scope="col" class="admin__order-col per-10">
+                                <div class="admin__order-handle">
+                                    <img class="admin__order-button-save"
+                                        src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
+                                    <img class="admin__order-button-edit"
+                                        src="https://img.icons8.com/windows/32/000000/edit-product.png" />
+                                    <img class="admin__order-button-delete"
+                                        src="https://img.icons8.com/ios-filled/32/000000/delete-forever.png"
+                                        data-toggle="modal" data-target="#exampleModal" />
+                                </div>
+                            </td>
+                        </tr>
                         @php $i = 1; @endphp
                         @foreach ($listOrderConfirm as $order)
                             <tr class="background-notBorrow">
