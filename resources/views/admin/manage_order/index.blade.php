@@ -140,12 +140,12 @@
                 <table class="table table-striped">
                     <thead>
                         <tr class="row row-tb">
-                            <th scope="col" class="per-5">STT</th>
-                            <th scope="col" class="per-10">UserId</th>
+                            <th scope="col" class="per-4">STT</th>
+                            <th scope="col" class="per-5">UserId</th>
                             <th scope="col" class="admin__order-col-listbook per-15">ListBook</th>
-                            <th scope="col" class="admin__order-col per-10">Ngày mượn</th>
-                            <th scope="col" class="admin__order-col per-10">Ngày hẹn</th>
-                            <th scope="col" class="admin__order-col per-10">Ngày trả</th>
+                            <th scope="col" class="admin__order-col per-11">Ngày mượn</th>
+                            <th scope="col" class="admin__order-col per-11">Ngày hẹn</th>
+                            <th scope="col" class="admin__order-col per-11">Ngày trả</th>
                             <th scope="col" class="admin__order-col per-15">Địa chỉ</th>
                             <th scope="col" class="admin__order-col per-10">Note</th>
                             <th scope="col" class="admin__order-col per-5">Trạng thái</th>
@@ -154,8 +154,8 @@
                     </thead>
                     <tbody>
                         <tr class="row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="per-10">US001</td>
+                            <td scope="col" class="per-4">1</td>
+                            <td scope="col" class="per-5">US001</td>
                             <td scope="col" class="admin__order-col-listbook per-15">
                                 <div class="admin__order-listbook">
                                     <ul class="admin__order-list cot">
@@ -170,19 +170,19 @@
                                     </ul>
                                 </div>
                             </td>
-                            <td scope="col" class="admin__order-col per-10">
+                            <td scope="col" class="admin__order-col per-11">
                                 <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow" value="2013-01-08">
+                                    <input type="text" disabled name="dateborrow" value="2013-01-08 14:12">
                                 </div>
                             </td>
-                            <td scope="col" class="admin__order-col per-10">
+                            <td scope="col" class="admin__order-col per-11">
                                 <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise" value="2013-01-08">
+                                    <input type="text" disabled name="datepromise" value="2013-01-08 14:12">
                                 </div>
                             </td>
-                            <td scope="col" class="admin__order-col per-10">
+                            <td scope="col" class="admin__order-col per-11">
                                 <div class="admin__order-datePay">
-                                    <input type="text" disabled name="datepay" value="2013-01-08">
+                                    <input type="text" disabled name="datepay" value="2013-01-08 14:12">
                                 </div>
                             </td>
                             <td scope="col" class="admin__order-col per-15">Ngõ 63, Trần Quốc Vượng, Dịch Vọng Hậu</td>

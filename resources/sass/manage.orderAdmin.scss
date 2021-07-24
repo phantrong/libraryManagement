@@ -1,6 +1,5 @@
-
 #list-order {
-    --per-table : 5%;
+    --per-table: 5%;
     .per-5 {
         flex: var(--per-table);
         max-width: var(--per-table);
@@ -17,7 +16,7 @@
         max-width: calc(var(--per-table) * 4);
         flex: calc(var(--per-table) * 4);
     }
-    .table th { 
+    .table th {
         padding: 16px 4px;
         text-align: center;
         border: none;
@@ -26,7 +25,6 @@
         justify-content: center;
     }
     .table td {
-        padding: 16px 4px;
         line-height: 18px;
         word-wrap: break-word;
         text-align: center;
@@ -38,12 +36,12 @@
     .table .row:last-child {
         border-bottom: 1px solid #f5f5f5;
     }
-    
     .table {
         display: block;
         padding-bottom: 30px;
     }
-    thead, tbody {
+    thead,
+    tbody {
         display: block;
     }
     thead .row-tb {
@@ -61,7 +59,6 @@
         font-weight: 700;
         list-style-type: none;
     }
-    
     .orderbook__content-dashboard {
         background-color: white;
         margin: 20px 15px 20px 15px;
@@ -89,7 +86,6 @@
         overflow-y: scroll;
         max-height: 70px;
         margin: 0;
-        
     }
      ::-webkit-scrollbar {
         width: 5px;
@@ -115,7 +111,7 @@
     }
     .admin__order-dateBorrow input,
     .admin__order-datePromise input,
-    .admin__order-datePay input{
+    .admin__order-datePay input {
         text-align: center;
         width: 100%;
     }
