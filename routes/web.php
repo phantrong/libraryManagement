@@ -17,7 +17,25 @@ Route::get('/', 'ShowBookController@welcome')->name('home');
 Route::get('/welcome', 'ShowBookController@welcome')->name('welcome');
 Route::get('/welcome/singlebook/{id}', 'ShowBookController@singlebook')->name('welcome.singlebook');
 Route::post('/upload', 'UploadController@index')->name('upload');
-Route::get('/user/profile', 'UserController@getViewProfile') ->name('profile');
+
+Route::prefix('user/')
+    ->name('user.')
+    ->group(function () {
+        Route::get('/register', 'UserController@showRegisterForm')->name('register');
+        Route::post('/register', 'UserController@registerPost')->name('registerPost');
+        Route::get('/login', 'UserController@showLoginForm')->name('login');
+        Route::post('/login', 'UserController@loginPost')->name('loginPost');
+        Route::get('/logout', function () {
+            Auth::logout();
+            return redirect()->route('user.login');
+        })->name('logout');
+
+        Route::middleware('auth')->group(function () {
+        });
+        Route::get('/profile', 'UserController@viewProfile')->name('profile');
+        Route::get('/order', 'UserController@viewListOrder')->name('order');
+    });
+
 Auth::routes();
 
 Route::prefix('admin/')
@@ -33,7 +51,7 @@ Route::prefix('admin/')
         Route::middleware('admin')->group(function () {
         });
         Route::resource("book", "BookController");
-        Route::resource("user", "UserController");
+        Route::resource("user", "ManageUserController");
         Route::resource("data", "DataController");
 
         Route::resource("order", "OrderAdminController");

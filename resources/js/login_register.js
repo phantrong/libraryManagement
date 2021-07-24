@@ -1,16 +1,17 @@
-var x = document.getElementById("login")
-var y = document.getElementById("register")
-var z = document.getElementById("btn")
 var loginbtn = document.querySelector('.login-btn');
 var registerbtn = document.querySelector('.register-btn');
 
 registerbtn.onclick = function() {
-    x.style.left = "-400px"
-    y.style.left = "50px"
-    z.style.left = "120px"
+    window.location.href = "/user/register";
 }
 loginbtn.onclick = function() {
-    x.style.left = "50px"
-    y.style.left = "450px"
-    z.style.left = "0"
+    window.location.href = "/user/login";
 }
+
+$(document).ready(function() {
+    if ($('.register input[name="sucess"]').val()) {
+        $(".register #overlay").css({ "display": "block" });
+        $(".register #popup").css({ "display": "block" });
+        $(".register .form-box").css({ "display": "none" });
+    }
+})

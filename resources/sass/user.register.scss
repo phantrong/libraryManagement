@@ -1,12 +1,12 @@
-.hero {
+.register {
     height: 100%;
     width: 100%;
     background-position: center;
     background-size: cover;
     position: absolute;
     .form-box {
-        width: 380px;
-        height: 546px;
+        width: 700px;
+        height: 580px;
         position: relative;
         margin: 0 auto;
         background: #fff;
@@ -42,7 +42,7 @@
     }
     #btn {
         top: 0;
-        left: 0;
+        left: 120px;
         position: absolute;
         width: 120px;
         height: 100%;
@@ -67,7 +67,7 @@
         width: 280px;
         transition: .5s;
     }
-    .input-group-item {
+    #register .input-group-item {
         width: 100%;
         margin-bottom: 20px;
         position: relative;
@@ -111,7 +111,7 @@
         color: #dd125f;
     }
     .submit-btn {
-        width: 85%;
+        width: 40%;
         padding: 10px 30px;
         cursor: pointer;
         display: block;
@@ -132,13 +132,24 @@
     .forget-pass:hover {
         text-decoration: none;
     }
-    #login {
-        left: 50px;
-    }
     #register {
-        left: 450px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     .mt-20 {
         margin-top: 10px;
+    }
+    .row {
+        width: 90%;
+    }
+    .alert-danger {
+        padding: 0;
+        color: red;
+        background-color: white;
+        border: none;
+        margin: -20px 0px 0px 0px;
+        font-size: 12px;
+        height: 30px;
     }
 }

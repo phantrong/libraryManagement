@@ -61,8 +61,14 @@
                     </svg>
                 </button>
             </div>
-            <button class="add-cart">Thêm vào giỏ hàng</button>
-            <button class="view-cart">Xem giỏ hàng</button>
+            @guest
+                <div class="alert alert-danger">*Bạn chưa đăng nhập nên chưa có tính năng giỏ hàng.</div>
+            @endguest
+            @auth
+                <button class="add-cart">Thêm vào giỏ hàng</button>
+                <button class="view-cart">Xem giỏ hàng</button>
+            @endauth
+
         </div>
     </div>
     <div class="book-review">

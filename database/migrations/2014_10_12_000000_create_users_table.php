@@ -17,10 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
+            $table->string('images')->nullable();
             $table->string('name');
             $table->date('birth');
             $table->string('phone');
             $table->string('email');
+            $table->string('address');
             $table->tinyInteger('is_borrow')->default(0);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
