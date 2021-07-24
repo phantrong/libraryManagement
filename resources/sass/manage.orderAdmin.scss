@@ -29,11 +29,8 @@
         padding: 16px 4px;
         line-height: 18px;
         word-wrap: break-word;
-        text-align: center;
+        align-items: flex-start;
         border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
     .table .row:last-child {
         border-bottom: 1px solid #f5f5f5;
