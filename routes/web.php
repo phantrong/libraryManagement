@@ -30,8 +30,6 @@ Route::prefix('user/')
             return redirect()->route('user.login');
         })->name('logout');
 
-        Route::middleware('auth')->group(function () {
-        });
         Route::get('/profile', 'UserController@viewProfile')->name('profile');
         Route::get('/order', 'UserController@viewListOrder')->name('order');
         Route::post('/addcart', 'ShowBookController@addCart')->name("add.cart");

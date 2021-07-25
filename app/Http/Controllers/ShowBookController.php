@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequest;
 use App\Models\Order;
+use App\Models\Orderdetail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\Book\BookRepository;
@@ -198,8 +199,16 @@ class ShowBookController extends Controller
             'address' => $request->address,
             'note' => $request->note
         ];
-        $this->orderRepository->create($order);
+        $orderNew = $this->orderRepository->create($order);
         $user = $this->userRepository->find(Auth::user()->id);
+        foreach ($user->carts()->get() as $item) {
+            $orderdetails[] = [
+                'order_id' => $orderNew->id,
+                'book_id' => $item->book_id,
+                'quantity' => $item->quantity
+            ];
+        }
+        Orderdetail::insert($orderdetails);
         $user['is_borrow'] = User::BORROWING;
         $user->update();
         $this->cartRepository->deleteAllCart(Auth::user()->id);

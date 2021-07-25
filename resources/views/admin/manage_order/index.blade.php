@@ -153,59 +153,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="row row-tb">
-                            <td scope="col" class="per-4">1</td>
-                            <td scope="col" class="per-5">US001</td>
-                            <td scope="col" class="admin__order-col-listbook per-15">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span>Giấc mơ trong em là một ngày ngủ mà không tỉnh</span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span>Con quỷ đói bụng</span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-11">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow" value="2013-01-08 14:12">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-11">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise" value="2013-01-08 14:12">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-11">
-                                <div class="admin__order-datePay">
-                                    <input type="text" disabled name="datepay" value="2013-01-08 14:12">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-15">Ngõ 63, Trần Quốc Vượng, Dịch Vọng Hậu</td>
-                            <td scope="col" class="admin__order-col per-10">Đặt trước cổng nhà cho mình nhé</td>
-                            <td scope="col" class="admin__order-col per-5">Đang mượn</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-handle">
-                                    <img class="admin__order-button-save"
-                                        src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
-                                    <img class="admin__order-button-edit"
-                                        src="https://img.icons8.com/windows/32/000000/edit-product.png" />
-                                    <img class="admin__order-button-delete"
-                                        src="https://img.icons8.com/ios-filled/32/000000/delete-forever.png"
-                                        data-toggle="modal" data-target="#exampleModal" />
-                                </div>
-                            </td>
-                        </tr>
                         @php $i = 1; @endphp
                         @foreach ($listOrderConfirm as $order)
-                            <tr class="background-notBorrow">
-                                <th scope="row">{{ $i }}</th>
-                                <td>{{ $order->user_id }}</td>
-                                <td>
+                            <tr class="background-notBorrow row row-tb">
+                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $order->user_id }}</td>
+                                <td scope="col" class="admin__order-col-listbook per-15">
                                     <div class="admin__order-listbook">
                                         <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
@@ -216,31 +169,29 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
-                                <td>{{ $order->address }}</td>
-                                <td>{{ $order->note }}</td>
-                                <td>
-                                    <div class="admin__order-status">
-                                        <button type="button" class="btn btn-primary btn-confirm"
-                                            attr-order="{{ $order->id }}">Chờ xác nhận</button>
-                                    </div>
+                                <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
+                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-10">
+                                    <button type="button" class="btn btn-primary btn-confirm"
+                                        attr-order="{{ $order->id }}">Chờ xác nhận</button>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-5">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
                                             src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
@@ -255,12 +206,12 @@
                             @php $i++; @endphp
                         @endforeach
                         @foreach ($listOrderOverdue as $order)
-                            <tr class="background-notPay">
-                                <th scope="row">{{ $i }}</th>
-                                <td>{{ $order->user_id }}</td>
-                                <td>
-                                    <div class="admin__order-listbook cot">
-                                        <ul class="admin__order-list">
+                            <tr class="background-notPay row row-tb">
+                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $order->user_id }}</td>
+                                <td scope="col" class="admin__order-col-listbook per-15">
+                                    <div class="admin__order-listbook">
+                                        <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
                                                 <li class="admin__order-item">
                                                     {{ $ModelBook->getName($oderdetail->book_id) }} <span
@@ -269,30 +220,26 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
-                                <td>{{ $order->address }}</td>
-                                <td>{{ $order->note }}</td>
-                                <td>
-                                    <div class="admin__order-status">
-                                        <span>Quá hạn chưa trả</span>
-                                    </div>
-                                </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
+                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-5">Quá hạn chưa trả</td>
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
                                             src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
@@ -307,12 +254,12 @@
                             @php $i++; @endphp
                         @endforeach
                         @foreach ($listOrderBorrowing as $order)
-                            <tr class="background-borrowed">
-                                <th scope="row">{{ $i }}</th>
-                                <td>{{ $order->user_id }}</td>
-                                <td>
-                                    <div class="admin__order-listbook cot">
-                                        <ul class="admin__order-list">
+                            <tr class="background-borrowed row row-tb">
+                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $order->user_id }}</td>
+                                <td scope="col" class="admin__order-col-listbook per-15">
+                                    <div class="admin__order-listbook">
+                                        <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
                                                 <li class="admin__order-item">
                                                     {{ $ModelBook->getName($oderdetail->book_id) }} <span
@@ -321,30 +268,26 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
-                                <td>{{ $order->address }}</td>
-                                <td>{{ $order->note }}</td>
-                                <td>
-                                    <div class="admin__order-status">
-                                        <span>Đang mượn</span>
-                                    </div>
-                                </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
+                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-5">Đang mượn</td>
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
                                             src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
@@ -359,12 +302,12 @@
                             @php $i++; @endphp
                         @endforeach
                         @foreach ($listOrderBorrowed as $order)
-                            <tr class="background-payed">
-                                <th scope="row">{{ $i }}</th>
-                                <td>{{ $order->user_id }}</td>
-                                <td>
-                                    <div class="admin__order-listbook cot">
-                                        <ul class="admin__order-list">
+                            <tr class="background-payed row row-tb">
+                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $order->user_id }}</td>
+                                <td scope="col" class="admin__order-col-listbook per-15">
+                                    <div class="admin__order-listbook">
+                                        <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
                                                 <li class="admin__order-item">
                                                     {{ $ModelBook->getName($oderdetail->book_id) }} <span
@@ -373,30 +316,26 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-11">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
-                                <td>{{ $order->address }}</td>
-                                <td>{{ $order->note }}</td>
-                                <td>
-                                    <div class="admin__order-status">
-                                        <span>Đã trả</span>
-                                    </div>
-                                </td>
-                                <td>
+                                <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
+                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-5">Đã trả</td>
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
                                             src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
