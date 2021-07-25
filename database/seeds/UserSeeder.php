@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     {
         User::insert([
             'name' => 'Nhóm 5',
-            'username' => 'nhom5',
+            'username' => 'nhomso5',
             'password' => Hash::make('123456789'),
             'birth' => '2021-07-05',
             'phone' => '0123456789',
