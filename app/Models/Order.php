@@ -20,9 +20,8 @@ class Order extends Model
         'time_promise_pay',
         'time_pay',
         'status',
-        'year_start',
-        'created_by',
-        'updated_by'
+        'address',
+        'note'
     ];
 
     public function orderdetails()

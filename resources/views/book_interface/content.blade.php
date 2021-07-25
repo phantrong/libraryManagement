@@ -17,58 +17,72 @@
             </div>
         </div>
         <div class="book-main col-xl-8 col-lg-8">
-            <h2 class="book-heading">{{ $book->name }}</h2>
-            <h3 class="book-author">{{ $book->auth }}</h3>
-            <div class="book-info">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Nhà xuất bản</td>
-                            <td>{{ $book->publisher }}</td>
-                        </tr>
-                        <tr>
-                            <td>Năm phát hành</td>
-                            <td>{{ $book->year_start }}</td>
-                        </tr>
-                        <tr>
-                            <td>Số lượng sách còn lại</td>
-                            <td>{{ $book->quantity }}</td>
-                        </tr>
-                        <tr>
-                            <td>Tên dịch giả</td>
-                            <td>{{ $book->translator }}</td>
-                        </tr>
-                        <tr>
-                            <td>Quốc gia</td>
-                            <td>{{ $book->country }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="book-num">
-                <button class="book-btn-sub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="book-icon-num bi bi-dash-lg" viewBox="0 0 16 16">
-                        <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z" />
-                    </svg>
-                </button>
-                <input type="text" class="book-num-input" value="1">
-                <button class="book-btn-add">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="book-icon-num bi bi-plus-lg" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
-                    </svg>
-                </button>
-            </div>
-            @guest
-                <div class="alert alert-danger">*Bạn chưa đăng nhập nên chưa có tính năng giỏ hàng.</div>
-            @endguest
-            @auth
-                <button class="add-cart">Thêm vào giỏ hàng</button>
-                <button class="view-cart">Xem giỏ hàng</button>
-            @endauth
+            <form action="{{ route('user.add.cart') }}" method="POST">
+                @csrf
+                <h2 class="book-heading">{{ $book->name }}</h2>
+                <h3 class="book-author">{{ $book->auth }}</h3>
+                <div class="book-info">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Nhà xuất bản</td>
+                                <td>{{ $book->publisher }}</td>
+                            </tr>
+                            <tr>
+                                <td>Năm phát hành</td>
+                                <td>{{ $book->year_start }}</td>
+                            </tr>
+                            <tr>
+                                <td>Số lượng sách còn lại</td>
+                                <td>{{ $book->quantity ? $book->quantity : 'Hết hàng' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tên dịch giả</td>
+                                <td>{{ $book->translator }}</td>
+                            </tr>
+                            <tr>
+                                <td>Quốc gia</td>
+                                <td>{{ $book->country }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                @if ($book->quantity)
+                    <div class="book-num">
+                        <button type="button" class="book-btn-sub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="book-icon-num bi bi-dash-lg" viewBox="0 0 16 16">
+                                <path d="M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z" />
+                            </svg>
+                        </button>
+                        <input type="hidden" name="book_id" value="{{ $book->id }}">
+                        <input type="hidden" name="book_quantity" value="{{ $book->quantity }}">
+                        <input type="text" class="book-num-input" name="quantity" value="1">
+                        <button type="button" class="book-btn-add">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="book-icon-num bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
+                            </svg>
+                        </button>
+                    </div>
+                    @auth
+                        @if (Auth::user()->is_borrow)
+                            <div class="alert alert-danger">*Bạn đang có 1 đơn hàng mượn rồi, không thể mượn tiếp. Xin thông
+                                cảm.</div>
+                        @else
+                            <button type="submit" class="add-cart">Thêm vào giỏ hàng</button>
+                            <button type="button" class="view-cart">Xem giỏ hàng</button>
+                        @endif
+                    @endauth
+                @else
+                    <div class="alert alert-danger">*Sản phẩm đã hết hàng. Mong bạn quay lại sau.</div>
+                @endif
 
+                @guest
+                    <div class="alert alert-danger">*Bạn chưa đăng nhập nên chưa có tính năng giỏ hàng.</div>
+                @endguest
+            </form>
         </div>
     </div>
     <div class="book-review">

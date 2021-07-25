@@ -157,12 +157,12 @@ class OrderAdminController extends Controller
             if ($order) {
                 $this->orderRepository->changeStatusOver($order, true);
                 return Response()->json([
-                    'sucess' => '1'
+                    'success' => '1'
                 ]);
             }
         }
         return Response()->json([
-            'sucess' => '0'
+            'success' => '0'
         ]);
     }
 }

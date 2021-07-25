@@ -38,7 +38,7 @@ class UserController extends Controller
         if (Auth::attempt($e)) {
             return redirect()->route('home');
         }
-        return redirect()->route('user.login')->with('not_sucess', 1);
+        return redirect()->route('user.login')->with('not_success', 1);
     }
 
     public function showRegisterForm()
@@ -60,6 +60,6 @@ class UserController extends Controller
         ]);
         $user['password'] = Hash::make($request->password);
         $this->userRepository->create($user);
-        return redirect()->route('user.register')->with('sucess', 1);
+        return redirect()->route('user.register')->with('success', 1);
     }
 }

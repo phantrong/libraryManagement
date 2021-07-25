@@ -29,7 +29,7 @@
                     <input type="password" class="input-field" placeholder=" " name="password">
                     <label class="label-field">Mật khẩu</label>
                 </div>
-                @if (session('not_sucess'))
+                @if (session('not_success'))
                     <div class="alert alert-danger">*Thông tin đăng nhập không chính xác.</div>
                 @endif
                 <div class="input-group-item">

@@ -101,9 +101,11 @@ input[type=number] {
     display: none;
     background-color: #000;
     opacity: 0.5;
+    z-index: 1000;
 }
 
 .popup {
+    z-index: 1000;
     display: none;
     position: fixed;
     left: 50%;

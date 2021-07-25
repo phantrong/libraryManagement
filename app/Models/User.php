@@ -12,6 +12,9 @@ class User extends Authenticatable
 
     use SoftDeletes;
 
+    const NOT_BORROW = 0;
+    const BORROWING = 1;
+
     /**
      * The attributes that are mass assignable.
      *

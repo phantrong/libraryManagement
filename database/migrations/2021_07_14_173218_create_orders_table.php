@@ -15,15 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->dateTime('time_borrow')->default(now());
-            $table->dateTime('time_promise_pay')->nullable();
+            $table->dateTime('time_promise_pay');
             $table->dateTime('time_pay')->nullable();
             $table->integer('status')->default(1);
             $table->string('address');
-            $table->text('note');
-            $table->foreignId('created_by')->constrained('admins');
-            $table->foreignId('updated_by')->nullable()->constrained('admins');
+            $table->text('note')->nullable();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });

@@ -28,7 +28,7 @@ $(function() {
             type: type
         }
         axios.post('/admin/order/changestatus', data).then(res => {
-            if (res.data.sucess) {
+            if (res.data.success) {
                 let parent = $(this).closest('.admin__order-status');
                 let background = parent.closest('.background-notBorrow');
                 background.addClass('background-borrowed');

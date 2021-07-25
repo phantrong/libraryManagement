@@ -8,7 +8,7 @@
 
 <body>
     <div class="register" style="background-image: url('{{ asset('images/banner.jpg') }}');">
-        <input type="hidden" name="sucess" value="{{ session('sucess') ? session('sucess') : '' }}">
+        <input type="hidden" name="success" value="{{ session('success') ? session('success') : '' }}">
         <div class="overlay" id="overlay"></div>
         <div id="popup" class="popup">
             <div class="container">

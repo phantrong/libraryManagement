@@ -16,6 +16,18 @@
 </head>
 
 <body>
+    <input type="hidden" name="success" value="{{ session('msg') ? 1 : '' }}">
+    <div class="overlay" id="overlay"></div>
+    <div id="popup" class="popup">
+        <div class="container">
+            <div class="content-popup">
+                <strong>{{ session('msg') }}</strong>
+            </div>
+            <div class="clearfix">
+                <a role="button" class="submitbtn">OK</a>
+            </div>
+        </div>
+    </div>
     @include('book_interface.navbar')
     <div id="home" class="section"></div>
     @include('book_interface.cart')
