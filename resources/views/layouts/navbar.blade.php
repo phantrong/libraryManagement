@@ -48,7 +48,8 @@
                                         </li>
                                     @endforeach
                                 </ul>
-                                <button class="nav-cart-view">Xem giỏ hàng</button>
+                                <button class="btn-primary nav-view-list">Đơn mượn</button>
+                                <button class="btn-primary nav-cart-view">Xem giỏ hàng</button>
                             @else
                                 <div class="nav-no-cart-2">
                                     <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
@@ -64,7 +65,10 @@
                         <span class="nav-user-name">{{ Auth::user()->name }}</span>
                         <ul class="nav-user-menu">
                             <li class="nav-user-item">
-                                <a href="">Dashboard</a>
+                                <a href="">Thông tin cá nhân</a>
+                            </li>
+                            <li class="nav-user-item">
+                                <a href="">Đơn mượn</a>
                             </li>
                             <li class="nav-user-item">
                                 <a href="{{ route('user.logout') }}">Đăng xuất</a>

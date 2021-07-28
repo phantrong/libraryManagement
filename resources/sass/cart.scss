@@ -7,12 +7,14 @@
     top: 0;
     display: none;
     .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.8);
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         bottom: 0;
+        display: block;
+        z-index: 100;
     }
     .your-cart {
         z-index: 101;
@@ -27,6 +29,9 @@
         margin: 0 auto;
         top: 50%;
         transform: translateY(-50%);
+        form {
+            margin: 0;
+        }
         .cart-heading {
             text-align: center;
             color: #dd125f;
@@ -157,6 +162,9 @@
         font-size: 20px;
         color: #999;
         font-weight: 500;
+    }
+    .cart-mess {
+        padding-bottom: 30px;
     }
     .address-heading,
     .mess-heading,

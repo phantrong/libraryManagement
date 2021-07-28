@@ -38,7 +38,7 @@
                                         <div class="nav-cart-item-info">
                                             <div class="nav-cart-item-heading">
                                                 <h5 class="nav-cart-item-name">
-                                                    {{ $item->book->name }}</p>
+                                                    {{ $item->book->name }}
                                                 </h5>
                                             </div>
                                             <div class="nav-cart-item-body">
@@ -50,7 +50,8 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <button class="nav-cart-view">Xem giỏ hàng</button>
+                            <button class="btn-primary nav-view-list">Đơn mượn</button>
+                            <button class="btn-primary nav-cart-view">Xem giỏ hàng</button>
                         @else
                             <div class="nav-no-cart-2">
                                 <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
