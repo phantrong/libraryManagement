@@ -23,6 +23,8 @@
 
     .shadows p {
         margin: 0;
+        padding-top: 30%;
+        padding-left: 28%;
     }
 
     .toolbar__profile-box {
@@ -66,13 +68,15 @@
     //     background-color: rgb(213, 219, 224);
     // }
     .toolbar__catagory-link:hover {
-        background-color: rgba(213, 219, 224, 0.2);
+        background-color: #dc3545;
     }
     .toolbar__catagory-link {
         color: aliceblue;
         display: flex;
         align-items: center;
         padding-left: 20px;
+        padding-top: 2px;
+        padding-bottom: 2px;
     }
     .toolbar__catagory-link p {
         margin: 0;
@@ -98,7 +102,8 @@
     .shadows {
         display: inline-block;
         white-space: nowrap;
-        overflow-x: hidden;
+        // overflow-x: hidden;
+        font-weight: 650;
         // animation: fadeOut ease-in-out 0.4s forwards;
     }
 
@@ -107,7 +112,7 @@
     .toolbar__catagory-link-img2 {
         height: 16px !important;
         width: 16px !important;
-        margin-left: 60px;
+        margin-left: 53px;
         transition: transform 0.2s ease-in;
     }
     .toolbar__catagory-item-list {
@@ -217,7 +222,6 @@
         // animation: transformI ease-in-out 0.4s forwards;
         transition: transform ease-in-out 0.4s;
     }
-   
 }
 
 /* // Large devices (desktops, less than 1200px) */
