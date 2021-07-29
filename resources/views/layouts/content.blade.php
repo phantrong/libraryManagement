@@ -48,10 +48,20 @@
         <div class="content-shelf-main col-xl-9-6 col-lg-9 col-md-9 col-sm-12">
             <div class="book-filter row">
                 <div class="book-filter-search col-xl-9-6 col-lg-9 col-md-8 col-sm-9">
-                    <form action="{{ route('welcome') }}" class="form-search-book">
+                    <form action="{{ route('welcome') }}" class="form-search-book" autocomplete="off">
                         <input type="hidden" name='category' value="{{ isset($category) ? $category : '' }}">
                         <input type="text" name="name" class="search-input"
-                            placeholder="Nhập vào tìm kiếm theo tên sách" value="{{ $name }}">
+                            placeholder="Nhập vào để tìm kiếm" value="{{ $name }}">
+                        <div class="select-wrapper">
+                            <select name="filter" class="select-filter-book" style="background-image: url({{asset('./images/funnel-fill.svg')}});">
+                                <option value="">Tìm theo tên sách</option>
+                                <option value="">Tìm theo tên tác giả</option>
+                                <option value="">Tìm theo nhà xuất bản</option>
+                                <option value="">Tìm theo mã DDC</option>
+                                <option value="">Tìm theo tên dịch giả</option>
+                                <option value="">Tìm theo quốc gia</option>
+                            </select>
+                        </div>
                         <button class="btn-search">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke-width="6"
                                 fill="currentColor" class="icon-search bi bi-search" viewBox="0 0 16 16">
@@ -124,42 +134,7 @@
                                     <span class="book-author-name">Author: {{ $book->auth }}</span>
                                 </div>
                                 <div class="book-item-action">
-                                    <div class="book-rating">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor"
-                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor"
-                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor"
-                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor"
-                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="book-rating-icon bi bi-star-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                    </div>
+                                    <p class="ddc-code">Mã DDC: <span>900</span></p>
                                     <span class="book-sold">Còn hàng</span>
                                 </div>
                             </div>

@@ -2,8 +2,18 @@
     <nav class="nav container">
         <a href="{{ route('welcome') }}" class="logo"><img src="{{ asset('images/logo.png') }}"></a>
         <div class="nav-search">
-            <form action="{{ route('welcome') }}" class="form-search-book">
+            <form action="{{ route('welcome') }}" class="form-search-book" autocomplete="off">
                 <input type="text" name="name" class="search-input" placeholder="Nhập vào tìm kiếm theo tên sách">
+                <div class="select-wrapper">
+                    <select name="filter" class="select-filter-book" style="background-image: url({{asset('./images/funnel-fill.svg')}});">
+                        <option value="">Tìm theo tên sách</option>
+                        <option value="">Tìm theo tên tác giả</option>
+                        <option value="">Tìm theo nhà xuất bản</option>
+                        <option value="">Tìm theo mã DDC</option>
+                        <option value="">Tìm theo tên dịch giả</option>
+                        <option value="">Tìm theo quốc gia</option>
+                    </select>
+                </div>
                 <button class="btn-search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke-width="6" fill="currentColor"
                         class="icon-search bi bi-search" viewBox="0 0 16 16">
