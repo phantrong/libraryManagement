@@ -1,7 +1,6 @@
 ******* chú ý khi pull code về:
-- luôn chạy lại Database theo các bước sau:
+- luôn chạy lại Database theo bước sau:
 + php artisan migrate:fresh --seed
-+ php artisan db:seed --class=BookSeeder
 
 **** code tôi thêm 15-7: 
 + ae vào file .env: đổi tên db_name và pass để kết nối với sql của ae -> rồi chạy: php artisan config:cache
