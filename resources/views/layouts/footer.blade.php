@@ -58,7 +58,4 @@
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
-            <h3> 2021 - Bản quyền thuộc về Nhóm 5 </h3>
-    </div>
 </div>
