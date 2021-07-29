@@ -29,13 +29,15 @@ Route::prefix('user/')
             Auth::logout();
             return redirect()->route('user.login');
         })->name('logout');
-
-        Route::get('/profile', 'UserController@viewProfile')->name('profile');
-        Route::get('/order', 'UserController@viewListOrder')->name('order');
         Route::post('/addcart', 'ShowBookController@addCart')->name("add.cart");
         Route::post('/deletecart', 'ShowBookController@deleteCart')->name("delete.cart");
         Route::post('/changecart', 'ShowBookController@changeCart')->name("change.cart");
         Route::post('/saveorder', 'ShowBookController@saveOrder')->name("save.order");
+
+        Route::middleware('auth')->group(function () {
+            Route::get('/profile', 'UserController@viewProfile')->name('profile');
+            Route::get('/order', 'UserController@viewListOrder')->name('order');
+        });
     });
 
 Auth::routes();

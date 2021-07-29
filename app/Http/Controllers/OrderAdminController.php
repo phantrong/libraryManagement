@@ -80,7 +80,6 @@ class OrderAdminController extends Controller
             'listOrderOverdue' => $listOrderOverdue,
             'listOrderBorrowing' => $listOrderBorrowing,
             'listOrderBorrowed' => $listOrderBorrowed,
-
         ]);
     }
 
