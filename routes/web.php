@@ -57,7 +57,7 @@ Route::prefix('admin/')
         Route::resource("book", "BookController");
         Route::resource("user", "ManageUserController");
         Route::resource("data", "DataController");
-
+        Route::resource("contact", "AdminContactController");
         Route::resource("order", "OrderAdminController");
         Route::post('order/changestatus', "OrderAdminController@changeStatusToBorrowing");
     });

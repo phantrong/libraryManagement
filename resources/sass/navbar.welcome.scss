@@ -1,4 +1,4 @@
-@import './navbar.book.scss';
+@import "./navbar.book.scss";
 
 #header {
     position: fixed;
@@ -71,7 +71,136 @@
     .nav_list_link:hover::after {
         transform: translateX(-50%) scaleX(1);
     }
-    .nav-cart, .nav-user {
+    .nav-cart,
+    .nav-user {
         margin-top: -6px;
+    }
+    .nav-logged-in {
+        display: flex;
+    }
+    .header__notify {
+        position: absolute;
+        top: 150%;
+        right: 0;
+        width: 404px;
+        background-color: white;
+        border: 1px solid #d3d3d3;
+        cursor: default;
+        transform-origin: calc(100%-32px) top;
+        animation: headerNotifyGrowth ease-in 0.25s;
+        will-change: opacity, transform;
+        display: none;
+        z-index: 1;
+        box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    }
+
+    .header__notify::before {
+        content: "";
+        border-style: solid;
+        border-width: 20px 23px;
+        border-color: transparent transparent whitesmoke transparent;
+        position: absolute;
+        right: 8px;
+        top: -39px;
+        // box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    }
+
+    .header__notify::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -20px;
+        width: 85px;
+        height: 30px;
+        /* background-color: red; */
+    }
+
+    .header__notify-header {
+        width: 100%;
+        height: 40px;
+        background-color: var(--white-color);
+    }
+
+    .header__notify-header h3 {
+        color: #999;
+        margin: 0 0 0 12px;
+        font-weight: 100;
+        font-size: 1.4rem;
+        line-height: 40px;
+        cursor: text;
+    }
+
+    .header__notify-list {
+        padding-left: 0;
+    }
+
+    .header__notify-item {
+        margin-top: 2px;
+        list-style: none;
+    }
+
+    .header__notify-link {
+        display: flex;
+        padding: 12px;
+        text-decoration: none; /* bo dau gach chan trong the a */
+        background-color: #fb8086;
+    }
+
+    .header__notify-link:hover {
+        opacity: 0.8;
+        /* cursor: pointer; */
+    }
+
+    .header__notify-img {
+        width: 48px;
+        object-fit: contain; /* thay doi chieu cao va rong cua anh */
+    }
+
+    .header__notify-info {
+        margin-left: 12px;
+    }
+
+    .header__notify-name {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--black-color);
+        font-weight: 500;
+        line-height: 1.6rem;
+    }
+
+    .header__notify-description {
+        display: block;
+        font-size: 1.2rem;
+        color: #756f6e;
+        line-height: 1.6rem;
+    }
+
+    .header__notify-footer {
+        display: flex;
+        /* text-align: center; */
+        /* cawn giua chu ben trong no */
+    }
+    .header__navbar-item--notify:hover .header__notify {
+        display: block;
+    }
+    .header__notify-footer-btn {
+        text-decoration: none;
+        color: var(--black-color);
+        font-weight: 400;
+        padding: 8px 48px;
+        margin: auto;
+    }
+    .header__navbar-item--notify {
+        position: relative;
+    }
+}
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0); /* phong to thu ngo 1 header */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }

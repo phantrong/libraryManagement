@@ -4,20 +4,20 @@
 
 @section('css')
     {{-- chèn thêm link css ở đây --}}
-    <link rel="stylesheet" href="{{ asset('css/manage.user.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/manage.contact.css') }}" type="text/css">
 @endsection
 
 @section('content')
-<div class="manageuser__content">
-        <section class="manageuser__content-header col-md-12 2">
-            <div class="manageuser__content-header-box">
-                <h1 class="manageuser__content-header-box-ct">Manage User</h1>
-                <span><span>Home</span> / User</span>
+<div class="managecontact__content">
+        <section class="managecontact__content-header col-md-12 2">
+            <div class="managecontact__content-header-box">
+                <h1 class="managecontact__content-header-box-ct">Manage contact</h1>
+                <span><span>Home</span> / Contact</span>
             </div>
         </section>
         
-        <section class="manageuser__content-dashboard"> 
-            <div class="row manageuser__content-dashboard-margin pewpew">
+        <section class="managecontact__content-dashboard"> 
+            <div class="row managecontact__content-dashboard-margin pewpew">
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box ">
                         <div>
@@ -84,9 +84,9 @@
             </div>
         </section >
 
-        <section class="manageuser__content-content user__table">
+        <section class="managecontact__content-content user__table">
             
-            <div class="manageuser__content-content-searchUser">
+            <div class="managecontact__content-content-searchUser">
                 <div class="input-group input-group-lg">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-lg">Tìm kiếm</span>
@@ -94,18 +94,18 @@
                     <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                 </div>
             </div>
-            <!-- <div class="manageuser__content-content-boxct  col-md-12 2 col-sm-12 col-12"> -->
-            <div class="container-fluid table__order manageuser__content-content-boxct">
+            <!-- <div class="managecontact__content-content-boxct  col-md-12 2 col-sm-12 col-12"> -->
+            <div class="container-fluid table__order managecontact__content-content-boxct">
                 <table class="table ">
                     <thead>
                     <tr class="row row-tb">
                         <th scope="col" class= "per-5">STT</th>
                         <th scope="col" class="admin__order-col-listbook per-15">Họ tên</th>
-                        <th scope="col" class="admin__order-col per-10">Username</th>
                         <th scope="col" class="admin__order-col per-20">Email</th>
                         <th scope="col" class="admin__order-col per-10">Phone</th>
-                        <th scope="col" class="admin__order-col per-10">Ngày sinh</th>
-                        <th scope="col" class="admin__order-col per-10">Số đơn</th>
+                        <th scope="col" class="admin__order-col per-10">Địa Chỉ</th>
+                        <th scope="col" class="admin__order-col per-10">Chủ đề</th>
+                        <th scope="col" class="admin__order-col per-10">Message</th>
                         <th scope="col" class= "per-10">Trạng thái</th>
                         <th scope="col" class="admin__order-col per-10">Handle</th>
                     </tr>
@@ -114,12 +114,13 @@
                         <tr class="background-notBorrow row row-tb">
                             <td class="per-5" scope="row">4</td>
                             <td class="per-15">Nguyễn Văn Hùng</td>
-                            <td class="per-10">hung hi hung</td>
+                            
                             <td class="per-20">nguyenvanhung@gmail.com</td>
                             <td class="per-10">0945621977</td>
                             <td class="per-10">01/01/2000</td>
+                            <td class="per-10">hung hi hung</td>
                             <td class="per-10">
-                                <div class="manageuser__content-table-quantityrow">
+                                <div class="managecontact__content-table-quantityrow">
                                     <span>30</span>
                                 </div>
                             </td>
@@ -133,12 +134,13 @@
                         <tr class="background-notBorrow row row-tb">
                             <td class="per-5" scope="row">4</td>
                             <td class="per-15">Nguyễn Văn Hùng</td>
-                            <td class="per-10">hung hi hung</td>
+                            
                             <td class="per-20">nguyenvanhung@gmail.com</td>
                             <td class="per-10">0945621977</td>
                             <td class="per-10">01/01/2000</td>
+                            <td class="per-10">hung hi hung</td>
                             <td class="per-10">
-                                <div class="manageuser__content-table-quantityrow">
+                                <div class="managecontact__content-table-quantityrow">
                                     <span>30</span>
                                 </div>
                             </td>
@@ -152,12 +154,13 @@
                         <tr class="background-notBorrow row row-tb">
                             <td class="per-5" scope="row">4</td>
                             <td class="per-15">Nguyễn Văn Hùng</td>
-                            <td class="per-10">hung hi hung</td>
+                            
                             <td class="per-20">nguyenvanhung@gmail.com</td>
                             <td class="per-10">0945621977</td>
                             <td class="per-10">01/01/2000</td>
+                            <td class="per-10">hung hi hung</td>
                             <td class="per-10">
-                                <div class="manageuser__content-table-quantityrow">
+                                <div class="managecontact__content-table-quantityrow">
                                     <span>30</span>
                                 </div>
                             </td>
@@ -171,12 +174,13 @@
                         <tr class="background-notBorrow row row-tb">
                             <td class="per-5" scope="row">4</td>
                             <td class="per-15">Nguyễn Văn Hùng</td>
-                            <td class="per-10">hung hi hung</td>
+                            
                             <td class="per-20">nguyenvanhung@gmail.com</td>
                             <td class="per-10">0945621977</td>
                             <td class="per-10">01/01/2000</td>
+                            <td class="per-10">hung hi hung</td>
                             <td class="per-10">
-                                <div class="manageuser__content-table-quantityrow">
+                                <div class="managecontact__content-table-quantityrow">
                                     <span>30</span>
                                 </div>
                             </td>
@@ -190,12 +194,13 @@
                         <tr class="background-notBorrow row row-tb">
                             <td class="per-5" scope="row">4</td>
                             <td class="per-15">Nguyễn Văn Hùng</td>
-                            <td class="per-10">hung hi hung</td>
+                            
                             <td class="per-20">nguyenvanhung@gmail.com</td>
                             <td class="per-10">0945621977</td>
                             <td class="per-10">01/01/2000</td>
+                            <td class="per-10">hung hi hung</td>
                             <td class="per-10">
-                                <div class="manageuser__content-table-quantityrow">
+                                <div class="managecontact__content-table-quantityrow">
                                     <span>30</span>
                                 </div>
                             </td>
@@ -236,5 +241,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/admin/manage_user.js') }}"></script>
+    <script src="{{ asset('js/admin/manage_contact.js') }}"></script>
 @endsection
