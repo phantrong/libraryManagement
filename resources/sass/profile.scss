@@ -1,0 +1,112 @@
+body {
+    background-color: #f5f5f5;
+    .profile {
+        padding: 40px 0;
+    }  
+    .main-profile {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+    .sub-profile {
+        padding-top: 10px;
+    }
+    .img-thumbnail {
+        max-width: 80%;
+    }
+    @mixin section-heading-text {
+        padding-bottom: 30px;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #dd125f;
+    }
+    .profile-heading {
+        .profile-heading-text {
+            color: #dd125f;
+            font-size: 28px;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            margin-left: 20px;
+        }
+    }
+    .section-heading {
+        @include section-heading-text;
+        position: relative;
+        display: inline-block;
+    }
+    .section-heading::after {
+        position: absolute;
+        content: "";
+        top: 28px;
+        left: 0;
+        width: 50%;
+        height: 3px;
+        border-radius: 10px;
+        background: -webkit-linear-gradient(to right, #dd125f, #fff);
+        background: linear-gradient(to right, #dd125f, #fff);
+        transform: translateX(50%);
+    }
+    .btn-pro {
+        background: #dd125f;
+        color: #fff;
+        margin-top: 20px;
+        font-size: 15px;
+        border: 1px solid #dd125f;
+        outline: none;
+        padding: 8px 12px;
+        border-radius: 3px;
+        box-shadow: none;
+    }
+    .btn-pro:hover {
+        background-color: #fff;
+        color: #dd125f;
+        box-shadow: none;
+        outline: none;
+    }
+    .change-password {
+        padding-top: 30px;
+    }
+    .lb {
+        width: 200px;
+        margin: 0;
+        h4 {
+            font-size: 16px;
+        }
+    }
+    .form-control {
+        padding: 10px 12px;
+        width: 500px;
+        height: 40px;
+    }
+    .form-group {
+        display: flex;
+        align-items: center;
+    }
+    .sex-item + .sex-item {
+        margin-left: 18px;
+    }
+    .sex-item {
+        display: flex;
+        align-items: inherit;
+    }
+    .sex-input {
+        width: 18px;
+        height: 18px;
+        margin: 0 8px 0 0;
+    }
+    button[type="submit"] {
+        background: #dd125f;
+        color: #fff;
+        margin-top: 20px;
+        font-size: 15px;
+        border: 1px solid #dd125f;
+        outline: none;
+        padding: 12px 12px;
+        border-radius: 3px;
+        box-shadow: none;
+        width: 120px;
+    }
+}

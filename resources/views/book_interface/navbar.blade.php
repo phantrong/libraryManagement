@@ -77,7 +77,10 @@
                     <span class="nav-user-name">{{ Auth::user()->name }}</span>
                     <ul class="nav-user-menu">
                         <li class="nav-user-item">
-                            <a href="">Dashboard</a>
+                            <a href="">Thông tin cá nhân</a>
+                        </li>
+                        <li class="nav-user-item">
+                            <a href="">Đơn hàng</a>
                         </li>
                         <li class="nav-user-item">
                             <a href="{{ route('user.logout') }}">Đăng xuất</a>
