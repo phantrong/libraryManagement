@@ -40,23 +40,28 @@
     /*ribbon*/
     .dashboard-money-content-total {
         display: flex;
-        align-items: center;
+
+        margin-left: auto;
     }
     .dashboard-money-content-total .col-xl-5 {
         margin-left: auto;
         margin-right: auto;
     }
-    .dashboard-money-content-total .col-xl-2 {
+    .dashboard-money-content-total .col-xl-4 {
         /* margin: auto; */
         /* border: 1px solid red; */
         /* height: 100px; */
         text-align: center;
-        margin-left: auto;
+        // margin-left: auto;
         height: 30px;
         background-color: #986794;
         border-radius: 13px;
         padding: 5px;
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 650;
+        font-style: italic;
+        height: 72%;
+        margin-left: 41% !important;
     }
     .dashboard-money-content-header {
         text-align: center;
@@ -69,7 +74,7 @@
         display: flex;
     }
     .dashboard-money-content-search label {
-        background-color: #3f9ae5;
+        background-color: #6cb2eb;
     }
     .custom-select1 {
         width: 50% !important;
@@ -127,9 +132,10 @@
     }
 
     .dashboard__content-dashboardMoney {
-        box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+        // box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
         background-color: white;
         margin: 15px;
+        height: 400px;
     }
     .dashboard__content-dashboardMoney-search {
         margin-left: 20px;
@@ -146,34 +152,90 @@
         color: black;
         font-size: 14px;
     }
+
     .dashboard-money-content-search-listsearch {
         position: absolute;
         top: 36px;
         left: 0;
-        max-height: 200px;
+        max-height: 190px;
         overflow-y: scroll;
         width: 82%;
         box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
         z-index: 2;
+        display: none;
     }
     .dashboard-money-content-search-listsearch-list {
         list-style: none;
-        padding-left: 5px;
-        font-size: 16px;
+        padding-left: 0;
+        font-size: 13px;
         width: 100%;
+        margin-bottom: 0;
     }
     .dashboard-money-content-search-listsearch-list li {
         height: 100%;
         padding: 8px 0;
+        z-index: 10;
+        font-size: 14px;
     }
-    #searchinput {
+    .dashboard-money-content-search-listsearch-list li:hover {
+        background-color: #74b2e6;
+    }
+
+    .chartTypeDashBoard {
+        // padding: 20px;
+
+        input {
+            width: 195px;
+            height: 37px;
+        }
+        select {
+            height: 37px;
+        }
+    }
+    .chooseTypeChart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0 40px 0;
+        height: 150px;
         position: relative;
+        input {
+            height: 37px;
+        }
     }
-    .aoaoao:checked ~ .dashboard-money-content-search-listsearch {
-        display: none;
+    .col-xl-sefl-5 {
+        flex: 1 0 46.666667%;
+        max-width: 46.666667%;
     }
-    .aoaoao {
-        display: none;
+    .col-xl-sefl-7 {
+        flex: 0 0 53.3333333333%;
+        max-width: 53.333333%;
+    }
+    .chartTypeDashBoard2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        div:nth-child(2) {
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            img {
+                display: none;
+            }
+        }
+        div:nth-child(1) {
+            position: absolute;
+            top: 32%;
+            right: 0;
+        }
+    }
+    .ssss {
+        margin-left: auto !important;
     }
 }
 
