@@ -67,14 +67,15 @@
                     <button class="cart-out">Thoát</button>
                 </div>
             </div>
-            <form action="{{ route('user.save.order') }}" method="POST">
+            <form class="form" action="{{ route('user.save.order') }}" method="POST" onsubmit="return false;">
                 @csrf
                 <div class="form-submit">
                     <div class="cart-address">
                         <div class="input-address">
                             <label class="address-heading">Địa chỉ nhận:</label>
                             <input type="text" class="address-receive" placeholder="Nhập địa chỉ cụ thể" name="address"
-                                value="{{ Auth::user()->address }}" readonly>
+                                value="{{ Auth::user()->address }}" readonly required>
+                            <div class="alert alert-danger error-address">*Bạn chưa nhập địa chỉ.</div>
                         </div>
                         <div class="checkbox-address">
                             <input type="checkbox" class="checkbox" checked>
@@ -82,16 +83,15 @@
                             <label class="address-heading">Địa chỉ mặc định</label>
                         </div>
                     </div>
-                    <div class="alert alert-danger">{{ $errors->first('address') }}</div>
                     <div class="cart-date">
                         <label class="date-heading">Ngày trả sách: <div class="alert alert-danger">*Giờ trả sách tương
                                 đương với giờ mượn sách</div></label>
                         <input type="date" class="date-giveback" name="time_promise_pay"
                             value="{{ old('time_promise_pay') }}"
                             min='{{ date_format(now()->addHours(7), 'Y-m-d') }}'
-                            max='{{ date_format(now()->addDays(30), 'Y-m-d') }}'>
+                            max='{{ date_format(now()->addDays(30), 'Y-m-d') }}' required>
+                            <div class="alert alert-danger error-date">*Ngày trả sách phải sau ngày mượn sách</div>
                     </div>
-                    <div class="alert alert-danger">{{ $errors->first('time_promise_pay') }}</div>
                     <div class="cart-mess">
                         <label class="mess-heading">Lời nhắn:</label>
                         <textarea type="text" class="mess-receive" placeholder="Để lại lời nhắn" rows="3" name="note"

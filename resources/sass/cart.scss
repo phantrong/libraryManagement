@@ -138,11 +138,9 @@
                 color: #dd125f;
             }
         }
-        /* .cart-sum {
-            font-size: 16px;
-            color: #333;
-            margin: 10px 0;
-        } */
+    }
+    .error-date, .error-address {
+        display: none;
     }
     .no-cart {
         width: 100%;
@@ -223,6 +221,9 @@
     }
     .form-submit {
         padding: 20px 20px 0;
+    }
+    .form-submit > div {
+        margin-bottom: 20px;
     }
     h4.cart-sum {
         text-align: right;

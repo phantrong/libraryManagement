@@ -149,4 +149,39 @@ $(document).ready(function() {
             $('.cart-interface .input-address input').attr('readonly', 'readonly');
         }
     });
+    let checkDate = function() {
+        let today = new Date();
+        let giveback = new Date($(('.date-giveback')).val());
+        let tomorrow = new Date(today.setDate(today.getDate() + 1));
+        if(tomorrow.getHours() > 7) {
+            tomorrow.setHours(7);
+        }
+        if(giveback == "Invalid Date") {
+            return false;
+        } 
+        if(giveback.getTime() < tomorrow.getTime()) {
+            $('.error-date').show();
+            return false;
+        } else {
+            $('.error-date').hide();
+            return true;
+        }
+    }
+    $('.date-giveback').on('change', checkDate);
+    $('.cart-submit').click(function(){
+        let check = true;
+        if($('.address-receive').val() == '') {
+            check = false;
+            $('.error-address').show();
+        } else {
+            check = true;
+            $('.error-address').hide();
+        }
+        if(!checkDate()) {
+            check = false;
+        }
+        if(check == true) {
+            /* $('.form')[0].submit(); */
+        }
+    })
 });
