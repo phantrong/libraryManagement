@@ -119,11 +119,13 @@ $(document).ready(function() {
             $('.nav-cart-list-item').hide();
             $('.nav-cart-heading').hide();
             $('.nav-cart-view').hide();
+            $('.nav-view-list').hide();
             $('.nav-no-cart').show();
         } else {
             $('.nav-cart-list-item').show();
             $('.nav-cart-heading').show();
             $('.nav-cart-view').show();
+            $('.nav-view-list').show();
             $('.nav-no-cart').hide();
         }
         if ($('.row-cart').length === 0) {
