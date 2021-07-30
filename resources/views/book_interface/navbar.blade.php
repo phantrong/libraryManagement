@@ -3,7 +3,7 @@
         <a href="{{ route('welcome') }}" class="logo"><img src="{{ asset('images/logo.png') }}"></a>
         <div class="nav-search">
             <form action="{{ route('welcome') }}" class="form-search-book" autocomplete="off">
-                <input type="text" name="name" class="search-input" placeholder="Nhập vào tìm kiếm theo tên sách">
+                <input type="text" name="name" class="search-input" placeholder="Nhập vào tìm kiếm">
                 <div class="select-wrapper">
                     <select name="filter" class="select-filter-book" style="background-image: url({{asset('./images/funnel-fill.svg')}});">
                         <option value="">Tìm theo tên sách</option>
@@ -25,6 +25,27 @@
         </div>
         @auth
             <div class="nav-logged-in">
+                <div class="header__navbar-item header__navbar-item--notify">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="header_navbar-icon-link bi bi-bell-fill" viewBox="0 0 16 16"><path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/></svg>
+                    <div class="header__notify">
+                        <header class="header__notify-header">
+                            <h3>Thông báo mới nhận</h3>
+                        </header>
+                        <ul class="header__notify-list">
+                            <li class="header__notify-item">
+                                <div class="header__notify-link">
+                                    <img src="https://cf.shopee.vn/file/b8ae87c9b51fb3b795eba17051a891b5" alt="" class="header__notify-img">
+                                    <div class="header__notify-info">
+                                        <span class="header__notify-name">Đơn mượn của bạn đã được xác nhận</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <footer class="header__notify-footer">
+                            <a href="" class="header__notify-footer-btn">Xem tất cả</a>
+                        </footer>
+                    </div>
+                </div>
                 <div class="nav-cart">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="icon-cart bi bi-cart-plus-fill" viewBox="0 0 16 16">
