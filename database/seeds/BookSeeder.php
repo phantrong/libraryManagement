@@ -17,7 +17,7 @@ class BookSeeder extends Seeder
     {
         $arrImg = ['images/book1.jpg', 'images/book2.jpg', 'images/book3.jpg'];
 
-        $books = factory(Book::class, 50)->create();
+        $books = factory(Book::class, 100)->create();
 
         foreach ($books as $book) {
             Image::insert([

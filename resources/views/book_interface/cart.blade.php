@@ -27,7 +27,7 @@
                                 </div>
                             </td>
                             <td class="col-xl-3 col-lg-3">
-                                <span class="cart-book-category">{{ $item->book->category }}</span>
+                                <span class="cart-book-category">{{ $item->book->type }}</span>
                             </td>
                             <td class="col-xl-2 col-lg-2">
                                 <div class="cart-book-num">
@@ -40,6 +40,7 @@
                                     <input type="hidden" name='cart' value={{ $item->id }}>
                                     <input type="text" class="cart-num" value="{{ $item->quantity }}">
                                     <button class="btn-add">
+                                        <input type="hidden" id="book_quantity" value={{ $item->book->quantity }}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="icon-num bi bi-plus-lg" viewBox="0 0 16 16">
                                             <path
@@ -90,7 +91,7 @@
                             value="{{ old('time_promise_pay') }}"
                             min='{{ date_format(now()->addHours(7), 'Y-m-d') }}'
                             max='{{ date_format(now()->addDays(30), 'Y-m-d') }}' required>
-                            <div class="alert alert-danger error-date">*Ngày trả sách phải sau ngày mượn sách</div>
+                        <div class="alert alert-danger error-date">*Ngày trả sách phải sau ngày mượn sách</div>
                     </div>
                     <div class="cart-mess">
                         <label class="mess-heading">Lời nhắn:</label>

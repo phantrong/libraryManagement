@@ -3,17 +3,17 @@
 <div id="content" class="content section container">
     <div class="breadcrumb">
         <a class="breadcrumb-item" href="{{ route('welcome') }}">Trang chủ</a>
-        <a class="breadcrumb-item">{{ $book->category }}</a>
+        <a class="breadcrumb-item">{{ $book->type }}</a>
         <a class="breadcrumb-item">{{ $book->name }}</a>
     </div>
     <div class="single-book row">
         <div class="single-book-img col-xl-4 col-lg-4">
             <div class="book-main-img">
-                <img src="{{ asset($book->images()->get()[0]->path) }}" alt="">
+                <img src="{{ asset($book->images()->get()[0]->path) }}" alt="Mặt trước">
             </div>
             <div class="book-review-img">
-                <img src="{{ asset($book->images()->get()[0]->path) }}" alt="" class="list-img active">
-                <img src="{{ asset($book->images()->get()[1]->path) }}" alt="" class="list-img">
+                <img src="{{ asset($book->images()->get()[0]->path) }}" alt="Mặt trước" class="list-img active">
+                <img src="{{ asset($book->images()->get()[1]->path) }}" alt="Mặt sau" class="list-img">
             </div>
         </div>
         <div class="book-main col-xl-8 col-lg-8">
@@ -43,6 +43,10 @@
                             <tr>
                                 <td>Quốc gia</td>
                                 <td>{{ $book->country }}</td>
+                            </tr>
+                            <tr>
+                                <td>Mã DDC</td>
+                                <td>{{ $book->category }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -108,8 +112,9 @@
                                 <span class="book-author-name">{{ $book->auth }}</span>
                             </div>
                             <div class="book-item-action">
-                            <p class="ddc-code">Mã DDC: <span>900</span></p>
-                            <span class="book-sold">{{ $book->quantity > 0 ? 'SL: ' . $book->quantity : 'Hết hàng' }}</span>
+                                <p class="ddc-code">Mã DDC: <span>{{ $book->category }}</span></p>
+                                <span
+                                    class="book-sold">{{ $book->quantity > 0 ? 'SL: ' . $book->quantity : 'Hết hàng' }}</span>
                             </div>
                         </div>
                     </div>

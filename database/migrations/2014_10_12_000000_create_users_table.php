@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('address');
+            $table->integer('sex')->nullable();
             $table->tinyInteger('is_borrow')->default(0);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();

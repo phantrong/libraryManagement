@@ -13,6 +13,9 @@ class Order extends Model
     const STATUS_OVERDUE = 2;
     const STATUS_BORROWING = 3;
     const STATUS_BORROWED = 4;
+    const STATUS_CANCEL = 5;
+
+    const PHONE_DEFAULT = '0123456789';
 
     protected $fillable = [
         'user_id',

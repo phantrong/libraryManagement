@@ -29,6 +29,8 @@ Route::prefix('user/')
             Auth::logout();
             return redirect()->route('user.login');
         })->name('logout');
+        Route::get('/forgetpass', 'UserController@viewForgetPassword')->name('forgetpass');
+        Route::post('/forgetpass/post', 'UserController@postForgetPassword')->name('forgetpass.post');
         Route::post('/addcart', 'ShowBookController@addCart')->name("add.cart");
         Route::post('/deletecart', 'ShowBookController@deleteCart')->name("delete.cart");
         Route::post('/changecart', 'ShowBookController@changeCart')->name("change.cart");
@@ -36,7 +38,11 @@ Route::prefix('user/')
 
         Route::middleware('auth')->group(function () {
             Route::get('/profile', 'UserController@viewProfile')->name('profile');
+            Route::post('/profile/edit', 'UserController@editProfile')->name('profile.edit');
+            Route::get('/profile/changepass', 'UserController@viewChangePassword')->name('profile.view.changepass');
+            Route::post('/profile/changepass/post', 'UserController@postChangePassword')->name('profile.post.changepass');
             Route::get('/order', 'UserController@viewListOrder')->name('order');
+            Route::post('/order/cancel', 'UserController@cancelOrder')->name('order.cancel');
         });
     });
 
@@ -62,7 +68,7 @@ Route::prefix('admin/')
         Route::post('order/changestatus', "OrderAdminController@changeStatusToBorrowing");
     });
 
-    Route::prefix('ajax/')
+Route::prefix('ajax/')
     ->name('ajax.')
     ->group(function () {
         Route::get('/dashboardData', 'AjaxController@getDataAjax');

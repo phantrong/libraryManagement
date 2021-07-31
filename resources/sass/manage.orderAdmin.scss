@@ -4,9 +4,17 @@
         flex: var(--per-table);
         max-width: var(--per-table);
     }
+    .per-8 {
+        max-width: calc(var(--per-table) * 8 / 5);
+        flex: calc(var(--per-table) * 8 / 5);
+    }
     .per-10 {
         max-width: calc(var(--per-table) * 2);
         flex: calc(var(--per-table) * 2);
+    }
+    .per-12 {
+        max-width: calc(var(--per-table) * 12 / 5);
+        flex: calc(var(--per-table) * 12 / 5);
     }
     .per-15 {
         max-width: calc(var(--per-table) * 3);
@@ -35,7 +43,7 @@
         justify-content: center;
     }
     .admin__order-handle {
-        align-self: center;
+        align-items: center;
     }
     .admin__order-handle span {
         cursor: pointer;
@@ -77,7 +85,6 @@
     .orderbook__content-dashboard-margin {
         margin: 20px -15px;
     }
-
     #list-order .addbook__content-header-box span span {
         color: #5e72e4;
     }
@@ -121,6 +128,7 @@
     .admin__order-datePay input {
         text-align: center;
         width: 100%;
+        font-size: 14px;
     }
     .admin__order-datePromise {
         text-align: center;
@@ -198,6 +206,9 @@
     }
     .background-payed {
         background-color: rgba(10, 238, 29, 0.4) !important;
+    }
+    .background-cancel {
+        background-color: gray !important;
     }
     .maincontainer__dashboard-typeImg-info-box {
         box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);

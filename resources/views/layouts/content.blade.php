@@ -11,37 +11,35 @@
                         class="sidebar-item {{ (isset($category) && $category == -1) || !isset($category) ? 'active' : '' }}"
                         name='category' value='-1'>Tất cả</button>
                     <button type="submit"
+                        class="sidebar-item {{ isset($category) && $category == 0 ? 'active' : '' }}" name='category'
+                        value='0'>Tổng quát</button>
+                    <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 1 ? 'active' : '' }}" name='category'
-                        value='1'>Sách Chính trị – pháp
-                        luật</button>
+                        value='1'>Triết học</button>
                     <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 2 ? 'active' : '' }}" name='category'
-                        value='2'>Sách Khoa học công nghệ – Kinh
-                        tế</button>
+                        value='2'>Tôn giáo</button>
                     <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 3 ? 'active' : '' }}" name='category'
-                        value='3'>Sách Văn học nghệ
-                        thuật</button>
+                        value='3'>Khoa học xã hội</button>
                     <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 4 ? 'active' : '' }}" name='category'
-                        value='4'>Sách Văn hóa xã hội – Lịch
-                        sử</button>
+                        value='4'>Ngôn ngữ</button>
                     <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 5 ? 'active' : '' }}" name='category'
-                        value='5'>Sách Giáo trình</button>
+                        value='5'>Toán học và khoa học tự nhiên</button>
                     <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 6 ? 'active' : '' }}" name='category'
-                        value='6'>Sách Truyện, tiểu
-                        thuyết</button>
+                        value='6'>Kỹ thuật</button>
                     <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 7 ? 'active' : '' }}" name='category'
-                        value='7'>Sách Tâm lý, tâm linh, tôn giáo</button>
+                        value='7'>Nghệ thuật</button>
                     <button type="submit"
                         class="sidebar-item {{ isset($category) && $category == 8 ? 'active' : '' }}" name='category'
-                        value='8'>Sách thiếu nhi</button>
+                        value='8'>Văn học</button>
                     <button type="submit"
-                        class="sidebar-item {{ isset($category) && $category == 0 ? 'active' : '' }}" name='category'
-                        value='0'>Khác</button>
+                        class="sidebar-item {{ isset($category) && $category == 9 ? 'active' : '' }}" name='category'
+                        value='9'>Địa lý lịch sử</button>
                 </form>
             </ul>
         </div>
@@ -50,16 +48,26 @@
                 <div class="book-filter-search col-xl-9-6 col-lg-9 col-md-8 col-sm-9">
                     <form action="{{ route('welcome') }}" class="form-search-book" autocomplete="off">
                         <input type="hidden" name='category' value="{{ isset($category) ? $category : '' }}">
-                        <input type="text" name="name" class="search-input"
-                            placeholder="Nhập vào để tìm kiếm" value="{{ $name }}">
+                        <input type="text" name="info" class="search-input" placeholder="Nhập vào để tìm kiếm"
+                            value="{{ $info }}">
                         <div class="select-wrapper">
-                            <select name="filter" class="select-filter-book" style="background-image: url({{asset('./images/funnel-fill.svg')}});">
-                                <option value="">Tìm theo tên sách</option>
-                                <option value="">Tìm theo tên tác giả</option>
-                                <option value="">Tìm theo nhà xuất bản</option>
-                                <option value="">Tìm theo mã DDC</option>
-                                <option value="">Tìm theo tên dịch giả</option>
-                                <option value="">Tìm theo quốc gia</option>
+                            <select name="choose" class="select-filter-book"
+                                style="background-image: url({{ asset('./images/funnel-fill.svg') }});">
+                                <option value="name" {{ $choose == 'name' ? 'selected' : '' }}>Tìm theo tên sách
+                                </option>
+                                <option value="auth" {{ $choose == 'auth' ? 'selected' : '' }}>Tìm theo tên tác giả
+                                </option>
+                                <option value="publisher" {{ $choose == 'publisher' ? 'selected' : '' }}>Tìm theo nhà
+                                    xuất bản</option>
+                                <option value="category" {{ $choose == 'category' ? 'selected' : '' }}>Tìm theo mã
+                                    DDC
+                                </option>
+                                <option value="translator" {{ $choose == 'translator' ? 'selected' : '' }}>Tìm theo
+                                    tên
+                                    dịch giả</option>
+                                <option value="country" {{ $choose == 'country' ? 'selected' : '' }}>Tìm theo quốc
+                                    gia
+                                </option>
                             </select>
                         </div>
                         <button class="btn-search">
@@ -134,14 +142,15 @@
                                     <span class="book-author-name">Author: {{ $book->auth }}</span>
                                 </div>
                                 <div class="book-item-action">
-                                    <p class="ddc-code">Mã DDC: <span>900</span></p>
-                                    <span class="book-sold">Còn hàng</span>
+                                    <p class="ddc-code">Mã DDC: <span>{{ $book->category }}</span></p>
+                                    <span class="book-sold">SL:
+                                        {{ $book->quantity ? $book->quantity : 'Hết hàng' }}</span>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-                {{ $books->links() }}
+                {{ $books->withQueryString()->onEachSide(1)->links() }}
             @else
                 <h3 class="note">Không có sách nào phù hợp!</h3>
             @endif

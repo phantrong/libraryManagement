@@ -14,15 +14,22 @@
             @auth
                 <div class="nav-logged-in">
                     <div class="header__navbar-item header__navbar-item--notify">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="header_navbar-icon-link bi bi-bell-fill" viewBox="0 0 16 16"><path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="header_navbar-icon-link bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                        </svg>
+                        <span class="nav-nofi-notice">1</span>
                         <div class="header__notify">
                             <header class="header__notify-header">
                                 <h3>Thông báo mới nhận</h3>
+                                <span>Đánh dấu đã xem</span>
                             </header>
                             <ul class="header__notify-list">
                                 <li class="header__notify-item">
                                     <div class="header__notify-link">
-                                        <img src="https://cf.shopee.vn/file/b8ae87c9b51fb3b795eba17051a891b5" alt="" class="header__notify-img">
+                                        <img src="https://cf.shopee.vn/file/b8ae87c9b51fb3b795eba17051a891b5" alt=""
+                                            class="header__notify-img">
                                         <div class="header__notify-info">
                                             <span class="header__notify-name">Đơn mượn của bạn đã được xác nhận</span>
                                         </div>
@@ -30,7 +37,7 @@
                                 </li>
                             </ul>
                             <footer class="header__notify-footer">
-                                <a href="" class="header__notify-footer-btn">Xem tất cả</a>
+                                <a class="header__notify-footer-btn"></a>
                             </footer>
                         </div>
                     </div>
@@ -69,7 +76,6 @@
                                         </li>
                                     @endforeach
                                 </ul>
-                                <button class="btn-primary nav-view-list">Đơn mượn</button>
                                 <button class="btn-primary nav-cart-view">Xem giỏ hàng</button>
                             @else
                                 <div class="nav-no-cart-2">
@@ -81,15 +87,14 @@
                         </div>
                     </div>
                     <div class="nav-user">
-                        <img src="{{ Auth::user()->images ? asset(Auth::user()->images) : asset('images/avatar-default.png') }}"
-                            alt="" class="nav-user-img">
+                        <img src="{{ asset(Auth::user()->images) }}" alt="" class="nav-user-img">
                         <span class="nav-user-name">{{ Auth::user()->name }}</span>
                         <ul class="nav-user-menu">
                             <li class="nav-user-item">
-                                <a href="">Thông tin cá nhân</a>
+                                <a href="{{ route('user.profile') }}">Thông tin cá nhân</a>
                             </li>
                             <li class="nav-user-item">
-                                <a href="">Đơn mượn</a>
+                                <a href=" {{ route('user.order') }}">Đơn mượn</a>
                             </li>
                             <li class="nav-user-item">
                                 <a href="{{ route('user.logout') }}">Đăng xuất</a>

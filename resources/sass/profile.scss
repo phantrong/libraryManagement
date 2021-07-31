@@ -1,8 +1,8 @@
 body {
     background-color: #f5f5f5;
     .profile {
-        padding: 40px 0;
-    }  
+        padding: 100px 0;
+    }
     .main-profile {
         padding: 20px;
         background-color: #fff;
@@ -49,16 +49,23 @@ body {
         background: linear-gradient(to right, #dd125f, #fff);
         transform: translateX(50%);
     }
+    .btn-act {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
     .btn-pro {
         background: #dd125f;
         color: #fff;
-        margin-top: 20px;
         font-size: 15px;
         border: 1px solid #dd125f;
         outline: none;
         padding: 8px 12px;
         border-radius: 3px;
         box-shadow: none;
+        margin-bottom: 30px;
     }
     .btn-pro:hover {
         background-color: #fff;
@@ -85,7 +92,7 @@ body {
         display: flex;
         align-items: center;
     }
-    .sex-item + .sex-item {
+    .sex-item+.sex-item {
         margin-left: 18px;
     }
     .sex-item {
@@ -108,5 +115,57 @@ body {
         border-radius: 3px;
         box-shadow: none;
         width: 120px;
+    }
+    .alert-danger {
+        padding: 0;
+        color: red;
+        background-color: white;
+        border: none;
+        margin: -15px 0px 5px 200px;
+        font-size: 12px;
+        height: 30px;
+    }
+    .form-upload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        margin: 10px 10px;
+        .link-img {
+            width: 180px;
+            height: 200px;
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 1px 0px 6px 1px rgb(0 0 0 / 19%);
+            cursor: inherit;
+        }
+        img {
+            width: 180px;
+            height: 200px;
+            position: absolute;
+            margin-top: -90px;
+            border: none;
+            border-radius: 10px;
+        }
+        .btn-ct-primary {
+            border: 2px solid #5e72e4;
+            border-radius: 10px;
+            padding: 4px 20px;
+            background-color: #5e72e4;
+            color: white;
+        }
+        .alert-upload {
+            padding: 0;
+            color: #ca001f;
+            background-color: none;
+            border: none;
+            font-size: 12px;
+            height: auto;
+        }
+    }
+    .hidden {
+        display: none !important;
     }
 }

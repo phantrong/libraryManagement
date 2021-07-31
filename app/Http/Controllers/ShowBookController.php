@@ -37,45 +37,69 @@ class ShowBookController extends Controller
 
     public function welcome(Request $request)
     {
+        if (Auth::user()) {
+            $user = $this->userRepository->find(Auth::user()->id);
+            $listOrder = $user->orders()->paginate(8);
+            if ($listOrder) {
+                foreach ($listOrder as $order) {
+                    $order = $this->orderRepository->changeStatusOver($order);
+                }
+            }
+        }
         $category = -1;
-        $name = '';
+        $info = '';
+        $choose = 'name';
         $sort = -1;
-        $fillter = [];
+        $filter = [];
         $cart = [];
         if ($request->get('category') != -1 && $request->get('category') != null) {
-            $fillter['category'] = $this->bookRepository->getTextCategory($request->category);
+            $filter['category'] = $request->get('category');
             $category = $request->get('category');
         }
-        if ($request->get('name')) {
-            $fillter['name'] = $request->get('name');
-            $name = $request->get('name');
+        if ($request->get('info')) {
+            $filter['info'] = $request->get('info');
+            $filter['filter'] = $request->get('choose');
+            $info = $request->get('info');
+            $choose = $request->get('choose');
         }
         if ($request->get('sort') != null) {
-            $fillter['sort'] = $request->get('sort');
+            $filter['sort'] = $request->get('sort');
             $sort = $request->get('sort');
         }
-        $books = $this->bookRepository->getListBook($fillter);
+        $books = $this->bookRepository->getListBook($filter);
         if (Auth::user()) {
             $userId = Auth::user()->id;
             $user = $this->userRepository->find($userId);
             $cart = $user->carts()->get();
             foreach ($cart as $item) {
                 $item['book'] = $this->bookRepository->find($item->book_id);
+                $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
         }
         return view('welcome', [
             'books' => $books,
             'category' => $category,
-            'name' => $name,
+            'info' => $info,
             'sort' => $sort,
+            'choose' => $choose,
             'cart' => $cart
         ]);
     }
 
     public function singlebook(Request $request, $id)
     {
+        if (Auth::user()) {
+            $user = $this->userRepository->find(Auth::user()->id);
+            $listOrder = $user->orders()->paginate(10);
+            if ($listOrder) {
+                foreach ($listOrder as $order) {
+                    $order = $this->orderRepository->changeStatusOver($order);
+                }
+            }
+        }
         $cart = [];
         $book = $this->bookRepository->find($id);
+        $book['type'] = $this->bookRepository->getTextCategory($book->category);
         if (!$book) {
             return abort(404);
         }
@@ -86,6 +110,7 @@ class ShowBookController extends Controller
             $cart = $user->carts()->get();
             foreach ($cart as $item) {
                 $item['book'] = $this->bookRepository->find($item->book_id);
+                $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
         }
         return view('book_interface.book_interface', [

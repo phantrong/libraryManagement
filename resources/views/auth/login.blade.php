@@ -33,7 +33,7 @@
                     <div class="alert alert-danger">*Thông tin đăng nhập không chính xác.</div>
                 @endif
                 <div class="input-group-item">
-                    <a href="#" class="forget-pass">Quên mật khẩu ?</a>
+                    <a href="{{ route('user.forgetpass') }}" class="forget-pass">Quên mật khẩu ?</a>
                 </div>
                 <button type="submit" class="submit-btn">Đăng nhập</button>
             </form>

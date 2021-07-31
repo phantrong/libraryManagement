@@ -1,5 +1,5 @@
 #list-order {
-    margin: 40px 30px;
+    margin: 50px 30px;
     .addbook__content-header-box-ct {
         color: #dd125f;
         font-size: 28px;
@@ -25,18 +25,19 @@
         border: none;
         border-bottom: 1px solid #dd125f;
         color: #dd125f;
+        margin: 0 auto;
     }
     tbody {
         max-height: 500px;
         overflow-y: scroll;
-    } 
+        overflow-x: hidden;
+    }
     tbody .row-tb {
         transition: all 0.3s ease;
     }
     tbody .row-tb:hover {
         transform: translateX(-10px);
     }
-    margin: 40px 30px;
     .addbook__content-header-box-ct {
         color: #dd125f;
         font-size: 28px;
@@ -66,7 +67,7 @@
     tbody {
         max-height: 500px;
         overflow-y: scroll;
-    } 
+    }
     tbody .row-tb {
         transition: all 0.3s ease;
     }
@@ -75,5 +76,54 @@
     }
     .admin__order-handle span:hover {
         color: #dd125f;
+    }
+    .btn-confirm {
+        cursor: default;
+    }
+    .pagination {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 50px;
+        margin-right: 20px;
+    }
+    .page-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .page-link {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #333;
+        border-radius: 50%;
+        display: block;
+        line-height: 30px;
+        font-weight: 500;
+        padding: 0px 5px 5px 11px;
+        box-shadow: none;
+        border: none;
+    }
+    .page-item.active .page-link {
+        background: #dd125f;
+        color: #fff;
+    }
+    .page-item:hover .page-link {
+        background: rgb(221, 18, 95, 0.5);
+        color: #fff;
+    }
+    .page-item[rel~='prev'] .page-link,
+    .page-item[rel~='next'] .page-link {
+        font-size: 20px;
+        line-height: 27px;
+    }
+    .page-item.disabled .page-link,
+    .page-item.disabled .page-link {
+        background-color: transparent;
+        color: #333;
     }
 }

@@ -18,12 +18,5 @@ use Illuminate\Support\Facades\Hash;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-    return [
-        'name' => 'Phan Minh Trọng',
-        'usermane' => 'trong123',
-        'password' => Hash::make('123456789'),
-        'birth' => now(),
-        'phone' => '0123456789',
-        'email' => $faker->unique()->safeEmail
-    ];
+    //
 });

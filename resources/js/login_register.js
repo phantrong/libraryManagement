@@ -1,15 +1,12 @@
-var loginbtn = document.querySelector('.login-btn');
-var registerbtn = document.querySelector('.register-btn');
-if (registerbtn) {
-    registerbtn.onclick = function() {
-        window.location.href = "/user/register";
-    }
-}
-if (loginbtn) {
-    loginbtn.onclick = function() {
-        window.location.href = "/user/login";
-    }
-}
+$('.login-btn').on('click', function() {
+    window.location.href = "/user/login";
+})
+$('.register-btn').on('click', function() {
+    window.location.href = "/user/register";
+})
+$('.profile-btn').on('click', function() {
+    window.location.href = "/user/profile";
+})
 
 $(document).ready(function() {
     if ($('.register input[name="success"]').val()) {

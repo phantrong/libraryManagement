@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             'birth' => '2021-07-05',
             'phone' => '0123456789',
             'email' => 'nhom5@gmail.com',
+            'images' => 'images/avatar-default.png',
             'address' => 'Đại Học Công Nghệ'
         ]);
     }

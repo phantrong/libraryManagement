@@ -10,32 +10,34 @@ $(document).ready(function() {
     $('.nav-cart-view').click(function() {
         $('.cart-interface').show(500);
     })
-    let bookQuantity = Number($("input[name='book_quantity']").val());
-    if (bookQuantity > 5) {
-        bookQuantity = 5;
-    }
     let arrNum = $('.cart-num')
     let listItemBig = $('.row-cart');
     let listItemSmall = $('.nav-cart-item');
     listItemBig.each(function(index, cur) {
         $(this).find('> * > * >.btn-add').click(function() {
+            let bookQuantity = Number(($(this).find("#book_quantity")).val());
+            if (bookQuantity > 5) {
+                bookQuantity = 5;
+            }
             let id = $(this).next().val();
             data = {
                 id: id,
                 type: 'add'
             }
-            axios.post('/user/changecart', data).then(res => {
-                if (res.data.success) {
-                    $('.cart-interface .cart-info #sum-book').text(res.data.sumBook);
-                    $('.nav-logged-in .nav-cart-notice').text(res.data.countCast);
-                }
-            }).catch(err => {
-                alert('Lỗi hệ thống, không thể thực hiện!');
-            });
             arrNum[index].value = parseInt(arrNum[index].value) + 1;
-            if (arrNum[index].value >= bookQuantity) {
+            if (arrNum[index].value > bookQuantity) {
                 arrNum[index].value = bookQuantity;
+            } else {
+                axios.post('/user/changecart', data).then(res => {
+                    if (res.data.success) {
+                        $('.cart-interface .cart-info #sum-book').text(res.data.sumBook);
+                        $('.nav-logged-in .nav-cart-notice').text(res.data.countCast);
+                    }
+                }).catch(err => {
+                    alert('Lỗi hệ thống, không thể thực hiện!');
+                });
             }
+
         })
         $(this).find('> * > * >.btn-sub').click(function() {
             let id = $(this).next().val();
@@ -121,6 +123,7 @@ $(document).ready(function() {
             $('.nav-cart-view').hide();
             $('.nav-view-list').hide();
             $('.nav-no-cart').show();
+            $('.your-cart .form').hide();
         } else {
             $('.nav-cart-list-item').show();
             $('.nav-cart-heading').show();
@@ -130,11 +133,11 @@ $(document).ready(function() {
         }
         if ($('.row-cart').length === 0) {
             $('.no-cart').show();
-            $('.form-submit').hide();
+            $('.your-cart .form').hide();
             $('.cart-info').hide();
         } else {
             $('.no-cart').hide();
-            $('.form-submit').show();
+            $('.your-cart .form').show();
             $('.cart-info').show();
         }
     }
@@ -153,13 +156,13 @@ $(document).ready(function() {
         let today = new Date();
         let giveback = new Date($(('.date-giveback')).val());
         let tomorrow = new Date(today.setDate(today.getDate() + 1));
-        if(tomorrow.getHours() > 7) {
-            tomorrow.setHours(7);
+        if (tomorrow.getHours() > 6) {
+            tomorrow.setHours(6);
         }
-        if(giveback == "Invalid Date") {
+        if (giveback == "Invalid Date") {
             return false;
-        } 
-        if(giveback.getTime() < tomorrow.getTime()) {
+        }
+        if (giveback.getTime() < tomorrow.getTime()) {
             $('.error-date').show();
             return false;
         } else {
@@ -168,20 +171,20 @@ $(document).ready(function() {
         }
     }
     $('.date-giveback').on('change', checkDate);
-    $('.cart-submit').click(function(){
+    $('.cart-submit').click(function() {
         let check = true;
-        if($('.address-receive').val() == '') {
+        if ($('.address-receive').val() == '') {
             check = false;
             $('.error-address').show();
         } else {
             check = true;
             $('.error-address').hide();
         }
-        if(!checkDate()) {
+        if (!checkDate()) {
             check = false;
         }
-        if(check == true) {
-            /* $('.form')[0].submit(); */
+        if (check == true) {
+            $('.form')[0].submit();
         }
     })
 });

@@ -16,17 +16,21 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
         return Book::class;
     }
 
-    public function getListBook($fillter = [])
+    public function getListBook($filter = [])
     {
         $books = $this->model;
-        if (array_key_exists('category', $fillter)) {
-            $books = $books->where('category', $fillter['category']);
+        if (array_key_exists('category', $filter)) {
+            $books = $books->where('category', 'like', $filter['category'] .  '%');
         }
-        if (array_key_exists('name', $fillter)) {
-            $books = $books->where('name', 'like', '%' . $fillter['name'] . '%');
+        if (array_key_exists('info', $filter)) {
+            if ($filter['filter'] == 'category') {
+                $books = $books->where($filter['filter'], 'like', $filter['info'] . '%');
+            } else {
+                $books = $books->where($filter['filter'], 'like', '%' . $filter['info'] . '%');
+            }
         }
-        if (array_key_exists('sort', $fillter)) {
-            if ($fillter['sort']) {
+        if (array_key_exists('sort', $filter)) {
+            if ($filter['sort']) {
                 $books = $books->orderBy('name');
             } else {
                 $books = $books->orderByDesc('name');
@@ -38,50 +42,12 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
 
     public function getTextCategory($int)
     {
-        switch ($int) {
-            case 1:
-                return Book::TYPE_ONE;
-            case 2:
-                return Book::TYPE_TWO;
-            case 3:
-                return Book::TYPE_THREE;
-            case 4:
-                return Book::TYPE_FOUR;
-            case 5:
-                return Book::TYPE_FIVE;
-            case 6:
-                return Book::TYPE_SIX;
-            case 7:
-                return Book::TYPE_SEVEN;
-            case 8:
-                return Book::TYPE_EIGHT;
-            default:
-                return Book::TYPE_DEFAULT;
-        }
+        return Book::TYPE[floor($int / 100)];
     }
 
     public function getIndexCategory($text)
     {
-        switch ($text) {
-            case Book::TYPE_ONE:
-                return 1;
-            case Book::TYPE_TWO:
-                return 2;
-            case Book::TYPE_THREE:
-                return 3;
-            case Book::TYPE_FOUR:
-                return 4;
-            case Book::TYPE_FIVE:
-                return 5;
-            case Book::TYPE_SIX:
-                return 6;
-            case Book::TYPE_SEVEN:
-                return 7;
-            case Book::TYPE_EIGHT:
-                return 8;
-            default:
-                return 0;
-        }
+        return array_search($text, Book::TYPE, true);
     }
 
     public function getListBookByName($name)
@@ -91,7 +57,7 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
 
     public function getListBookByCategory($category)
     {
-        return $this->model->where('category', $category)->paginate(6);
+        return $this->model->where('category', 'like', floor($category / 100) . '%')->paginate(6);
     }
 
     //search in show data page

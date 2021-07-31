@@ -12,15 +12,18 @@ class Book extends Model
 {
     use SoftDeletes;
 
-    const TYPE_ONE = 'Sách Chính trị – pháp luật';
-    const TYPE_TWO = 'Sách Khoa học công nghệ – Kinh tế';
-    const TYPE_THREE = 'Sách Văn học nghệ thuật';
-    const TYPE_FOUR = 'Sách Văn hóa xã hội – Lịch sử';
-    const TYPE_FIVE = 'Sách Giáo trình';
-    const TYPE_SIX = 'Sách Truyện, tiểu thuyết';
-    const TYPE_SEVEN = 'Sách Tâm lý, tâm linh, tôn giáo';
-    const TYPE_EIGHT = 'Sách thiếu nhi';
-    const TYPE_DEFAULT = 'Khác';
+    const TYPE = [
+        'Tổng quát',
+        'Triết học',
+        'Tôn giáo',
+        'Khoa học xã hội',
+        'Ngôn ngữ',
+        'Toán học và khoa học tự nhiên',
+        'Kỹ thuật',
+        'Nghệ thuật',
+        'Văn học',
+        'Địa lý lịch sử'
+    ];
 
     protected $fillable = [
         'category',
@@ -33,7 +36,8 @@ class Book extends Model
         'price',
         'year_start',
         'created_by',
-        'updated_by'
+        'updated_by',
+        'code_isbn'
     ];
 
     public function content()

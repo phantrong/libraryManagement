@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
+use App\Http\Requests\PasswordRequest;
+use Facade\FlareClient\Http\Response;
 
 class UserController extends Controller
 {
@@ -24,34 +26,67 @@ class UserController extends Controller
 
     public function viewProfile()
     {
-        return view('user.profile');
+        $cart = [];
+        if (Auth::user()) {
+            $userId = Auth::user()->id;
+            $user = $this->userRepository->find($userId);
+            $listOrder = $user->orders()->paginate(10);
+            if ($listOrder) {
+                foreach ($listOrder as $order) {
+                    $order = $this->orderRepository->changeStatusOver($order);
+                }
+            }
+            $cart = $user->carts()->get();
+            foreach ($cart as $item) {
+                $item['book'] = $this->bookRepository->find($item->book_id);
+                $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
+            }
+        }
+        return view('user.profile', [
+            'cart' => $cart
+        ]);
+    }
+
+    public function editProfile(RegisterUserRequest $request)
+    {
+        $user = $request->only([
+            'name',
+            'images',
+            'birth',
+            'phone',
+            'email',
+            'address',
+            'sex'
+        ]);
+        $this->userRepository->update(Auth::user()->id, $user);
+        return redirect()->route('user.profile')->with('msg', "Chúc mừng bạn đã thay đổi thông tin thành công.");
+    }
+
+    public function viewChangePassword()
+    {
+        return view('user.change_password');
+    }
+
+    public function postChangePassword(PasswordRequest $request)
+    {
+        $user = $this->userRepository->find(Auth::user()->id);
+        $user['password'] = Hash::make($request->password);
+        $user->update();
+        return redirect()->route('user.profile.view.changepass')->with('msg', "Chúc mừng bạn đã thay đổi mật khẩu thành công. Vui lòng đăng nhập lại.");
     }
 
     public function viewListOrder(Request $request)
     {
-        $userIds = [];
-        $day_start = '2020-01-01';
-        $day_end = Carbon::now()->addHours(7);
-        $user = '';
-        if ($request->get('day_start')) {
-            $day_start = $request->get('day_start');
-        }
-        if ($request->get('day_end')) {
-            $day_end = $request->get('day_end');
-        }
-        if ($request->get('username')) {
-            $user = $this->userRepository->getUserByUserName($request->get('user'));
-            $userIds[] = $user->id;
-        } elseif ($request->get('user')) {
-            $filler['name'] = $request->get('user');
-            $listUser = $this->userRepository->getListUser($filler);
-            if ($listUser) {
-                foreach ($listUser as $user) {
-                    $userIds[] = $user->id;
-                }
+        $user = $this->userRepository->find(Auth::user()->id);
+        $listOrder = $user->orders()->orderBy('status')->orderByDesc('updated_at')->paginate(5);
+        $cart = [];
+        if (Auth::user()) {
+            $cart = $user->carts()->get();
+            foreach ($cart as $item) {
+                $item['book'] = $this->bookRepository->find($item->book_id);
+                $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
         }
-        $listOrder = $this->orderRepository->getListOrderByUser($userIds, $day_start, $day_end->toDateTimeString());
         $listOrderConfirm = [];
         $listOrderOverdue = [];
         $listOrderBorrowing = [];
@@ -74,19 +109,34 @@ class UserController extends Controller
             }
         }
         return view('user.list_order', [
-            'day_start' => $day_start,
-            'day_end' => $day_end->toDateString(),
             'listOrder' => $listOrder,
             'users' => $user,
             'listOrderConfirm' => $listOrderConfirm,
             'listOrderOverdue' => $listOrderOverdue,
             'listOrderBorrowing' => $listOrderBorrowing,
             'listOrderBorrowed' => $listOrderBorrowed,
+            'cart' => $cart
+        ]);
+    }
+
+    public function cancelOrder(Request $request)
+    {
+        if ($request->id) {
+            $order = $this->orderRepository->find($request->id);
+            $order['status'] = Order::STATUS_CANCEL;
+            $order->update();
+            return Response()->json([
+                'success' => 1
+            ]);
+        }
+        return Response()->json([
+            'success' => 0
         ]);
     }
 
     public function showLoginForm()
     {
+        Auth::logout();
         return view('auth.login');
     }
 
@@ -117,7 +167,21 @@ class UserController extends Controller
             'is_borrow'
         ]);
         $user['password'] = Hash::make($request->password);
+        $user['images'] = 'images/avatar-default.png';
         $this->userRepository->create($user);
         return redirect()->route('user.register')->with('success', 1);
+    }
+
+    public function viewForgetPassword()
+    {
+        return view('user.forget_password');
+    }
+
+    public function postForgetPassword(PasswordRequest $request)
+    {
+        $user = $this->userRepository->getUserByUserName($request->username);
+        $user['password'] = Hash::make($request->password);
+        $user->update();
+        return redirect()->route('user.forgetpass')->with('msg', "Chúc mừng bạn đã thay đổi mật khẩu thành công. Vui lòng đăng nhập lại.");
     }
 }

@@ -21,9 +21,8 @@ $(function() {
     })
     $('#list-order .background-notBorrow .btn-confirm').on('click', function() {
         let id = $(this).attr('attr-order');
-        console.log(id);
         let type = 'one-to-three';
-        data = {
+        let data = {
             id: id,
             type: type
         }
@@ -41,4 +40,37 @@ $(function() {
             alert('Lỗi hệ thống, không thể thực hiện!');
         })
     })
+
+    var idOrderCancel = 0;
+    var colOrderCancel = '';
+    $('.open-modal-pay').on('click', function() {
+        $('#modal-pay').show();
+    })
+    $('.background-notBorrow .open-modal-cancel').on('click', function() {
+        $('#modal-cancel').show();
+        idOrderCancel = $(this).attr('attr-id');
+        colOrderCancel = $(this).closest('.background-notBorrow');
+    });
+    $('#modal-pay #btn-modal-pay').on('click', function() {
+        $('#modal-pay').css('display', 'none');
+    });
+    $('#modal-cancel #btn-modal-cancel').on('click', function() {
+        $('#modal-cancel').css('display', 'none');
+    });
+    $('#modal-cancel #submit-cancel').on('click', function() {
+        if (idOrderCancel && colOrderCancel) {
+            let data = {
+                id: idOrderCancel
+            }
+            axios.post('/user/order/cancel', data).then(res => {
+                if (res.data.success) {
+                    colOrderCancel.addClass('background-cancel');
+                    colOrderCancel.removeClass('background-notBorrow');
+                    $('#modal-cancel').css('display', 'none');
+                }
+            }).catch(err => {
+                alert('Lỗi hệ thống, không thể thực hiện!');
+            })
+        }
+    });
 })
