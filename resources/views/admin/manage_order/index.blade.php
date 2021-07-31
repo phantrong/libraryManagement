@@ -140,15 +140,15 @@
                 <table class="table table-striped">
                     <thead>
                         <tr class="row row-tb">
-                            <th scope="col" class="per-4">STT</th>
+                            <th scope="col" class="per-5">STT</th>
                             <th scope="col" class="per-5">UserId</th>
                             <th scope="col" class="admin__order-col-listbook per-15">ListBook</th>
-                            <th scope="col" class="admin__order-col per-11">Ngày mượn</th>
-                            <th scope="col" class="admin__order-col per-11">Ngày hẹn</th>
-                            <th scope="col" class="admin__order-col per-11">Ngày trả</th>
+                            <th scope="col" class="admin__order-col per-10">Ngày mượn</th>
+                            <th scope="col" class="admin__order-col per-10">Ngày hẹn</th>
+                            <th scope="col" class="admin__order-col per-10">Ngày trả</th>
                             <th scope="col" class="admin__order-col per-15">Địa chỉ</th>
-                            <th scope="col" class="admin__order-col per-10">Note</th>
-                            <th scope="col" class="admin__order-col per-5">Trạng thái</th>
+                            <th scope="col" class="admin__order-col per-12">Note</th>
+                            <th scope="col" class="admin__order-col per-8">Trạng thái</th>
                             <th scope="col" class="admin__order-col per-10">Handle</th>
                         </tr>
                     </thead>
@@ -156,7 +156,7 @@
                         @php $i = 1; @endphp
                         @foreach ($listOrderConfirm as $order)
                             <tr class="background-notBorrow row row-tb">
-                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $i }}</td>
                                 <td scope="col" class="per-5">{{ $order->user_id }}</td>
                                 <td scope="col" class="admin__order-col-listbook per-15">
                                     <div class="admin__order-listbook">
@@ -169,29 +169,29 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
-                                <td scope="col" class="admin__order-col per-10">
+                                <td scope="col" class="admin__order-col per-12">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-8">
                                     <button type="button" class="btn btn-primary btn-confirm"
                                         attr-order="{{ $order->id }}">Chờ xác nhận</button>
                                 </td>
-                                <td scope="col" class="admin__order-col per-5">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
                                             src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
@@ -207,7 +207,7 @@
                         @endforeach
                         @foreach ($listOrderOverdue as $order)
                             <tr class="background-notPay row row-tb">
-                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $i }}</td>
                                 <td scope="col" class="per-5">{{ $order->user_id }}</td>
                                 <td scope="col" class="admin__order-col-listbook per-15">
                                     <div class="admin__order-listbook">
@@ -220,25 +220,25 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
-                                <td scope="col" class="admin__order-col per-5">Quá hạn chưa trả</td>
+                                <td scope="col" class="admin__order-col per-12">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-8">Quá hạn chưa trả</td>
                                 <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
@@ -255,7 +255,7 @@
                         @endforeach
                         @foreach ($listOrderBorrowing as $order)
                             <tr class="background-borrowed row row-tb">
-                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $i }}</td>
                                 <td scope="col" class="per-5">{{ $order->user_id }}</td>
                                 <td scope="col" class="admin__order-col-listbook per-15">
                                     <div class="admin__order-listbook">
@@ -268,25 +268,25 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
-                                <td scope="col" class="admin__order-col per-5">Đang mượn</td>
+                                <td scope="col" class="admin__order-col per-12">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-8">Đang mượn</td>
                                 <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
@@ -303,7 +303,7 @@
                         @endforeach
                         @foreach ($listOrderBorrowed as $order)
                             <tr class="background-payed row row-tb">
-                                <td scope="col" class="per-4">{{ $i }}</td>
+                                <td scope="col" class="per-5">{{ $i }}</td>
                                 <td scope="col" class="per-5">{{ $order->user_id }}</td>
                                 <td scope="col" class="admin__order-col-listbook per-15">
                                     <div class="admin__order-listbook">
@@ -316,25 +316,25 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-dateBorrow">
                                         <input type="text" disabled name="dateborrow" value="{{ $order->time_borrow }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePromise">
                                         <input type="text" disabled name="datepromise"
                                             value="{{ $order->time_promise_pay }}">
                                     </div>
                                 </td>
-                                <td scope="col" class="admin__order-col per-11">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-datePay">
                                         <input type="text" disabled name="datepay" value="{{ $order->time_pay }}">
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
-                                <td scope="col" class="admin__order-col per-5">Đã trả</td>
+                                <td scope="col" class="admin__order-col per-12">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-8">Đã trả</td>
                                 <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"

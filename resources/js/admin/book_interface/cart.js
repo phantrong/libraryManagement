@@ -154,7 +154,7 @@ $(document).ready(function() {
         let giveback = new Date($(('.date-giveback')).val());
         let tomorrow = new Date(today.setDate(today.getDate() + 1));
         if(tomorrow.getHours() > 7) {
-            tomorrow.setHours(7);
+            tomorrow.setHours(0);
         }
         if(giveback == "Invalid Date") {
             return false;
@@ -181,7 +181,7 @@ $(document).ready(function() {
             check = false;
         }
         if(check == true) {
-            /* $('.form')[0].submit(); */
+            $('.form')[0].submit();
         }
     })
 });

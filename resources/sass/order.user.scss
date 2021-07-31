@@ -25,6 +25,7 @@
         border: none;
         border-bottom: 1px solid #dd125f;
         color: #dd125f;
+        margin: 0 auto;
     }
     tbody {
         max-height: 500px;
@@ -66,6 +67,7 @@
     tbody {
         max-height: 500px;
         overflow-y: scroll;
+        overflow-x: hidden;
     } 
     tbody .row-tb {
         transition: all 0.3s ease;
@@ -75,5 +77,8 @@
     }
     .admin__order-handle span:hover {
         color: #dd125f;
+    }
+    .btn-confirm {
+        cursor: default;
     }
 }

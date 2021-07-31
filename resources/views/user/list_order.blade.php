@@ -100,442 +100,18 @@
                             <th scope="col" class="admin__order-col-listbook per-20">Sách</th>
                             <th scope="col" class="admin__order-col per-10">Ngày mượn</th>
                             <th scope="col" class="admin__order-col per-10">Ngày hẹn</th>
-                            <th scope="col" class="admin__order-col per-20">Địa chỉ</th>
+                            <th scope="col" class="admin__order-col per-15">Địa chỉ</th>
                             <th scope="col" class="admin__order-col per-20">Ghi chú</th>
                             <th scope="col" class="admin__order-col per-10">Trạng thái</th>
-                            <th scope="col" class="admin__order-col per-5"></th>
+                            <th scope="col" class="admin__order-col per-10">Chỉnh sửa</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="background-notBorrow row row-tb">
-                            <td scope="col" class="per-5">1</td>
-                            <td scope="col" class="admin__order-col-listbook per-20">
-                                <div class="admin__order-listbook">
-                                    <ul class="admin__order-list cot">
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x1</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ là một cơn mưa thật là ngu ngốc và đần độn
-                                            </span>                                            
-                                            <span class="color-red">x5</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x2</span>
-                                        </li>
-                                        <li class="admin__order-item">
-                                            <span class="book">
-                                                Cơn mưa mùa hạ
-                                            </span>
-                                            <span class="color-red">x3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-dateBorrow">
-                                    <input type="text" disabled name="dateborrow">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <div class="admin__order-datePromise">
-                                    <input type="text" disabled name="datepromise">
-                                </div>
-                            </td>
-                            <td scope="col" class="admin__order-col per-20">Ngõ 64, Trần Quốc Vượng, Dịch Vọng, Cầu Giấy, Hà Nội</td>
-                            <td scope="col" class="admin__order-col per-20">Anh giao cho bà chủ nhà hộ em với ạ</td>
-                            <td scope="col" class="admin__order-col per-10">
-                                <button type="button" class="btn btn-primary btn-confirm">Chờ xác nhận</button>
-                            </td>
-                            <td scope="col" class="admin__order-col per-5">
-                                <div class="admin__order-handle">
-                                    <span>Xóa</span>
-                                </div>
-                            </td>
-                        </tr>
                         @php $i = 1; @endphp
                         @foreach ($listOrderConfirm as $order)
                             <tr class="background-notBorrow row row-tb">
                                 <td scope="col" class="per-5">{{ $i }}</td>
-                                <td scope="col" class="admin__order-col-listbook per-15">
+                                <td scope="col" class="admin__order-col-listbook per-20">
                                     <div class="admin__order-listbook">
                                         <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
@@ -558,12 +134,12 @@
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-20">{{ $order->note }}</td>
                                 <td scope="col" class="admin__order-col per-10">
                                     <button type="button" class="btn btn-primary btn-confirm"
                                         attr-order="{{ $order->id }}">Chờ xác nhận</button>
                                 </td>
-                                <td scope="col" class="admin__order-col per-5">
+                                <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
                                             src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png" />
@@ -580,7 +156,7 @@
                         @foreach ($listOrderOverdue as $order)
                             <tr class="background-notPay row row-tb">
                                 <td scope="col" class="per-5">{{ $i }}</td>
-                                <td scope="col" class="admin__order-col-listbook per-15">
+                                <td scope="col" class="admin__order-col-listbook per-20">
                                     <div class="admin__order-listbook">
                                         <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
@@ -603,8 +179,8 @@
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
-                                <td scope="col" class="admin__order-col per-5">Quá hạn chưa trả</td>
+                                <td scope="col" class="admin__order-col per-20">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-10">Quá hạn chưa trả</td>
                                 <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
@@ -622,7 +198,7 @@
                         @foreach ($listOrderBorrowing as $order)
                             <tr class="background-borrowed row row-tb">
                                 <td scope="col" class="per-5">{{ $i }}</td>
-                                <td scope="col" class="admin__order-col-listbook per-15">
+                                <td scope="col" class="admin__order-col-listbook per-20">
                                     <div class="admin__order-listbook">
                                         <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
@@ -645,8 +221,8 @@
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
-                                <td scope="col" class="admin__order-col per-5">Đang mượn</td>
+                                <td scope="col" class="admin__order-col per-20">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-10">Đang mượn</td>
                                 <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"
@@ -664,7 +240,7 @@
                         @foreach ($listOrderBorrowed as $order)
                             <tr class="background-payed row row-tb">
                                 <td scope="col" class="per-5">{{ $i }}</td>
-                                <td scope="col" class="admin__order-col-listbook per-15">
+                                <td scope="col" class="admin__order-col-listbook per-20">
                                     <div class="admin__order-listbook">
                                         <ul class="admin__order-list cot">
                                             @foreach ($order->orderdetails()->get() as $oderdetail)
@@ -687,8 +263,8 @@
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-10">{{ $order->note }}</td>
-                                <td scope="col" class="admin__order-col per-5">Đã trả</td>
+                                <td scope="col" class="admin__order-col per-20">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-10">Đã trả</td>
                                 <td scope="col" class="admin__order-col per-10">
                                     <div class="admin__order-handle">
                                         <img class="admin__order-button-save"

@@ -120,7 +120,7 @@
         color: #dd125f;
         cursor: pointer;
     }
-    .nav-cart-notice {
+    .nav-cart-notice, .nav-nofi-notice {
         background-color: #dd125f;
         color: #fff;
         padding: 1px 8px;
@@ -130,9 +130,12 @@
         top: -3px;
         right: -4px;
     }
-    .nav-cart:hover .nav-cart-list {
-        display: block;
+    .nav-nofi-notice {
+        top: -6px;
     }
+    /* .nav-cart:hover .nav-cart-list {
+        display: block;
+    } */
     .nav-cart-list {
         display: none;
         position: absolute;
@@ -415,6 +418,8 @@
     .header__notify-header {
         width: 100%;
         background-color: var(--white-color);
+        display: flex;
+        align-items: baseline;
     }
 
     .header__notify-header h3 {
@@ -426,6 +431,22 @@
         font-weight: 400;
     }
 
+    .header__notify-header span {
+        color: #666;
+        font-size: 12px;
+        margin: 0px;
+        padding: 15px 12px 15px 0;
+        cursor: text;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-left: auto;
+    }
+
+    .header__notify-header span:hover {
+        cursor: pointer;
+        color: #dd125f;
+    }
+
     .header__notify-list {
         padding-left: 0;
         margin: 0;
@@ -434,13 +455,16 @@
     .header__notify-item {
         margin-top: 2px;
         list-style: none;
+        background-color: rgba(238, 75, 43, 0.08);
+    }
+    .header__notify-item.seen {
+        background-color: #fff;
     }
 
     .header__notify-link {
         display: flex;
         padding: 12px;
         text-decoration: none; /* bo dau gach chan trong the a */
-        background-color: rgba(238, 75, 43, 0.08);
     }
 
     .header__notify-link:hover {
@@ -473,9 +497,9 @@
     .header__notify-footer {
         display: flex;
     }
-    .header__navbar-item--notify:hover .header__notify {
+    /* .header__navbar-item--notify:hover .header__notify {
         display: block;
-    }
+    } */
     .header__notify-footer-btn {
         text-decoration: none;
         color: var(--black-color);
