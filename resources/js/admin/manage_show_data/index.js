@@ -1,7 +1,19 @@
 const { data } = require("jquery");
 $(function() {
+
+  const typeCategory = [
+    {"category": "Tổng quát"},
+   {"category":'Triết học'},
+    {"category": 'Tôn giáo'},
+    {"category":  'Khoa học xã hội'},
+    {"category":  'Ngôn ngữ'},
+   {"category": 'Toán học và khoa học tự nhiên'},
+   {"category": 'Kỹ thuật'},
+   {"category": 'Nghệ thuật'},
+    {"category": 'Văn học'},
+   {"category": 'Địa lý lịch sử'},
+  ];
     let myChart;
-      //tinh tiong tien
       let dtt = [];
       let typedata;
       let typeofbooks = $('#typeofbook');
@@ -20,7 +32,9 @@ $(function() {
             [$(this).attr('name')]: $(this).val(),
           },
           success: function(res) {
-            dtt = res;
+            if($('#typeofbook').val() == 'category') {
+              dtt = [...typeCategory];
+            } else dtt = res;
             if(res.length != 0) typedata = Object.keys((res[0]))[0];
             // console.log(res);
           },
@@ -135,7 +149,6 @@ $(function() {
               },
         }
     })
-        console.log(res[0]);
       },
       error: function(jqXHR, textStatus, errorThrown) {
       }
@@ -192,7 +205,6 @@ $(function() {
           myChart.data.labels = indexs;
           myChart.data.datasets[0].data = values;
           myChart.update();
-          // console.log(res);
         },
         error: function(jqXHR, textStatus, errorThrown) {
         }
@@ -264,7 +276,6 @@ $(function() {
 //dashboras2
 let type2 = 'month';
 $('input[name="todate"]').next().on('click', function() {
-  // console.log($(this).prev().val());
   let data;
   if($(this).prev().val() == "" || $(this).prev().prev().prev().val() == "")  alert('nhap de ??');
   else {
@@ -277,7 +288,6 @@ $('input[name="todate"]').next().on('click', function() {
        type: type2,
       },
       success: function(res) {
-       console.log(res);
        data = new Array(monthDiff($('input[name="todate"]').prev().prev().val(), $('input[name="todate"]').val())).fill(0);
        let timestarts = new Date($('input[name="todate"]').prev().prev().val());
 
