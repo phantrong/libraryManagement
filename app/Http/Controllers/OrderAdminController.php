@@ -172,6 +172,9 @@ class OrderAdminController extends Controller
                     'content' => 'Đơn mượn ĐH' . sprintf('%04d', $order->id) . ' của bạn đã bị hủy.'
                 ];
                 Alert::create($alert);
+                $user = $this->userRepository->find($order->user_id);
+                $user['is_borrow'] = 0;
+                $user->update();
                 return Response()->json([
                     'success' => '1'
                 ]);

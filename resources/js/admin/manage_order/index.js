@@ -68,7 +68,7 @@ $(function() {
 
     var idOrderChoose = 0;
     var btnCancel = '';
-    $('#list-order .background-borrowed .admin__order-button-cancel').on('click', function() {
+    $('#list-order .admin__order-button-cancel').on('click', function() {
         idOrderChoose = $(this).attr('attr-order');
         btnCancel = $(this);
     });
@@ -83,10 +83,11 @@ $(function() {
             axios.post('/admin/order/cancel', data).then(res => {
                 if (res.data.success) {
                     let parent = btnCancel.closest('.admin__order-col');
-                    let background = parent.closest('.background-borrowed');
+                    let background = parent.closest('tr');
                     let statusText = background.find('.col-status');
                     background.addClass('background-cancel');
                     background.removeClass('background-borrowed');
+                    background.removeClass('background-notBorrow');
                     statusText.text('Đã hủy');
                     parent.html('');
                 } else {

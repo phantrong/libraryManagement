@@ -1,3 +1,5 @@
+const { default: Axios } = require('axios');
+
 require('./slider')
 require('./scroll_smooth')
 require('../book_interface/cart')
@@ -54,9 +56,7 @@ $(document).ready(function() {
     $('.header__navbar-item--notify').on('click', function(event) {
         event.stopPropagation();
         $('.header__notify').toggle();
-        $('.nav-nofi-notice').hide();
         $('.nav-cart-list').hide();
-        $('.nav-nofi-notice').text(0);
     });
     $('.nav-cart').on('click', function(event) {
         event.stopPropagation();
@@ -70,5 +70,25 @@ $(document).ready(function() {
     $(document).click(function() {
         $('.header__notify').hide();
         $('.nav-cart-list').hide();
+    });
+
+    $('.header__notify-header #readed').on('click', function() {
+        let id = $(this).attr('attr-id');
+        let data = {
+            id: id
+        }
+        axios.post('/user/alert/readed', data).then(res => {
+            if (res.data.success) {
+                $('.header__notify-item').each(function(index) {
+                    $(this).addClass("bg-readed");
+                    $(this).removeClass("bg-not-read");
+                })
+                $('#count-alert').hide();
+            } else {
+                alert('Lỗi hệ thống, không thể thực hiện!');
+            }
+        }).catch(err => {
+            alert('Lỗi hệ thống, không thể thực hiện!');
+        })
     });
 });

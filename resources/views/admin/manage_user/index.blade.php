@@ -41,7 +41,7 @@
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
-                                Tổng người mượn (tuần)
+                                User đăng kí trong tuần
                             </span>
                             <span>
                                 {{ count($listUserWeek) }}
@@ -57,7 +57,7 @@
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
-                                Tổng người mượn (tháng)
+                                User đăng kí trong tháng
                             </span>
                             <span>
                                 {{ count($listUserMonth) }}
@@ -73,7 +73,7 @@
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
-                                Tổng người mượn (năm)
+                                User đăng kí trong năm
                             </span>
                             <span>
                                 {{ count($listUserYear) }}
@@ -83,19 +83,19 @@
                 </div>
             </div>
         </section>
-        @if (count($listUser))
-            <section class="manageuser__content-content user__table">
-                <form action="{{ route('admin.user.index') }}">
-                    <div class="manageuser__content-content-searchUser">
-                        <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-lg">Tìm kiếm</span>
-                            </div>
-                            <input type="text" name="name" value="{{ $name }}" class="form-control"
-                                aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        <section class="manageuser__content-content user__table">
+            <form action="{{ route('admin.user.index') }}">
+                <div class="manageuser__content-content-searchUser">
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-prepend">
+                            <button class="input-group-text" id="inputGroup-sizing-lg" role="submit">Tìm kiếm</button>
                         </div>
+                        <input type="text" name="name" value="{{ $name }}" class="form-control" aria-label="Large"
+                            aria-describedby="inputGroup-sizing-sm" placeholder="Tìm theo tên">
                     </div>
-                </form>
+                </div>
+            </form>
+            @if (count($listUser))
                 <div class="container-fluid table__order manageuser__content-content-boxct">
                     <table class="table ">
                         <thead>
@@ -140,10 +140,10 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- </div> -->
-
-            </section>
-        @endif
+            @else
+                <h3 class="note">Không có người dùng nào phù hợp!</h3>
+            @endif
+        </section>
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">

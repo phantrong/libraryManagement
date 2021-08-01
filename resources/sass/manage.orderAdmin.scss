@@ -45,6 +45,9 @@
     .admin__order-handle {
         align-items: center;
     }
+    .admin__order-handle span:hover {
+        color: #dd125f;
+    }
     .admin__order-handle span {
         cursor: pointer;
     }
@@ -178,8 +181,12 @@
         width: 24px;
         height: 24px;
     }
+    .btn_confirm {
+        height: 24px;
+    }
     .btn-handle {
         cursor: pointer;
+        margin-left: 5px;
     }
     .table__order {
         padding: 0 0 10px 0;

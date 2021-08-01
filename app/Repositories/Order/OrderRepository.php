@@ -47,13 +47,16 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
             $order->update();
         } elseif (($order->status == Order::STATUS_OVERDUE || $order->status == Order::STATUS_BORROWING) && $order->time_pay) {
             $order->status = Order::STATUS_BORROWED;
+            $order->update();
             $alert = [
                 'user_id' => $order->user_id,
                 'order_id' => $order->id,
                 'content' => 'Đơn mượn ĐH' . sprintf('%04d', $order->id) . ' của bạn đã trả thành công. Cảm ơn bạn.'
             ];
             Alert::create($alert);
-            $order->update();
+            $user = $this->userRepository->find($order->user_id);
+            $user['is_borrow'] = 0;
+            $user->update();
         }
         return $order;
     }

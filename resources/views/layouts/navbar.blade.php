@@ -19,22 +19,28 @@
                             <path
                                 d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                         </svg>
-                        <span class="nav-nofi-notice">1</span>
+                        @if ($countAlert)
+                            <span class="nav-nofi-notice" id='count-alert'>{{ $countAlert }}</span>
+                        @endif
                         <div class="header__notify">
                             <header class="header__notify-header">
                                 <h3>Thông báo mới nhận</h3>
-                                <span>Đánh dấu đã xem</span>
+                                @if ($countAlert)
+                                    <span id="readed" attr-id={{ Auth::user()->id }}>Đánh dấu đã xem</span>
+                                @endif
                             </header>
                             <ul class="header__notify-list">
-                                <li class="header__notify-item">
-                                    <div class="header__notify-link">
-                                        <img src="https://cf.shopee.vn/file/b8ae87c9b51fb3b795eba17051a891b5" alt=""
-                                            class="header__notify-img">
-                                        <div class="header__notify-info">
-                                            <span class="header__notify-name">Đơn mượn của bạn đã được xác nhận</span>
+                                @foreach ($alerts as $alert)
+                                    <li class="header__notify-item {{ $alert->is_readed ? 'bg-readed' : 'bg-not-read' }}">
+                                        <div class="header__notify-link">
+                                            <img src="https://cf.shopee.vn/file/b8ae87c9b51fb3b795eba17051a891b5" alt=""
+                                                class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">{{ $alert->content }}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                             <footer class="header__notify-footer">
                                 <a class="header__notify-footer-btn"></a>

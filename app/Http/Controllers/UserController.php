@@ -9,10 +9,10 @@ use App\Repositories\User\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Carbon;
 use App\Http\Requests\PasswordRequest;
-use Facade\FlareClient\Http\Response;
+use App\Models\Alert;
 use App\Repositories\Book\BookRepository;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -128,6 +128,9 @@ class UserController extends Controller
             $order = $this->orderRepository->find($request->id);
             $order['status'] = Order::STATUS_CANCEL;
             $order->update();
+            $user = $this->userRepository->find($order->user_id);
+            $user['is_borrow'] = 0;
+            $user->update();
             return Response()->json([
                 'success' => 1
             ]);
@@ -171,7 +174,12 @@ class UserController extends Controller
         ]);
         $user['password'] = Hash::make($request->password);
         $user['images'] = 'images/avatar-default.png';
-        $this->userRepository->create($user);
+        $user = $this->userRepository->create($user);
+        $alert = [
+            'user_id' => $user->id,
+            'content' => 'Chúc mừng bạn đã đăng kí thành công. Chào mừng bạn đến với thư viện mini.'
+        ];
+        Alert::create($alert);
         return redirect()->route('user.register')->with('success', 1);
     }
 
@@ -186,5 +194,23 @@ class UserController extends Controller
         $user['password'] = Hash::make($request->password);
         $user->update();
         return redirect()->route('user.forgetpass')->with('msg', "Chúc mừng bạn đã thay đổi mật khẩu thành công. Vui lòng đăng nhập lại.");
+    }
+
+    public function changeAlert(Request $request)
+    {
+        if ($request->id) {
+            $user = $this->userRepository->find($request->id);
+            $alerts = $user->alerts()->get();
+            foreach ($alerts as $alert) {
+                $alert['is_readed'] = 1;
+                $alert->update();
+            }
+            return Response()->json([
+                'success' => '1'
+            ]);
+        }
+        return Response()->json([
+            'success' => '0'
+        ]);
     }
 }

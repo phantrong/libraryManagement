@@ -35,6 +35,9 @@
                 <div class="input-group-item">
                     <a href="{{ route('user.forgetpass') }}" class="forget-pass">Quên mật khẩu ?</a>
                 </div>
+                <div class="input-group-item">
+                    <a href="{{ route('home') }}" class="forget-pass">Về trang chủ</a>
+                </div>
                 <button type="submit" class="submit-btn">Đăng nhập</button>
             </form>
         </div>

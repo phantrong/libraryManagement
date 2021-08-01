@@ -44,6 +44,7 @@ Route::prefix('user/')
             Route::post('/profile/changepass/post', 'UserController@postChangePassword')->name('profile.post.changepass');
             Route::get('/order', 'UserController@viewListOrder')->name('order');
             Route::post('/order/cancel', 'UserController@cancelOrder')->name('order.cancel');
+            Route::post('/alert/readed', 'UserController@changeAlert')->name('order.cancel');
         });
     });
 
@@ -64,12 +65,14 @@ Route::prefix('admin/')
             Route::resource("book", "BookController");
             Route::resource("user", "ManageUserController");
             Route::resource("data", "DataController");
-            Route::resource("contact", "AdminContactController");
+            Route::get("contact", "AdminContactController@index")->name('contact.index');
+            Route::post("contact/readed", "AdminContactController@changeReaded");
+            Route::post("contact/delete", "AdminContactController@deleteContact");
             Route::resource("order", "OrderAdminController");
             Route::post('order/changestatus', "OrderAdminController@changeStatusToBorrowing");
             Route::post('order/cancel', "OrderAdminController@cancelOrder");
             Route::post('order/edit', "OrderAdminController@editOrder");
-            Route::post('order/delete', "OrderAdminController@deleteOrder");
+            Route::post('order/delete', "OrderAdminController@changeAlert");
         });
     });
 

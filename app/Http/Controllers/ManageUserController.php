@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Order\OrderRepository;
 use Illuminate\Http\Request;
 use App\Repositories\User\UserRepository;
+use Carbon\Carbon;
 
 class ManageUserController extends Controller
 {
@@ -34,6 +35,15 @@ class ManageUserController extends Controller
         $listUser = $this->userRepository->getListUserByName($name);
         foreach ($listUser as $user) {
             $user['countOrder'] = count($user->orders()->get());
+            if (Carbon::parse($user->created_at)->year == Carbon::now()->year) {
+                $listUserYear[] = $user;
+            }
+            if (Carbon::parse($user->created_at)->month == Carbon::now()->month) {
+                $listUserMonth[] = $user;
+            }
+            if (Carbon::parse($user->created_at)->weekOfYear == Carbon::now()->weekOfYear) {
+                $listUserWeek[] = $user;
+            }
         }
         return view('admin.manage_user.index', [
             'name' => $name,

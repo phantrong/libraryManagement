@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequest;
+use App\Models\Alert;
 use App\Models\Order;
 use App\Models\Orderdetail;
 use App\Models\User;
@@ -14,6 +15,7 @@ use App\Repositories\Cart\CartRepository;
 use App\Repositories\Order\OrderRepository;
 use Carbon\Carbon;
 use Facade\FlareClient\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class ShowBookController extends Controller
 {
@@ -75,6 +77,15 @@ class ShowBookController extends Controller
                 $item['book'] = $this->bookRepository->find($item->book_id);
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
+            $alerts = $user->alerts()->limit(10)->get();
+            $countAlert = 0;
+            if ($alerts) {
+                foreach ($alerts as $alert) {
+                    if (!$alert->is_readed) {
+                        $countAlert++;
+                    }
+                }
+            }
         }
         return view('welcome', [
             'books' => $books,
@@ -82,7 +93,9 @@ class ShowBookController extends Controller
             'info' => $info,
             'sort' => $sort,
             'choose' => $choose,
-            'cart' => $cart
+            'cart' => $cart,
+            'countAlert' => $countAlert,
+            'alerts' => $alerts
         ]);
     }
 
@@ -116,11 +129,22 @@ class ShowBookController extends Controller
                 $item['book'] = $this->bookRepository->find($item->book_id);
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
+            $alerts = $user->alerts()->limit(10)->get();
+            $countAlert = 0;
+            if ($alerts) {
+                foreach ($alerts as $alert) {
+                    if (!$alert->is_readed) {
+                        $countAlert++;
+                    }
+                }
+            }
         }
         return view('book_interface.book_interface', [
             'book' => $book,
             'listbook' => $listbook,
-            'cart' => $cart
+            'cart' => $cart,
+            'countAlert' => $countAlert,
+            'alerts' => $alerts
         ]);
     }
 

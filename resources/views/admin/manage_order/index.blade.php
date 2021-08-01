@@ -207,9 +207,11 @@
                                 @endif
                                 @if ($order->status == $ModelOrder::STATUS_CONFIRM)
                                     <td scope="col" class="admin__order-col per-10">
-                                        <button type="button" class="btn btn-primary btn_confirm"
-                                            attr-order="{{ $order->id }}">Xác
-                                            nhận</button>
+                                        <img class="btn-handle btn_confirm" src="{{ asset('images/confirm-btn.png') }}"
+                                            attr-order="{{ $order->id }}">
+                                        <img class="admin__order-button-cancel btn-handle"
+                                            src="{{ asset('images/btn-cancel.png') }}" attr-order="{{ $order->id }}"
+                                            data-toggle="modal" data-target="#exampleModalCancel" />
                                     </td>
                                 @else
                                     <td scope="col" class="admin__order-col per-10">
@@ -226,10 +228,12 @@
                                                     attr-order="{{ $order->id }}" data-toggle="modal"
                                                     data-target="#exampleModalCancel" />
                                             @endif
-                                            <img class="admin__order-button-delete btn-handle"
-                                                src="https://img.icons8.com/ios-filled/32/000000/delete-forever.png"
-                                                data-toggle="modal" data-target="#exampleModal"
-                                                attr-order="{{ $order->id }}" />
+                                            @if ($order->status == $ModelOrder::STATUS_BORROWED || $order->status == $ModelOrder::STATUS_CANCEL)
+                                                <img class="admin__order-button-delete btn-handle"
+                                                    src="https://img.icons8.com/ios-filled/32/000000/delete-forever.png"
+                                                    data-toggle="modal" data-target="#exampleModal"
+                                                    attr-order="{{ $order->id }}" />
+                                            @endif
                                         </div>
                                     </td>
                                 @endif

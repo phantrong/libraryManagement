@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class AdminContactController extends Controller
 {
@@ -13,72 +15,59 @@ class AdminContactController extends Controller
      */
     public function index()
     {
-        return view('admin.manage_contact.index');
+        $listContactYear = [];
+        $listContactMonth = [];
+        $listContactWeek = [];
+        $listContact = Contact::get();
+        foreach ($listContact as $contact) {
+            if (Carbon::parse($contact->created_at)->year == Carbon::now()->year) {
+                $listContactYear[] = $contact;
+            }
+            if (Carbon::parse($contact->created_at)->month == Carbon::now()->month) {
+                $listContactMonth[] = $contact;
+            }
+            if (Carbon::parse($contact->created_at)->weekOfYear == Carbon::now()->weekOfYear) {
+                $listContactWeek[] = $contact;
+            }
+        }
+        return view('admin.manage_contact.index', [
+            'listContactYear' => $listContactYear,
+            'listContactMonth' => $listContactMonth,
+            'listContactWeek' => $listContactWeek,
+            'listContact' => $listContact
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function changeReaded(Request $request)
     {
-        //
+        if ($request->id) {
+            $contact = Contact::find($request->id);
+            if ($contact) {
+                $contact['is_readed'] = Contact::STATUS_READED;
+                $contact->update();
+                return Response()->json([
+                    'success' => '1'
+                ]);
+            }
+        }
+        return Response()->json([
+            'success' => '0'
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function deleteContact(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if ($request->id) {
+            $contact = Contact::find($request->id);
+            if ($contact) {
+                $contact->delete();
+                return Response()->json([
+                    'success' => '1'
+                ]);
+            }
+        }
+        return Response()->json([
+            'success' => '0'
+        ]);
     }
 }

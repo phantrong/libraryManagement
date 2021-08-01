@@ -443,22 +443,25 @@
     .header__notify-item {
         margin-top: 2px;
         list-style: none;
-        background-color: rgba(238, 75, 43, 0.08);
     }
     .header__notify-item.seen {
-        background-color: #fff;
+        background-color: rgba(238, 75, 43, 0.2);
+    }
+    .bg-not-read {
+        background-color: rgba(238, 75, 43, 0.2) !important;
+    }
+    .bg-readed {
+        background-color: #fff !important;
     }
     .header__notify-link {
         display: flex;
         padding: 12px;
         text-decoration: none;
     }
-    .header__notify-link:hover {
-        background-color: #f5f5f5;
-    }
+    .header__notify-link:hover,
     .header__notify-link:focus,
     .header__notify-link:active {
-        background-color: #fff;
+        background-color: rgba(238, 75, 43, 0.08);
     }
     .header__notify-img {
         width: 40px;

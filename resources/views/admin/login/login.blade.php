@@ -20,7 +20,7 @@
             </div>
             <form action="{{ route('admin.loginPost') }}" method="POST">
                 @csrf
-                <input type="text" id="login" class="fadeIn second" name="admin" placeholder="login"
+                <input type="text" id="login" class="fadeIn second" name="admin" placeholder="admin"
                     value="{{ old('admin') }}" required>
                 <input type="password" id="password" class="fadeIn third" name="password" placeholder="password"
                     required>
