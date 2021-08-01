@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alert;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Repositories\Order\OrderRepository;
 use App\Models\Order;
 use App\Repositories\User\UserRepository;
 use Carbon\Carbon;
+use Exception;
 use Facade\FlareClient\Http\Response;
 
 class OrderAdminController extends Controller
@@ -28,10 +30,10 @@ class OrderAdminController extends Controller
      */
     public function index(Request $request)
     {
-        $userIds = [];
-        $day_start = '2020-01-01';
-        $day_end = Carbon::now()->addHours(7);
-        $user = '';
+        $userIds = 1;
+        $day_start = '2021-01-01';
+        $day_end = Carbon::now()->addHours(7)->toDateTimeString();
+        $userFilter = '';
         if ($request->get('day_start')) {
             $day_start = $request->get('day_start');
         }
@@ -41,23 +43,25 @@ class OrderAdminController extends Controller
         if ($request->get('username')) {
             $user = $this->userRepository->getUserByUserName($request->get('user'));
             $userIds[] = $user->id;
+            $userFilter = $user->name;
         } elseif ($request->get('user')) {
-            $filler['name'] = $request->get('user');
-            $listUser = $this->userRepository->getListUser($filler);
+            $userIds = [];
+            $userFilter = $request->get('user');
+            $listUser = $this->userRepository->getUserByName($request->get('user'));
             if ($listUser) {
                 foreach ($listUser as $user) {
                     $userIds[] = $user->id;
                 }
             }
         }
-        $listOrder = $this->orderRepository->getListOrderByUser($userIds, $day_start, $day_end->toDateTimeString());
+        $listOrder = $this->orderRepository->getListOrderByUser($userIds, $day_start, $day_end);
         $listOrderConfirm = [];
         $listOrderOverdue = [];
         $listOrderBorrowing = [];
         $listOrderBorrowed = [];
         if ($listOrder) {
             foreach ($listOrder as $order) {
-                $order = $this->orderRepository->changeStatusOver($order);
+                $order = $this->orderRepository->updateStatus($order);
                 if ($order->status == Order::STATUS_CONFIRM) {
                     $listOrderConfirm[] = $order;
                 }
@@ -74,9 +78,9 @@ class OrderAdminController extends Controller
         }
         return view('admin.manage_order.index', [
             'day_start' => $day_start,
-            'day_end' => $day_end->toDateString(),
+            'day_end' => $day_end,
             'listOrder' => $listOrder,
-            'users' => $user,
+            'userFilter' => $userFilter,
             'listOrderConfirm' => $listOrderConfirm,
             'listOrderOverdue' => $listOrderOverdue,
             'listOrderBorrowing' => $listOrderBorrowing,
@@ -84,70 +88,52 @@ class OrderAdminController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function editOrder(Request $request)
     {
-        //
+        if ($request->id) {
+            $order = $this->orderRepository->find($request->id);
+            if ($order) {
+                try {
+                    if ($request->time_borrow) {
+                        $time_borrow = Carbon::parse($request->time_borrow);
+                        $order['time_borrow'] = $time_borrow;
+                    }
+                    if ($request->time_promise_pay) {
+                        $time_promise_pay = Carbon::parse($request->time_promise_pay);
+                        $order['time_promise_pay'] = $time_promise_pay;
+                    }
+                    if ($request->time_pay) {
+                        $time_pay = Carbon::parse($request->time_pay);
+                        $order['time_pay'] = $time_pay;
+                    }
+                    $order->update();
+                    $order = $this->orderRepository->updateStatus($order);
+                    return Response()->json([
+                        'success' => '1'
+                    ]);
+                } catch (Exception $e) {
+                    return Response()->json([
+                        'success' => '2'
+                    ]);
+                }
+            }
+        }
+        return Response()->json([
+            'success' => '0'
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function deleteOrder(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if ($request->id) {
+            $this->orderRepository->delete($request->id);
+            return Response()->json([
+                'success' => '1'
+            ]);
+        }
+        return Response()->json([
+            'success' => '0'
+        ]);
     }
 
     public function changeStatusToBorrowing(Request $request)
@@ -155,7 +141,37 @@ class OrderAdminController extends Controller
         if ($request->id && $request->type == 'one-to-three') {
             $order = $this->orderRepository->find($request->id);
             if ($order) {
-                $this->orderRepository->changeStatusOver($order, true);
+                $order['status'] = Order::STATUS_BORROWING;
+                $order->update();
+                $alert = [
+                    'user_id' => $order->user_id,
+                    'order_id' => $order->id,
+                    'content' => 'Đơn mượn ĐH' . sprintf('%04d', $order->id) . ' của bạn đã được xác nhận.'
+                ];
+                Alert::create($alert);
+                return Response()->json([
+                    'success' => '1'
+                ]);
+            }
+        }
+        return Response()->json([
+            'success' => '0'
+        ]);
+    }
+
+    public function cancelOrder(Request $request)
+    {
+        if ($request->id && $request->type == 'cancel') {
+            $order = $this->orderRepository->find($request->id);
+            if ($order) {
+                $order['status'] = Order::STATUS_CANCEL;
+                $order->update();
+                $alert = [
+                    'user_id' => $order->user_id,
+                    'order_id' => $order->id,
+                    'content' => 'Đơn mượn ĐH' . sprintf('%04d', $order->id) . ' của bạn đã bị hủy.'
+                ];
+                Alert::create($alert);
                 return Response()->json([
                     'success' => '1'
                 ]);

@@ -16,17 +16,19 @@ interface OrderRepositoryInterface extends RepositoryInterface
     /**
      * getListOrderByUser
      *
+     * @param  mixed $userIds
+     * @param  mixed $day_start
+     * @param  mixed $day_end
      * @return object
      */
-    public function getListOrderByUser($userIds);
+    public function getListOrderByUser($userIds, $day_start, $day_end);
 
 
     /**
-     * changeStatusOver
+     * updateStatus
      *
      * @param  object $order
-     * @param  bool $type
      * @return object
      */
-    public function changeStatusOver($order, $type);
+    public function updateStatus($order);
 }

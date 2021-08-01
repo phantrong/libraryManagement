@@ -27,27 +27,31 @@ class BookController extends Controller
     public function index(Request $request)
     {
         $category = -1;
-        $name = '';
+        $info = '';
+        $choose = 'name';
         $sort = -1;
-        $fillter = [];
+        $filter = [];
         if ($request->get('category') != -1 && $request->get('category') != null) {
-            $fillter['category'] = $this->bookRepository->getTextCategory($request->category);
+            $filter['category'] = $request->get('category');
             $category = $request->get('category');
         }
-        if ($request->get('name')) {
-            $fillter['name'] = $request->get('name');
-            $name = $request->get('name');
+        if ($request->get('info')) {
+            $filter['info'] = $request->get('info');
+            $filter['filter'] = $request->get('choose');
+            $info = $request->get('info');
+            $choose = $request->get('choose');
         }
         if ($request->get('sort') != null) {
-            $fillter['sort'] = $request->get('sort');
+            $filter['sort'] = $request->get('sort');
             $sort = $request->get('sort');
         }
-        $books = $this->bookRepository->getListBook($fillter);
+        $books = $this->bookRepository->getListBook($filter);
         return view('admin.manage_book.index', [
             'books' => $books,
             'category' => $category,
-            'name' => $name,
-            'sort' => $sort
+            'info' => $info,
+            'sort' => $sort,
+            'choose' => $choose,
         ]);
     }
 
@@ -203,6 +207,4 @@ class BookController extends Controller
     {
         $this->bookRepository->delete($id);
     }
-
-   
 }

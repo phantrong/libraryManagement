@@ -97,6 +97,21 @@
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
+                                Tổng đơn đang mượn
+                            </span>
+                            <span>
+                                {{ count($listOrderBorrowing) }}
+                            </span>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-xl-2">
+                    <button class="maincontainer__dashboard-typeImg-info-box">
+                        <div>
+                            <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                        </div>
+                        <div class="maincontainer__dashboard-typeImg-info-box-quantity">
+                            <span>
                                 Tổng đơn đã trả
                             </span>
                             <span>
@@ -116,7 +131,7 @@
                                 <th scope="col" class="per-5">STT</th>
                                 <th scope="col" class="admin__order-col-listbook per-20">Sách</th>
                                 <th scope="col" class="admin__order-col per-10">Ngày mượn</th>
-                                <th scope="col" class="admin__order-col per-10">Ngày hẹn</th>
+                                <th scope="col" class="admin__order-col per-10">Ngày hẹn/trả</th>
                                 <th scope="col" class="admin__order-col per-20">Địa chỉ</th>
                                 <th scope="col" class="admin__order-col per-20">Ghi chú</th>
                                 <th scope="col" class="admin__order-col per-10">Trạng thái</th>
@@ -251,6 +266,24 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" id="btn-modal-pay">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="modal-pay-again" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Đặt lại đơn</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có chắc muốn đặt lại đơn ?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="submit-again">Đặt lại</button>
+                                    <button type="button" class="btn btn-secondary" id="btn-modal-again">Quay
+                                        lại</button>
                                 </div>
                             </div>
                         </div>

@@ -51,13 +51,6 @@ $(document).ready(function() {
         });
     });
 
-
-    $('#contactForm').submit(function() {
-        alert('Gửi thành công');
-        $('.form-input').val("");
-        return false;
-    });
-
     $('.header__navbar-item--notify').on('click', function(event) {
         event.stopPropagation();
         $('.header__notify').toggle();

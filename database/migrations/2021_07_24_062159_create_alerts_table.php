@@ -18,7 +18,7 @@ class CreateAlertsTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('order_id')->constrained('orders');
             $table->text('content');
-            $table->tinyInteger('is_readed');
+            $table->tinyInteger('is_readed')->default(0);
             $table->timestamps();
         });
     }

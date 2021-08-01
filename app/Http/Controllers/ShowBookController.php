@@ -42,7 +42,7 @@ class ShowBookController extends Controller
             $listOrder = $user->orders()->paginate(8);
             if ($listOrder) {
                 foreach ($listOrder as $order) {
-                    $order = $this->orderRepository->changeStatusOver($order);
+                    $order = $this->orderRepository->updateStatus($order);
                 }
             }
         }
@@ -88,12 +88,16 @@ class ShowBookController extends Controller
 
     public function singlebook(Request $request, $id)
     {
+        $book = $this->bookRepository->find($id);
+        if (!$book) {
+            return abort(404);
+        }
         if (Auth::user()) {
             $user = $this->userRepository->find(Auth::user()->id);
             $listOrder = $user->orders()->paginate(10);
             if ($listOrder) {
                 foreach ($listOrder as $order) {
-                    $order = $this->orderRepository->changeStatusOver($order);
+                    $order = $this->orderRepository->updateStatus($order);
                 }
             }
         }

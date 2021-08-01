@@ -12,16 +12,19 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
 use App\Http\Requests\PasswordRequest;
 use Facade\FlareClient\Http\Response;
+use App\Repositories\Book\BookRepository;
 
 class UserController extends Controller
 {
     private $orderRepository;
     private $userRepository;
+    private $bookRepository;
 
-    public function __construct(OrderRepository $orderRepository, UserRepository $userRepository)
+    public function __construct(OrderRepository $orderRepository, UserRepository $userRepository, BookRepository $bookRepository)
     {
         $this->orderRepository = $orderRepository;
         $this->userRepository = $userRepository;
+        $this->bookRepository = $bookRepository;
     }
 
     public function viewProfile()
@@ -33,7 +36,7 @@ class UserController extends Controller
             $listOrder = $user->orders()->paginate(10);
             if ($listOrder) {
                 foreach ($listOrder as $order) {
-                    $order = $this->orderRepository->changeStatusOver($order);
+                    $order = $this->orderRepository->updateStatus($order);
                 }
             }
             $cart = $user->carts()->get();
@@ -93,7 +96,7 @@ class UserController extends Controller
         $listOrderBorrowed = [];
         if ($listOrder) {
             foreach ($listOrder as $order) {
-                $order = $this->orderRepository->changeStatusOver($order);
+                $order = $this->orderRepository->updateStatus($order);
                 if ($order->status == Order::STATUS_CONFIRM) {
                     $listOrderConfirm[] = $order;
                 }

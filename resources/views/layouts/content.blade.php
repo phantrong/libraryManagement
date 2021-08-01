@@ -95,7 +95,9 @@
                         </svg>
                         <ul class="sort-by">
                             <form action="{{ route('welcome') }}" class="form-list-book">
-                                <input type="hidden" name='category' value="{{ isset($category) ? $category : '' }}">
+                                <input type="hidden" name='category' value="{{ $category }}">
+                                <input type="hidden" name="info" value="{{ $info }}">
+                                <input type="hidden" name="choose" value="{{ $choose }}">
                                 <button type="submit" name='sort' value='1' class="sort-by-name AtoZ"
                                     {{ $sort == 1 ? 'disabled' : '' }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -134,7 +136,7 @@
                             <div class="book-item">
                                 <a href="{{ route('welcome.singlebook', $book->id) }}" class="book-item-link">
                                     <div class="book-img"
-                                        style="background-image: url({{ $book->images()->get()[0]->path }});">
+                                        style="background-image: url({{ asset($book->images()->get()[0]->path) }});">
                                     </div>
                                     <h4 class="book-name">{{ $book->name }}</h4>
                                 </a>

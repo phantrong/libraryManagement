@@ -73,7 +73,7 @@
         list-style-type: none;
     }
     .admin__order-list span {
-        margin-left: 6px;
+        margin-right: 6px;
     }
     .orderbook__content-dashboard {
         background-color: white;
@@ -178,12 +178,18 @@
         width: 24px;
         height: 24px;
     }
+    .btn-handle {
+        cursor: pointer;
+    }
     .table__order {
-        padding: 0;
+        padding: 0 0 10px 0;
         margin: 0;
     }
-    table .admin__order-col-listbook {
+    table td.admin__order-col-listbook {
         text-align: start;
+    }
+    .admin__order-listbook {
+        flex: 1;
     }
     .book {
         overflow: hidden;
@@ -310,5 +316,51 @@
     .color-red {
         color: red;
         display: inline-block;
+    }
+    .pagination {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 50px;
+        margin-right: 20px;
+    }
+    .page-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .page-link {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #333;
+        border-radius: 50%;
+        display: block;
+        line-height: 30px;
+        font-weight: 500;
+        padding: 0px 5px 5px 11px;
+        box-shadow: none;
+        border: none;
+    }
+    .page-item.active .page-link {
+        background: #dd125f;
+        color: #fff;
+    }
+    .page-item:hover .page-link {
+        background: rgb(221, 18, 95, 0.5);
+        color: #fff;
+    }
+    .page-item[rel~='prev'] .page-link,
+    .page-item[rel~='next'] .page-link {
+        font-size: 20px;
+        line-height: 27px;
+    }
+    .page-item.disabled .page-link,
+    .page-item.disabled .page-link {
+        background-color: transparent;
+        color: #333;
     }
 }

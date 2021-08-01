@@ -2,18 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Order\OrderRepository;
 use Illuminate\Http\Request;
+use App\Repositories\User\UserRepository;
 
 class ManageUserController extends Controller
 {
+    private $orderRepository;
+    private $userRepository;
+
+    public function __construct(OrderRepository $orderRepository, UserRepository $userRepository)
+    {
+        $this->orderRepository = $orderRepository;
+        $this->userRepository = $userRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.manage_user.index');
+        $name = '';
+        $listUserYear = [];
+        $listUserMonth = [];
+        $listUserWeek = [];
+        if ($request->get('name')) {
+            $name = $request->get('name');
+        }
+        $listUser = $this->userRepository->getListUserByName($name);
+        foreach ($listUser as $user) {
+            $user['countOrder'] = count($user->orders()->get());
+        }
+        return view('admin.manage_user.index', [
+            'name' => $name,
+            'listUserYear' => $listUserYear,
+            'listUserMonth' => $listUserMonth,
+            'listUserWeek' => $listUserWeek,
+            'listUser' => $listUser
+        ]);
     }
 
     /**

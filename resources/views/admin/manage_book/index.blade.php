@@ -35,50 +35,79 @@
                                         class="sidebar-item {{ (isset($category) && $category == -1) || !isset($category) ? 'active' : '' }}"
                                         name='category' value='-1'>Tất cả</button>
                                     <button type="submit"
+                                        class="sidebar-item {{ isset($category) && $category == 0 ? 'active' : '' }}"
+                                        name='category' value='0'>Tổng quát</button>
+                                    <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 1 ? 'active' : '' }}"
-                                        name='category' value='1'>Sách Chính trị – pháp
-                                        luật</button>
+                                        name='category' value='1'>Triết học</button>
                                     <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 2 ? 'active' : '' }}"
-                                        name='category' value='2'>Sách Khoa học công nghệ – Kinh
-                                        tế</button>
+                                        name='category' value='2'>Tôn giáo</button>
                                     <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 3 ? 'active' : '' }}"
-                                        name='category' value='3'>Sách Văn học nghệ
-                                        thuật</button>
+                                        name='category' value='3'>Khoa học xã hội</button>
                                     <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 4 ? 'active' : '' }}"
-                                        name='category' value='4'>Sách Văn hóa xã hội – Lịch
-                                        sử</button>
+                                        name='category' value='4'>Ngôn ngữ</button>
                                     <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 5 ? 'active' : '' }}"
-                                        name='category' value='5'>Sách Giáo trình</button>
+                                        name='category' value='5'>Toán học và khoa học tự nhiên</button>
                                     <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 6 ? 'active' : '' }}"
-                                        name='category' value='6'>Sách Truyện, tiểu
-                                        thuyết</button>
+                                        name='category' value='6'>Kỹ thuật</button>
                                     <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 7 ? 'active' : '' }}"
-                                        name='category' value='7'>Sách Tâm lý, tâm linh, tôn giáo</button>
+                                        name='category' value='7'>Nghệ thuật</button>
                                     <button type="submit"
                                         class="sidebar-item {{ isset($category) && $category == 8 ? 'active' : '' }}"
-                                        name='category' value='8'>Sách thiếu nhi</button>
+                                        name='category' value='8'>Văn học</button>
                                     <button type="submit"
-                                        class="sidebar-item {{ isset($category) && $category == 0 ? 'active' : '' }}"
-                                        name='category' value='0'>Khác</button>
+                                        class="sidebar-item {{ isset($category) && $category == 9 ? 'active' : '' }}"
+                                        name='category' value='9'>Địa lý lịch sử</button>
                                 </form>
                             </ul>
                         </div>
                         <div class="content-shelf-main col-xl-9-6 col-lg-9 col-md-9 col-sm-12">
                             <div class="book-filter row">
                                 <div class="book-filter-search col-xl-9-6 col-lg-9 col-md-8 col-sm-9">
-                                    <form action="{{ route('admin.book.index') }}" class="form-list-book">
+                                    <form action="{{ route('admin.book.index') }}" class="form-search-book"
+                                        autocomplete="off">
                                         <input type="hidden" name='category'
                                             value="{{ isset($category) ? $category : '' }}">
-                                        <input type="text" name='name' value="{{ $name }}" class="book-search"
-                                            placeholder="Tìm kiếm">
-                                        <button type="submit" class="search-name"><img
-                                                src="{{ asset('images/search-icon.png') }}">
+                                        <input type="text" name="info" class="search-input"
+                                            placeholder="Nhập vào để tìm kiếm" value="{{ $info }}">
+                                        <div class="select-wrapper">
+                                            <select name="choose" class="select-filter-book"
+                                                style="background-image: url({{ asset('./images/funnel-fill.svg') }});">
+                                                <option value="name" {{ $choose == 'name' ? 'selected' : '' }}>Tìm theo
+                                                    tên sách
+                                                </option>
+                                                <option value="auth" {{ $choose == 'auth' ? 'selected' : '' }}>Tìm theo
+                                                    tên tác giả
+                                                </option>
+                                                <option value="publisher" {{ $choose == 'publisher' ? 'selected' : '' }}>
+                                                    Tìm theo nhà
+                                                    xuất bản</option>
+                                                <option value="category" {{ $choose == 'category' ? 'selected' : '' }}>
+                                                    Tìm theo mã
+                                                    DDC
+                                                </option>
+                                                <option value="translator"
+                                                    {{ $choose == 'translator' ? 'selected' : '' }}>Tìm theo
+                                                    tên
+                                                    dịch giả</option>
+                                                <option value="country" {{ $choose == 'country' ? 'selected' : '' }}>Tìm
+                                                    theo quốc
+                                                    gia
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <button class="btn-search">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke-width="6"
+                                                fill="currentColor" class="icon-search bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                            </svg>
                                         </button>
                                     </form>
                                 </div>
@@ -98,8 +127,9 @@
                                         </svg>
                                         <ul class="sort-by">
                                             <form action="{{ route('admin.book.index') }}" class="form-list-book">
-                                                <input type="hidden" name='category'
-                                                    value="{{ isset($category) ? $category : '' }}">
+                                                <input type="hidden" name='category' value="{{ $category }}">
+                                                <input type="hidden" name="info" value="{{ $info }}">
+                                                <input type="hidden" name="choose" value="{{ $choose }}">
                                                 <button type="submit" name='sort' value='1' class="sort-by-name AtoZ"
                                                     {{ $sort == 1 ? 'disabled' : '' }}>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -152,49 +182,15 @@
                                                     <span class="book-author-name">Author: {{ $book->auth }}</span>
                                                 </div>
                                                 <div class="book-item-action">
-                                                    <div class="book-rating">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor"
-                                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                                        </svg>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor"
-                                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                                        </svg>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor"
-                                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                                        </svg>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor"
-                                                            class="book-rating-icon book-rating-icon-gold bi bi-star-fill"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                                        </svg>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" class="book-rating-icon bi bi-star-fill"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                                        </svg>
-                                                    </div>
-                                                    <span class="book-sold">Còn hàng</span>
+                                                    <p class="ddc-code">Mã DDC: <span>{{ $book->category }}</span></p>
+                                                    <span class="book-sold">SL:
+                                                        {{ $book->quantity ? $book->quantity : 'Hết hàng' }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
                                 </div>
-                                {{ $books->links() }}
+                                {{ $books->withQueryString()->onEachSide(1)->links() }}
                             @else
                                 <h3 class="note">Không có sách nào phù hợp!</h3>
                             @endif

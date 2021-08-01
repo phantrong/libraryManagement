@@ -42,6 +42,7 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
 
     public function getTextCategory($int)
     {
+        $int = (int) $int;
         return Book::TYPE[floor($int / 100)];
     }
 

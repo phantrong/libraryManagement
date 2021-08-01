@@ -17,6 +17,7 @@ Route::get('/', 'ShowBookController@welcome')->name('home');
 Route::get('/welcome', 'ShowBookController@welcome')->name('welcome');
 Route::get('/welcome/singlebook/{id}', 'ShowBookController@singlebook')->name('welcome.singlebook');
 Route::post('/upload', 'UploadController@index')->name('upload');
+Route::post('/contact', 'ContactController@addContact')->name('contact');
 
 Route::prefix('user/')
     ->name('user.')
@@ -59,13 +60,17 @@ Route::prefix('admin/')
         })->name('admin.logout');
 
         Route::middleware('admin')->group(function () {
+            Route::get("/", "DataController@index")->name('home');
+            Route::resource("book", "BookController");
+            Route::resource("user", "ManageUserController");
+            Route::resource("data", "DataController");
+            Route::resource("contact", "AdminContactController");
+            Route::resource("order", "OrderAdminController");
+            Route::post('order/changestatus', "OrderAdminController@changeStatusToBorrowing");
+            Route::post('order/cancel', "OrderAdminController@cancelOrder");
+            Route::post('order/edit', "OrderAdminController@editOrder");
+            Route::post('order/delete', "OrderAdminController@deleteOrder");
         });
-        Route::resource("book", "BookController");
-        Route::resource("user", "ManageUserController");
-        Route::resource("data", "DataController");
-        Route::resource("contact", "AdminContactController");
-        Route::resource("order", "OrderAdminController");
-        Route::post('order/changestatus', "OrderAdminController@changeStatusToBorrowing");
     });
 
 Route::prefix('ajax/')
