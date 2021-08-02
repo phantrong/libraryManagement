@@ -84,7 +84,7 @@
         </section>
         @if (count($listContact))
             <section class="managecontact__content-content user__table">
-                <div class="container-fluid table__order managecontact__content-content-boxct">
+                <div class="table__order managecontact__content-content-boxct">
                     <table class="table ">
                         <thead>
                             <tr class="row row-tb">

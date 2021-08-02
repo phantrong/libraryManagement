@@ -63,14 +63,14 @@ class AjaxController extends Controller
             $dateto = $request -> valueto;
             return DB::table('orders') -> selectRaw('count(*) as total, concat(year(created_at),"-",month(created_at)) as dates')
             ->whereBetween('created_at',[$datefrom, $dateto])
-            ->groupBy('created_at')
+            ->groupBy('dates')
             ->get();
         } else {
             $datefrom = $request -> valuefrom;
             $distance = $request -> value;
             return DB::table('orders') -> selectRaw('count(*) as total, concat(year(created_at),"-",month(created_at),"-",day(created_at)) as days')
             ->whereRaw('created_at between ? and adddate(?, interval ? day)',[$datefrom,$datefrom,$distance])
-            ->groupBy('created_at')
+            ->groupBy('days')
             ->get();
     } 
     }
