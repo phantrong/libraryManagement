@@ -30,23 +30,29 @@ class UserController extends Controller
     public function viewProfile()
     {
         $cart = [];
+        $countAlert = 0;
+        $alerts = [];
         if (Auth::user()) {
             $userId = Auth::user()->id;
             $user = $this->userRepository->find($userId);
-            $listOrder = $user->orders()->paginate(10);
-            if ($listOrder) {
-                foreach ($listOrder as $order) {
-                    $order = $this->orderRepository->updateStatus($order);
-                }
-            }
             $cart = $user->carts()->get();
             foreach ($cart as $item) {
                 $item['book'] = $this->bookRepository->find($item->book_id);
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
+            $alerts = $user->alerts()->limit(10)->get();
+            if ($alerts) {
+                foreach ($alerts as $alert) {
+                    if (!$alert->is_readed) {
+                        $countAlert++;
+                    }
+                }
+            }
         }
         return view('user.profile', [
-            'cart' => $cart
+            'cart' => $cart,
+            'alerts' => $alerts,
+            'countAlert' => $countAlert
         ]);
     }
 
@@ -83,11 +89,23 @@ class UserController extends Controller
         $user = $this->userRepository->find(Auth::user()->id);
         $listOrder = $user->orders()->orderBy('status')->orderByDesc('updated_at')->paginate(5);
         $cart = [];
+        $countAlert = 0;
+        $alerts = [];
         if (Auth::user()) {
+            $userId = Auth::user()->id;
+            $user = $this->userRepository->find($userId);
             $cart = $user->carts()->get();
             foreach ($cart as $item) {
                 $item['book'] = $this->bookRepository->find($item->book_id);
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
+            }
+            $alerts = $user->alerts()->limit(10)->get();
+            if ($alerts) {
+                foreach ($alerts as $alert) {
+                    if (!$alert->is_readed) {
+                        $countAlert++;
+                    }
+                }
             }
         }
         $listOrderConfirm = [];
@@ -118,7 +136,9 @@ class UserController extends Controller
             'listOrderOverdue' => $listOrderOverdue,
             'listOrderBorrowing' => $listOrderBorrowing,
             'listOrderBorrowed' => $listOrderBorrowed,
-            'cart' => $cart
+            'cart' => $cart,
+            'alerts' => $alerts,
+            'countAlert' => $countAlert
         ]);
     }
 

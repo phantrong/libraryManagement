@@ -53,7 +53,6 @@ class ShowBookController extends Controller
         $choose = 'name';
         $sort = -1;
         $filter = [];
-        $cart = [];
         if ($request->get('category') != -1 && $request->get('category') != null) {
             $filter['category'] = $request->get('category');
             $category = $request->get('category');
@@ -69,6 +68,9 @@ class ShowBookController extends Controller
             $sort = $request->get('sort');
         }
         $books = $this->bookRepository->getListBook($filter);
+        $cart = [];
+        $countAlert = 0;
+        $alerts = [];
         if (Auth::user()) {
             $userId = Auth::user()->id;
             $user = $this->userRepository->find($userId);
@@ -78,7 +80,6 @@ class ShowBookController extends Controller
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
             $alerts = $user->alerts()->limit(10)->get();
-            $countAlert = 0;
             if ($alerts) {
                 foreach ($alerts as $alert) {
                     if (!$alert->is_readed) {
@@ -114,13 +115,15 @@ class ShowBookController extends Controller
                 }
             }
         }
-        $cart = [];
         $book = $this->bookRepository->find($id);
         $book['type'] = $this->bookRepository->getTextCategory($book->category);
         if (!$book) {
             return abort(404);
         }
         $listbook = $this->bookRepository->getListBookByCategory($book->category);
+        $cart = [];
+        $countAlert = 0;
+        $alerts = [];
         if (Auth::user()) {
             $userId = Auth::user()->id;
             $user = $this->userRepository->find($userId);
@@ -130,7 +133,6 @@ class ShowBookController extends Controller
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
             $alerts = $user->alerts()->limit(10)->get();
-            $countAlert = 0;
             if ($alerts) {
                 foreach ($alerts as $alert) {
                     if (!$alert->is_readed) {

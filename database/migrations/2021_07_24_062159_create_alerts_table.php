@@ -16,7 +16,7 @@ class CreateAlertsTable extends Migration
         Schema::create('alerts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('order_id')->constrained('orders')->nullable();
+            $table->foreignId('order_id')->nullable()->constrained('orders');
             $table->text('content');
             $table->tinyInteger('is_readed')->default(0);
             $table->timestamps();
