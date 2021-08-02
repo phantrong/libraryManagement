@@ -39,8 +39,7 @@
     <div class="addbook__content" id="list-order">
         <section class="addbook__content-header col-md-12 col-xl-12">
             <div class="addbook__content-header-box">
-                <h1 class="addbook__content-header-box-ct">Đơn mượn</h1>
-                <span><span>Trang chủ</span> / Đơn mượn</span>
+                <h1 class="addbook__content-header-box-ct">ĐƠN MƯỢN</h1>
             </div>
         </section>
         <section class="orderbook__content-dashboard">
@@ -122,8 +121,13 @@
                 </div>
             </div>
         </section>
-        @if (count($listOrder))
-            <section class="addbook__content-content order__table">
+        <section class="addbook__content-content order__table">
+            <div class="orderbook__content-noOrder">
+                <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
+                                    alt="" class="no-order-img">
+                <p class="no-order-text">Bạn chưa có đơn hàng nào</p>
+            </div>
+            @if (count($listOrder))
                 <div class="table__order addbook__content-content-boxct container-fluid">
                     <table class="table table-striped">
                         <thead>
@@ -289,8 +293,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
-        @endif
+            @endif
+        </section>
     </div>
     @include('layouts.footer')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

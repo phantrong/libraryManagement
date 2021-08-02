@@ -161,4 +161,9 @@ $(function() {
     $('#form-filter-order input').on('change', function() {
         $('#form-filter-order').submit();
     });
+    if($('tbody').children().length === 0) {
+        $('.orderbook__content-noOrder').show();
+    } else {
+        $('.orderbook__content-noOrder').hide();
+    }
 })

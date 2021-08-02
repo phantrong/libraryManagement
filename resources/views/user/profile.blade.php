@@ -29,7 +29,7 @@
         </div>
     </div>
     @include('book_interface.navbar')
-    <div class="container bootstrap snippet profile">
+    <div class="bootstrap snippet profile">
         <div class="profile-heading">
             <h1 class="profile-heading-text">HỒ SƠ CỦA TÔI</h1>
         </div>
