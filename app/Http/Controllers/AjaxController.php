@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Repositories\Book\BookRepository;
+use App\Models\Book;
 class AjaxController extends Controller
 {
     private $bookRepository;
@@ -20,6 +21,13 @@ class AjaxController extends Controller
     public function getTotalAjax (Request $request) {
         $value = $request -> value;
         $type = $request -> type;
+        $index  = array_search($value,Book::TYPE);
+        if($type == "category") {
+           return DB::table('books') -> select(DB::raw('sum(price) as total')) ->where($type, 'like', $index . '%') -> get();
+        }
+        
+        // return $index;
+        
         // return $request ->all();
         return DB::table('books') -> select(DB::raw('sum(price) as total')) ->where($type, $value) -> get();
     }
