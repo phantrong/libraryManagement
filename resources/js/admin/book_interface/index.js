@@ -97,26 +97,6 @@ $(document).ready(function() {
     $('.close').click(function() {
         $('.slider-view-img').fadeOut(500);
     })
-
-    $('.header__navbar-item--notify').on('click', function(event) {
-        event.stopPropagation();
-        $('.header__notify').toggle();
-        $('.nav-cart-list').hide();
-    });
-    $('.nav-cart').on('click', function(event) {
-        event.stopPropagation();
-        $('.header__notify').hide();
-        $('.nav-cart-list').toggle();
-    });
-    $('.header__notify-header span').on('click', function(event) {
-        event.stopPropagation();
-        $('.header__notify-item').addClass('seen');
-    })
-    $(document).click(function() {
-        $('.header__notify').hide();
-        $('.nav-cart-list').hide();
-    });
-
     $('.header__notify-header #readed').on('click', function() {
         let id = $(this).attr('attr-id');
         let data = {
