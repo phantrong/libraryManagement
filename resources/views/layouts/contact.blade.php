@@ -77,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-danger form-send" value="Gửi">
+                    <button type="submit" class="btn form-send">Gửi</button>
                 </form>
             </div>
         </div>

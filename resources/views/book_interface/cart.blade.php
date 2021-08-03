@@ -65,7 +65,7 @@
                     alt="" class="no-cart-img">
                 <p class="no-cart-text">Chưa Có Sản Phẩm</p>
                 <div class="cart-submit-wrapper-2">
-                    <button class="cart-out">Thoát</button>
+                    <button class="cart-out btn-effect">Thoát</button>
                 </div>
             </div>
             <form class="form" action="{{ route('user.save.order') }}" method="POST" onsubmit="return false;">
@@ -100,8 +100,8 @@
                     </div>
                 </div>
                 <div class=" cart-submit-wrapper">
-                    <button type="submit" class="cart-submit">Xác nhận</button>
-                    <button type="button" class="cart-out">Thoát</button>
+                    <button type="submit" class="cart-submit btn-effect">Xác nhận</button>
+                    <button type="button" class="cart-out btn-effect">Thoát</button>
                 </div>
             </form>
         @else
