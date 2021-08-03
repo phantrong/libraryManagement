@@ -79,9 +79,9 @@ class BookController extends Controller
             'auth',
             'quantity',
             'price',
-            'year_start'
+            'year_start',
+            'category'
         );
-        $book['category'] = $this->bookRepository->getTextCategory($request->category);
         if ($request->publisher) {
             $book['publisher'] = $request->publisher;
         }
@@ -136,7 +136,6 @@ class BookController extends Controller
         if (!$book) {
             return abort(404);
         }
-        $book['category'] = $this->bookRepository->getIndexCategory($book->category);
         $images = $book->images()->get();
         $content = $book->content()->get();
         return view('admin.manage_book.edit', [
@@ -161,9 +160,9 @@ class BookController extends Controller
             'auth',
             'quantity',
             'price',
-            'year_start'
+            'year_start',
+            'category'
         );
-        $book['category'] = $this->bookRepository->getTextCategory($request->category);
         if ($request->publisher) {
             $book['publisher'] = $request->publisher;
         }

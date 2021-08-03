@@ -119,38 +119,23 @@
                                 </div>
 
                             </div>
-                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-category">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Thể loại</span>
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
+                                <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Mã DDC</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Default"
+                                        aria-describedby="inputGroup-sizing-default" name="category"
+                                        value="{{ old('category', $book->category) }}" maxlength="3"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                 </div>
-                                <select class="maincontainer__thethird-category-select" name='category'>
-                                    <option value="1" {{ old('category', $book->category) == 1 ? 'selected' : '' }}>Sách
-                                        Chính trị – pháp
-                                        luật</option>
-                                    <option value="2" {{ old('category', $book->category) == 2 ? 'selected' : '' }}>Sách
-                                        Khoa học công
-                                        nghệ – Kinh tế</option>
-                                    <option value="3" {{ old('category', $book->category) == 3 ? 'selected' : '' }}>Sách
-                                        Văn học nghệ
-                                        thuật</option>
-                                    <option value="4" {{ old('category', $book->category) == 4 ? 'selected' : '' }}>Sách
-                                        Văn hóa xã hội –
-                                        Lịch sử</option>
-                                    <option value="5" {{ old('category', $book->category) == 5 ? 'selected' : '' }}>Sách
-                                        Giáo trình
-                                    </option>
-                                    <option value="6" {{ old('category', $book->category) == 6 ? 'selected' : '' }}>Sách
-                                        Truyện, tiểu
-                                        thuyết</option>
-                                    <option value="7" {{ old('category', $book->category) == 7 ? 'selected' : '' }}>Sách
-                                        Tâm lý, tâm linh,
-                                        tôn giáo</option>
-                                    <option value="8" {{ old('category', $book->category) == 8 ? 'selected' : '' }}>Sách
-                                        thiếu nhi
-                                    </option>
-                                    <option value="0" {{ !old('category', $book->category) ? 'selected' : '' }}>Khác
-                                    </option>
-                                </select>
+                            </div>
+                        </div>
+                        <div class="no-gutters">
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
+                                <div class="alert alert-danger">{{ $errors->first('category') }}</div>
                             </div>
                         </div>
                         <div class="row no-gutters">

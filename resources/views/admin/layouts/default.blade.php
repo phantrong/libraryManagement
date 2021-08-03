@@ -43,7 +43,6 @@
     </script>
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/admin/manage_book.js') }}"></script>
     @yield('script')
 </body>
 

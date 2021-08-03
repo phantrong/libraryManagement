@@ -32,6 +32,7 @@ class BookRequest extends FormRequest
             'content' => 'required',
             'image1' => 'required',
             'image2' => 'required',
+            'category' => 'required|max:3|min:3'
         ];
 
         return $rules;
@@ -50,6 +51,9 @@ class BookRequest extends FormRequest
             'content.required' => '*Bạn chưa nhập nội dung cuốn sách.',
             'image1.required' => '*Bạn chưa upload ảnh mặt trước.',
             'image2.required' => '*Bạn chưa upload ảnh mặt sau.',
+            'category.required' => '*Bạn chưa nhập mã DDC.',
+            'category.max' => '*Bạn nhập mã DDC tương ứng trong khoảng 000-999.',
+            'category.min' => '*Bạn nhập mã DDC tương ứng trong khoảng 000-999.',
         ];
     }
 }
