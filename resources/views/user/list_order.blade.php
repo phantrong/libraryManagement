@@ -47,7 +47,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box ">
                         <div>
-                            <img src="https://img.icons8.com/officel/60/000000/book.png" />
+                            <img src="{{ asset('images/manageordertotal.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -62,7 +62,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/money.png" />
+                            <img src="{{ asset('images/manageorder.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -77,7 +77,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/food-cart.png" />
+                            <img src="{{ asset('images/manageordercancel.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -92,7 +92,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                            <img src="{{ asset('images/manageorderborrow.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -107,7 +107,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                            <img src="{{ asset('images/borrow2.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -124,7 +124,7 @@
         <section class="addbook__content-content order__table">
             <div class="orderbook__content-noOrder">
                 <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
-                                    alt="" class="no-order-img">
+                    alt="" class="no-order-img">
                 <p class="no-order-text">Bạn chưa có đơn hàng nào</p>
             </div>
             @if (count($listOrder))

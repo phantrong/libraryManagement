@@ -94,7 +94,7 @@ $(function() {
     $('#searchinput').on('focusout', function() {
       setTimeout(()=> {
         document.querySelector('.dashboard-money-content-search-listsearch').style.display = 'none';
-      },100)
+      },200)
     })
     $('#searchinput').on('focusin', function() {
     
@@ -126,7 +126,7 @@ $(function() {
         data: {
             labels: nameBook,
             datasets: [{
-                label: 'POPULAR BOOK',
+                label: 'Sách phổ biến',
                 data: valueY,
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',

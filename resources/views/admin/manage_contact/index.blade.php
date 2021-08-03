@@ -20,7 +20,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box ">
                         <div>
-                            <img src="https://img.icons8.com/officel/60/000000/book.png" />
+                            <img src="{{ asset('images/managecontact.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -36,7 +36,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/money.png" />
+                            <img src="{{ asset('images/managecontact1.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -52,7 +52,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/food-cart.png" />
+                            <img src="{{ asset('images/managecontact1.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -68,7 +68,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                            <img src="{{ asset('images/managecontact1.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -101,7 +101,7 @@
                             @php $i = 1; @endphp
                             @foreach ($listContact as $contact)
                                 <tr attr-id="{{ $contact->id }}" class=" {{ $contact->is_readed ? 'background-readed' : 'background-notRead' }}
-                                        row row-tb">
+                                            row row-tb">
                                     <td class="per-5" scope="row">{{ $i }}</td>
                                     <td class="per-15">{{ $contact->name }}</td>
                                     <td class="per-20">{{ $contact->email }}</td>
