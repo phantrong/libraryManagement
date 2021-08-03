@@ -84,4 +84,5 @@ Route::prefix('ajax/')
         Route::post('/totalMoney', 'AjaxController@getTotalAjax');
         Route::post('/dashBoardOfMonth', 'AjaxController@dashBoardOfMonth');
         Route::post('/datefromto', 'AjaxController@dashBoardFromTo');
+        Route::post('/getdata', 'AjaxController@getDaTa');
     });

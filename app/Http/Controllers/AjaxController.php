@@ -85,4 +85,8 @@ class AjaxController extends Controller
         else return  response()
             ->json([]);
     }
+
+    public function getDaTa() {
+        
+    }
 }
