@@ -10,6 +10,16 @@
     }
 }
 
+::-webkit-scrollbar {
+    border-radius: 5px;
+    width: 3px;
+    background: rgba(165, 157, 157, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(165, 157, 157, 0.5);
+    border-radius: 5px;
+}
+
 .col-xl-2-4 {
     flex: 0 0 20%;
     max-width: 20%;
@@ -182,4 +192,5 @@ input[type=number] {
         clear: both;
         display: table;
     }
+    
 }

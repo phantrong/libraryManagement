@@ -95,7 +95,31 @@
         height: 42px;
         font-size: 16px;
         font-weight: 500;
-        background-color: #e85454;
-        border-color: #e85454;
+        background-color: #dd125f;
+        border-color: #dd125f;
+        position: relative;
+        z-index: 1;
+        color: #fff;
+    }
+    .form-send:hover {
+        color: #dd125f;
+    }
+    .form-send:before {
+        transition: all 0.5s ease;
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 50%;
+        left: 50%;
+        opacity: 0;
+        background-color: #fff;
+    }
+    .form-send:hover:before {
+        transition: all 0.5s ease;
+        right: 0;
+        left: 0;
+        opacity: 1;
+        z-index: -1;
     }
 }

@@ -199,8 +199,7 @@
         display: flex;
         justify-content: flex-end;
     }
-    .cart-submit,
-    .cart-out {
+    .btn-effect {
         height: 40px;
         min-width: 200px;
         padding: 10px;
@@ -212,12 +211,32 @@
         color: #fff;
         border-radius: 3px;
         margin: 20px 20px;
+        position: relative;
+        z-index: 1;
     }
-    .cart-submit:hover,
-    .cart-out:hover {
-        background-color: #fff;
+    .btn-effect:hover{
         color: #dd125f;
         border: 1px solid #dd125f;
+    }
+
+    .btn-effect:before{
+        transition: all 0.5s ease;
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 50%;
+        left: 50%;
+        opacity: 0;
+        background-color: #fff;
+    }
+
+    .btn-effect:hover:before{
+        transition: all 0.5s ease;
+        right: 0;
+        left: 0;
+        opacity: 1;
+        z-index: -1;
     }
     .form-submit {
         padding: 20px 20px 0;

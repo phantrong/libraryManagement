@@ -77,12 +77,32 @@ body {
         border-radius: 3px;
         box-shadow: none;
         margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
     }
     .btn-pro:hover {
-        background-color: #fff;
         color: #dd125f;
         box-shadow: none;
         outline: none;
+    }
+    .btn-pro:before {
+        transition: all 0.5s ease;
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 50%;
+        left: 50%;
+        opacity: 0;
+        background-color: #fff;
+    }
+
+    .btn-pro:hover:before{
+        transition: all 0.5s ease;
+        right: 0;
+        left: 0;
+        opacity: 1;
+        z-index: -1;
     }
     .change-password {
         padding-top: 30px;

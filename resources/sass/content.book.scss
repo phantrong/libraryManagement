@@ -136,13 +136,36 @@
         margin-right: 20px;
         margin-left: 20px;
         line-height: 1.4;
+        border: 1px solid #dd125f;
+        font-weight: 500;
+        z-index: 1;
+        position: relative;
     }
     .add-cart:hover,
     .view-cart:hover {
-        background-color: #fff;
         color: #dd125f;
         border: 1px solid #dd125f;
     }
+    .add-cart:before, .view-cart:before {
+        transition: all 0.5s ease;
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 50%;
+        left: 50%;
+        opacity: 0;
+        background-color: #fff;
+    }
+
+    .add-cart:hover:before, .view-cart:hover:before {
+        transition: all 0.5s ease;
+        right: 0;
+        left: 0;
+        opacity: 1;
+        z-index: -1;
+    }
+
     .book-review {
         padding: 40px 0;
         .book-review-heading {
