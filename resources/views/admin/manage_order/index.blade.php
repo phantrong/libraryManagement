@@ -6,7 +6,6 @@
 @section('title', 'ManageOrder')
 
 @section('css')
-    {{-- chèn thêm link css ở đây --}}
     <link rel="stylesheet" href="{{ asset('css/manage.orderAdmin.css') }}" type="text/css">
 @endsection
 
@@ -54,7 +53,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box ">
                         <div>
-                            <img src="https://img.icons8.com/officel/60/000000/book.png" />
+                            <img src="{{ asset('images/manageordertotal.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -69,7 +68,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/money.png" />
+                            <img src="{{ asset('images/manageorder.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -84,7 +83,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/food-cart.png" />
+                            <img src="{{ asset('images/manageordercancel.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -99,7 +98,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                            <img src="{{ asset('images/manageorderborrow.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -114,7 +113,7 @@
                 <div class="col-xl-2">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                            <img src="{{ asset('images/borrow2.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -193,7 +192,7 @@
                                     </div>
                                 </td>
                                 <td scope="col" class="admin__order-col per-15">{{ $order->address }}</td>
-                                <td scope="col" class="admin__order-col per-12">{{ $order->note }}</td>
+                                <td scope="col" class="admin__order-col per-12 per-12-1">{{ $order->note }}</td>
                                 @if ($order->status == $ModelOrder::STATUS_CONFIRM)
                                     <td scope="col" class="admin__order-col col-status per-8">Chờ xác nhận</td>
                                 @elseif ($order->status == $ModelOrder::STATUS_OVERDUE)

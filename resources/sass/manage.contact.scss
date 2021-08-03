@@ -17,6 +17,10 @@
         max-width: calc(var(--per-table) * 3);
         flex: calc(var(--per-table) * 3);
     }
+    img {
+        width: 60px;
+        height: 60px;
+    }
     .per-20 {
         max-width: calc(var(--per-table) * 4);
         flex: calc(var(--per-table) * 4);
@@ -110,6 +114,7 @@
     .maincontainer__dashboard-typeImg-info-box-quantity {
         display: flex;
         flex-direction: column;
+        margin: auto;
     }
     .maincontainer__dashboard-typeImg-info-box-quantity span {
         font-size: 16px;

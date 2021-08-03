@@ -3,7 +3,6 @@
 @section('title', 'ManageBook')
 
 @section('css')
-    {{-- chèn thêm link css ở đây --}}
     <link rel="stylesheet" href="{{ asset('css/manage.list.book.css') }}" type="text/css">
 @endsection
 

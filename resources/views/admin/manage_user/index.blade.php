@@ -3,7 +3,6 @@
 @section('title', 'ManageUser')
 
 @section('css')
-    {{-- chèn thêm link css ở đây --}}
     <link rel="stylesheet" href="{{ asset('css/manage.user.css') }}" type="text/css">
 @endsection
 
@@ -21,7 +20,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box ">
                         <div>
-                            <img src="https://img.icons8.com/officel/60/000000/book.png" />
+                            <img src="{{ asset('images/manageuser.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -37,7 +36,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/money.png" />
+                            <img src="{{ asset('images/manageuser1.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -53,7 +52,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/cute-clipart/60/000000/food-cart.png" />
+                            <img src="{{ asset('images/manageuser1.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
@@ -69,7 +68,7 @@
                 <div class="col-xl-3">
                     <button class="maincontainer__dashboard-typeImg-info-box">
                         <div>
-                            <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                            <img src="{{ asset('images/manageuser1.png') }}" />
                         </div>
                         <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                             <span>
