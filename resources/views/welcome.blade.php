@@ -10,7 +10,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/contact.welcome.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/footer.welcome.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/slider.welcome.css') }}" type="text/css">
