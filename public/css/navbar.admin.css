@@ -74,7 +74,8 @@
   color: white;
 }
 
-.pew1 .toolbar__catagory-link:hover {
+.pew1 .toolbar__catagory-link:hover .hover,
+.pew1 .toolbar__catagory-list .hover {
   background-color: #dc3545;
 }
 
@@ -174,6 +175,10 @@
 
 .pew1 .toolbar__catagory-item-list li:hover {
   background-color: rgba(213, 219, 224, 0.2);
+}
+
+.pew1 .toolbar__catagory-item-list .hover {
+  background-color: rgba(213, 219, 224, 0.2) !important;
 }
 
 .activeWidth .shadows {

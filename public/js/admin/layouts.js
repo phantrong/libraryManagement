@@ -121,13 +121,12 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       document.querySelector('.book').setAttribute('class', 'grid book');
     }
-  }; //activeHeight for list item 
+  };
 
-
-  $('#manage__book').click(function () {
-    var leng = $('#manage__book').attr('class').split(' ').length;
-    if (leng == 1) $('#manage__book').addClass('activeHeight');else $('#manage__book').removeClass('activeHeight');
-  }); //activw click change background
+  $('#page_managebook').click(function () {
+    var leng = $('#page_managebook').attr('class').indexOf('activeHeight');
+    if (leng != -1) $('#page_managebook').removeClass('activeHeight');else $('#page_managebook').addClass('activeHeight');
+  });
 });
 
 /***/ }),
