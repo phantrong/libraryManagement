@@ -1,24 +1,6 @@
 #list-order {
     margin: 50px 30px;
     margin-top: 120px;
-    .addbook__content-header-box-ct {
-        color: #dd125f;
-        font-size: 28px;
-        letter-spacing: 1px;
-        word-spacing: 2px;
-        font-weight: 600;
-    }
-    .selection {
-        justify-content: center;
-    }
-
-    .addbook__content-content {
-        background-color: white;
-        margin: 20px 15px 20px 15px;
-        padding: 20px;
-        box-shadow: 10px -3px 30px rgb(0 0 0 / 13%);
-        border: 1px solid #f5f5f5;
-    }
     thead .row-tb {
         background-color: #fff;
         border: none;
@@ -28,11 +10,12 @@
     }
     tbody {
         max-height: 500px;
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
     }
     tbody .row-tb {
         transition: all 0.3s ease;
+        width: calc(100% + 10px);
     }
     tbody .row-tb:hover {
         transform: translateX(-10px);
@@ -65,16 +48,6 @@
         border: none;
         border-bottom: 1px solid #dd125f;
         color: #dd125f;
-    }
-    tbody {
-        max-height: 500px;
-        overflow-y: scroll;
-    }
-    tbody .row-tb {
-        transition: all 0.3s ease;
-    }
-    tbody .row-tb:hover {
-        transform: translateX(-10px);
     }
     .admin__order-handle span:hover {
         color: #dd125f;

@@ -18,7 +18,7 @@
     }
     .per-12-1 {
         display: inline-block !important;
-        overflow-y: scroll;
+        overflow-y: auto;
         height: 94px;
         padding-top: 5px !important;
     }
@@ -47,7 +47,7 @@
         padding: 16px 4px;
         display: flex;
         height: 94px;
-        overflow-y: scroll;
+        overflow-y: auto;
         justify-content: center;
     }
     .admin__order-handle {
@@ -69,8 +69,8 @@
     thead .row-tb {
         background-color: #ffed86;
         border: none;
-        border-bottom: 1px solid #dd125f;
-        color: #dd125f;
+        border-bottom: 1px solid #f5f5f5;
+        color: #333;
         margin: 0 auto;
     }
     tbody .row-tb {
@@ -112,7 +112,7 @@
         height: 100%;
     }
     .cot {
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: 60px;
         margin: 0;
     }
@@ -169,7 +169,7 @@
         display: none;
     }
     .scroll__table-order {
-        overflow-y: scroll;
+        overflow-y: auto;
         height: 640px;
     }
     .admin__order-datePay span {

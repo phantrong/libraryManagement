@@ -173,8 +173,7 @@
                     </div>
 
                     <div class="col-xl-6 dashboard-money-content-total">
-
-                        <div class="col-xl-4">
+                        <div class="col-xl-6">
                             <span>Tổng tiền sách:</span>
                             <span>0</span>
                             <span>đ</span>

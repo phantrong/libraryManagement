@@ -40,14 +40,16 @@
     /*ribbon*/
     .dashboard-money-content-total {
         display: flex;
-
         margin-left: auto;
+    }
+    .dashboard-money-content-total span {
+        color: #fff;
     }
     .dashboard-money-content-total .col-xl-5 {
         margin-left: auto;
         margin-right: auto;
     }
-    .dashboard-money-content-total .col-xl-4 {
+    .dashboard-money-content-total .col-xl-6 {
         /* margin: auto; */
         /* border: 1px solid red; */
         /* height: 100px; */
@@ -63,6 +65,13 @@
         height: 72%;
         margin-left: 41% !important;
     }
+    .btn-info {
+        color: #fff;
+    }
+    #btn2 {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
     .dashboard-money-content-header {
         text-align: center;
         padding-bottom: 30px;
@@ -75,6 +84,7 @@
     }
     .dashboard-money-content-search label {
         background-color: #6cb2eb;
+        color: #fff;
     }
     .custom-select1 {
         width: 50% !important;
@@ -91,7 +101,7 @@
         background: #ba89b6;
         color: #fff;
         text-align: center;
-        padding: 1em 2em; /* thay đổi cho phù hợp với kích cỡ */
+        padding: 0.6em 1em; /* thay đổi cho phù hợp với kích cỡ */
         margin: 2em auto 3em;
     }
     .ribbon:before,
