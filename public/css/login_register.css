@@ -1,0 +1,196 @@
+.hero {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.hero .form-box {
+  width: 600px;
+  height: 546px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 9px #7a76741f;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero .button-box {
+  width: 240px;
+  height: 40px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #a835071f;
+  border-radius: 30px;
+  display: flex;
+  background: #999;
+}
+
+.hero .toggle-btn {
+  padding: 0;
+  width: 120px;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.hero #btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, #1916dd9f, #dd125f);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.hero .social-icon {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.hero .social-icon img {
+  width: 30px;
+  margin: 0 12px;
+  box-shadow: 0 0 20px 0 #7f7f7f3d;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.hero .input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+
+.hero #login .input-group-item {
+  width: 80%;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero #register .input-group-item {
+  width: 95%;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero .input-field {
+  background-color: #fff;
+  color: #666;
+  padding: 10px 18px;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  position: relative;
+  font-size: 16px;
+  border: 2px solid #ccc;
+}
+
+.hero .label-field {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  padding: 0 6px;
+  color: #666;
+  font-size: 16px;
+  transition: top 0.2s ease-in, left 0.2s ease-in, font-size 0.2s ease-in;
+  pointer-events: none;
+}
+
+.hero .input-field:hover {
+  border: 2px solid rgba(221, 18, 95, 0.3);
+}
+
+.hero .input-field:focus {
+  border: 2px solid #dd125f;
+}
+
+.hero .input-field:not(:-moz-placeholder-shown) ~ .label-field {
+  top: -10px;
+  left: 16px;
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #dd125f;
+}
+
+.hero .input-field:not(:-ms-input-placeholder) ~ .label-field {
+  top: -10px;
+  left: 16px;
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #dd125f;
+}
+
+.hero .input-field:focus ~ .label-field,
+.hero .input-field:not(:placeholder-shown) ~ .label-field {
+  top: -10px;
+  left: 16px;
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #dd125f;
+}
+
+.hero .submit-btn {
+  width: 50%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #1916dd9f, #dd125f);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.hero .forget-pass {
+  font-size: 14px;
+  margin-left: 4px;
+  margin-bottom: 20px;
+}
+
+.hero .forget-pass:hover {
+  text-decoration: none;
+}
+
+.hero #login {
+  width: 80%;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero #register {
+  width: 80%;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero .mt-20 {
+  margin-top: 10px;
+}
+
