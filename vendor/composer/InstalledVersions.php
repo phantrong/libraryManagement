@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '772d539869354056c491a5412e1c08876f9e91fa',
+    'reference' => '7c622158a0b69d0da5449c6bbe2d9523c948e2e0',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -114,6 +114,13 @@ private static $installed = array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
     ),
+    'ergebnis/faker' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '1.9.2',
+      ),
+    ),
     'facade/flare-client-php' => 
     array (
       'pretty_version' => '1.8.1',
@@ -143,12 +150,12 @@ private static $installed = array (
     ),
     'fakerphp/faker' => 
     array (
-      'pretty_version' => 'v1.15.0',
-      'version' => '1.15.0.0',
+      'pretty_version' => 'v1.9.2',
+      'version' => '1.9.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '89c6201c74db25fa759ff16e78a4d8f32547770e',
+      'reference' => '84220cf137a9344acffb10374e781fed785ff307',
     ),
     'fideloper/proxy' => 
     array (
@@ -176,6 +183,13 @@ private static $installed = array (
       array (
       ),
       'reference' => 'a8ccedc7ca95189ead0e407c43b530dc17791d6a',
+    ),
+    'fzaninotto/faker' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '1.9.2',
+      ),
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -439,7 +453,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '772d539869354056c491a5412e1c08876f9e91fa',
+      'reference' => '7c622158a0b69d0da5449c6bbe2d9523c948e2e0',
     ),
     'laravel/tinker' => 
     array (
