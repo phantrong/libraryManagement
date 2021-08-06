@@ -48,7 +48,7 @@ $(function() {
                arr.unshift("." + test.toString());
               e=Math.floor(e/1000);
           }
-          return arr.join('').substr(1,arr.join('').length);
+          return arr.join('').substr(1,arr.join('').length).replaceAll('.','');
         }
 
         let a = document.querySelector('.navbar1')
@@ -65,53 +65,49 @@ $(function() {
 
 
 
-    $('.aothatsuluon .input-group-append button').on('click', function() {
+    $('#ISBN').on('click', function() {
+
       if($(this).parent().prev().val() !='' ) {
-        $.ajaxSetup({
-          beforeSend: function(xhr, type) {
-              if (!type.crossDomain) {
-                  xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-                }
+        if(checkISBN($(this).parent().prev().val()) == false) {
+          alert("Not Found");
+          return;
+        } else {
+          $.ajaxSetup({
+            beforeSend: function(xhr, type) {
+                if (!type.crossDomain) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+                  }
+              },
+          });
+          $.ajax({
+            type: 'POST',
+            url: '/ajax/getdata',
+            data:{
+              link:  $('#ISBN').parent().prev().val(),
             },
-        });
-      $.ajaxSetup({
-          beforeSend: function(xhr, type) {
-              if (!type.crossDomain) {
-                  xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-                }
+            success: function(res) {
+              let  data = JSON.parse(res);
+              $('#exampleFormControlTextarea1').val(decodeHtml(decodeHtmlCharCodes(data.content).trim()));
+              $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth).trim()));
+              $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0,decodeHtmlCharCodes(data.publisher).indexOf('('))));
+              $('input[name="name"]').val(decodeHtml(decodeHtmlCharCodes(data.name).trim()));
+              $('input[name="image1"]').next().attr('src',data.frontImage);
+              $('input[name="image1"]').next().attr('class','');
+              $('input[name="image1"]').val(data.frontImage);
+              $('input[name="image2"]').next().attr('src',data.behindImage);
+              $('input[name="image2"]').next().attr('class','');
+              $('input[name="image2"]').val(data.behindImage);
+              $('input[name="price"]').val(intBindStringMoney(data.price.slice(data.price.indexOf('$')+1) * 23000));
+              $('input[name="year_start"]').val(decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf('(')+1, data.publisher.trim().length-1)); 
             },
-        });
-        $.ajax({
-          type: 'POST',
-          url: '/ajax/getdata',
-          data:{
-            link: $(this).parent().prev().val(),
-          },
-          success: function(res) {
-            let  data = JSON.parse(res);
-          //  console.log(decodeHtml(decodeHtmlCharCodes(data.content)));
-            $('#exampleFormControlTextarea1').val(decodeHtml(decodeHtmlCharCodes(data.content).trim()));
-            $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth).trim()));
-            $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0,decodeHtmlCharCodes(data.publisher).indexOf('('))));
-            $('input[name="name"]').val(decodeHtml(decodeHtmlCharCodes(data.name).trim()));
-            $('input[name="image1"]').next().attr('src',data.frontImage);
-            $('input[name="image1"]').next().attr('class','');
-            $('input[name="image1"]').val(data.frontImage);
-            $('input[name="image2"]').next().attr('src',data.behindImage);
-            $('input[name="image2"]').next().attr('class','');
-            $('input[name="image2"]').val(data.behindImage);
-            $('input[name="price"]').val(intBindStringMoney(data.price.slice(data.price.indexOf('$')+1) * 23000));
-            $('input[name="year_start"]').val(decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf('(')+1, data.publisher.trim().length-1));
-            $('select[name="category"]').val(decodeHtml(categorys[decodeHtmlCharCodes(data.category).trim()]));
-            
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-      
-          }
-        })
+            error: function(jqXHR, textStatus, errorThrown) {
+        
+            }
+          })
+        }
+        
 
       }
-      // console.log(1);
     })
     //ham chuyen nhung dau co dang '&#8217' o dinh dang nao do ve chuan
     function decodeHtmlCharCodes(str) { 
@@ -127,3 +123,25 @@ $(function() {
       
 
 });
+function checkISBN(isbn) {
+  isbn = isbn.replaceAll('-','');
+ if(isbn.length == 13) {
+     let sum = 0;
+     let count = 9;
+     while(count > 0) {
+         sum += isbn[count+2]*count;
+         count--;
+     }
+     return (sum - ((isbn[12] == 'X' ||isbn[12] == 'x' )? 10 :isbn[12]))%11 == 0 ? true : false;
+
+ }
+ else if(isbn.length == 10) {
+     let sum = 0;
+     let count = 9;
+     while(count > 0) {
+         sum += isbn[count-1]*count;
+         count--;
+     }
+     return (sum - ((isbn[9] == 'X' ||isbn[9] == 'x' ) ? 10 : isbn[9]))%11 == 0 ? true : false;
+ } else return false;
+}

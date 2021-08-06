@@ -186,6 +186,13 @@
                                 </div>
                             </div>
                         </div>
+
+
+                        
+
+
+
+                        
                         <div class="no-gutters">
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
                                 <div class="alert alert-danger"></div>
@@ -203,6 +210,20 @@
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">{{ old('content') }}</textarea>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-sm-12 col-12 col-md-3  col-xl-3 maincontainer__thethird-ISBN">
+                                <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="ISBN" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="ISBN">Search</button>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            
                         </div>
                         <div class="no-gutters">
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
