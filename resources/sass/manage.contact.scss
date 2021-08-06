@@ -29,7 +29,7 @@
         max-width: calc(var(--per-table) * 6);
         flex: calc(var(--per-table) * 6);
         max-height: 73px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     .table th {
         padding: 20px 4px;
