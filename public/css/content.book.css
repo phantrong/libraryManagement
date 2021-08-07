@@ -377,6 +377,15 @@
   color: #333;
 }
 
+#content .ddc-link {
+  padding: 12px 15px 0;
+  display: none;
+}
+
+#content .ddc-link a:hover {
+  text-decoration: none;
+}
+
 #content {
   padding: 0 0 50px;
 }

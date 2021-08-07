@@ -2374,6 +2374,13 @@ window.addEventListener('scroll', function () {
     }
   });
 });
+$('.select-filter-book').on('change', function () {
+  if (this.value === "category") {
+    $('.ddc-link').css('display', 'flex');
+  } else {
+    $('.ddc-link').hide();
+  }
+});
 $(document).ready(function () {
   // element trượt lên khi scroll xuống => animation
   $(window).scroll(function () {
