@@ -122,7 +122,7 @@
         padding-left: 0;
     }
     .activeHeight .toolbar__catagory-item-list {
-        height: 100px;
+        height: 115px;
     }
     .activeHeight .toolbar__catagory-link-img2 {
         transform: rotate(-90deg);
@@ -130,7 +130,7 @@
     .toolbar__catagory-item-list li {
         padding: 6px 0 6px 0;
         width: 100%;
-        height: 30px;
+        height: auto;
     }
     .toolbar__catagory-item-list li img {
         width: 25px !important;
@@ -141,6 +141,7 @@
         padding-left: 35px;
         color: white;
         transition: padding-left 0.4s ease-in-out;
+        height: 26px;
     }
     .toolbar__catagory-item-list li a p {
         padding: 3px 0 0 10px;
@@ -183,7 +184,6 @@
     transform: scale(1);
 }
 
-
 /*active color */
 
 .pew1 .activeColor {
@@ -200,7 +200,6 @@
         transition: transform 0.4s ease-in-out;
     }
 }
-
 
 /* // Small devices (landscape phones, less than 768px) */
 
@@ -221,7 +220,6 @@
     }
 }
 
-
 /* // Medium devices (tablets, less than 992px) */
 
 @media (max-width: 991.98px) and (min-width: 768px) {
@@ -232,7 +230,6 @@
         transition: transform ease-in-out 0.4s;
     }
 }
-
 
 /* // Large devices (desktops, less than 1200px) */
 
