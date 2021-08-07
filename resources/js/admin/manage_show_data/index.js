@@ -65,7 +65,7 @@ $(function() {
         }
         $('.dashboard-money-content-search-listsearch-list li').on('click', function() {
             $('#searchinput').val($(this).text());
-            document.querySelector('.dashboard-money-content-search-listsearch').style.display = 'none';
+            // document.querySelector('.dashboard-money-content-search-listsearch').style.display = 'none';
 
           $.ajaxSetup({
             beforeSend: function(xhr, type) {
