@@ -31,7 +31,7 @@
                                     Tổng số lượng sách
                                 </span>
                                 <span>
-                                    {{ $totalBook[0]->totalBook }}
+                                    {{ count($totalBook) }}
                                 </span>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                     Tổng tin nhắn
                                 </span>
                                 <span>
-                                    {{ $totalContact[0]->totalContact }}
+                                    {{ count($totalContact) }}
                                 </span>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                     Tổng số đơn
                                 </span>
                                 <span>
-                                    {{ $totalOrder[0]->totalOrder }}
+                                    {{ count($totalOrder) }}
                                 </span>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                     Tổng số người mượn
                                 </span>
                                 <span>
-                                    {{ $totalUser[0]->totalUser }}
+                                    {{ count($totalUser) }}
                                 </span>
                             </div>
                         </div>
