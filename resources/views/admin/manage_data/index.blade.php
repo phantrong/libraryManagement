@@ -156,9 +156,9 @@
                             </select>
 
                             <div class="input-group mb-3" id="input__search-money">
-
-                                <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
-                                    aria-describedby="basic-addon2" id="searchinput">
+                                
+                                <textarea type="text" class="form-control" placeholder="" aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2" id="searchinput"></textarea>
                                 <div class="input-group-append">
                                     <button class="btn btn-info" type="button" id="btn2">Tìm</button>
                                 </div>
