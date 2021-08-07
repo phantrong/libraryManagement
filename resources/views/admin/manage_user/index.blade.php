@@ -122,7 +122,8 @@
                                     <td class="per-10">{{ $user->birth }}</td>
                                     <td class="per-10">
                                         <div class="manageuser__content-table-quantityrow">
-                                            <span>{{ $user->countOrder }}</span>
+                                            <a
+                                                href="{{ route('admin.order.index', ['username' => $user->username]) }}">{{ $user->countOrder }}</a>
                                         </div>
                                     </td>
                                     <td class="per-10">{{ $user->is_borrow ? 'Đang mượn' : 'Không mượn' }}</td>
@@ -133,6 +134,29 @@
                                                 data-toggle="modal" data-target="#exampleModal" />
                                         </div>
                                     </td>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Xóa dịch vụ</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Bạn có chắc muốn xóa ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger btn-delete"
+                                                        attr-id="{{ $user->id }}">Xóa bỏ</button>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Hủy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                                 @php $i++; @endphp
                             @endforeach
@@ -143,26 +167,6 @@
                 <h3 class="note">Không có người dùng nào phù hợp!</h3>
             @endif
         </section>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Xóa dịch vụ</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Bạn có chắc muốn xóa ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Xóa bỏ</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection
 

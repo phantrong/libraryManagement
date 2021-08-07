@@ -117,6 +117,15 @@ class ManageUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = $this->userRepository->find($id);
+        if (!$user) {
+            return response()->json([
+                'success' => 0
+            ]);
+        }
+        $user->delete();
+        return response()->json([
+            'success' => 1
+        ]);
     }
 }

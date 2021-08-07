@@ -215,12 +215,14 @@
                                 @else
                                     <td scope="col" class="admin__order-col per-10">
                                         <div class="admin__order-handle">
-                                            <img class="admin__order-button-save btn-handle"
-                                                src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png"
-                                                attr-order="{{ $order->id }}" />
-                                            <img class="admin__order-button-edit btn-handle"
-                                                src="https://img.icons8.com/windows/32/000000/edit-product.png"
-                                                attr-order="{{ $order->id }}" />
+                                            @if ($order->status == $ModelOrder::STATUS_BORROWING || $order->status == $ModelOrder::STATUS_OVERDUE)
+                                                <img class="admin__order-button-save btn-handle"
+                                                    src="https://img.icons8.com/ios-glyphs/32/000000/save--v1.png"
+                                                    attr-order="{{ $order->id }}" />
+                                                <img class="admin__order-button-edit btn-handle"
+                                                    src="https://img.icons8.com/windows/32/000000/edit-product.png"
+                                                    attr-order="{{ $order->id }}" />
+                                            @endif
                                             @if ($order->status == $ModelOrder::STATUS_BORROWING)
                                                 <img class="admin__order-button-cancel btn-handle"
                                                     src="{{ asset('images/btn-cancel.png') }}"

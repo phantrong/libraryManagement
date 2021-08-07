@@ -40,7 +40,7 @@ class UserController extends Controller
                 $item['book'] = $this->bookRepository->find($item->book_id);
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
-            $alerts = $user->alerts()->limit(10)->get();
+            $alerts = $user->alerts()->orderByDesc('created_at')->limit(10)->get();
             if ($alerts) {
                 foreach ($alerts as $alert) {
                     if (!$alert->is_readed) {
@@ -99,7 +99,7 @@ class UserController extends Controller
                 $item['book'] = $this->bookRepository->find($item->book_id);
                 $item['book']['type'] = $this->bookRepository->getTextCategory($item['book']->category);
             }
-            $alerts = $user->alerts()->limit(10)->get();
+            $alerts = $user->alerts()->orderByDesc('created_at')->limit(10)->get();
             if ($alerts) {
                 foreach ($alerts as $alert) {
                     if (!$alert->is_readed) {

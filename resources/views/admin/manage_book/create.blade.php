@@ -114,7 +114,9 @@
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
                                 <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Mã DDC</span>
+                                        <span class="input-group-text" id="inputGroup-sizing-default"><a
+                                                href="http://www.thuvienhaiphu.com.vn/datafile1/tl_plddc/DC027106.htm"
+                                                target="_blank">Mã DDC</a></span>
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default" name="category"
@@ -188,11 +190,11 @@
                         </div>
 
 
-                        
 
 
 
-                        
+
+
                         <div class="no-gutters">
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">
                                 <div class="alert alert-danger"></div>
@@ -215,15 +217,17 @@
                             <div class="col-sm-12 col-12 col-md-3  col-xl-3 maincontainer__thethird-ISBN">
                                 <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="ISBN" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control" placeholder="ISBN"
+                                            aria-label="Recipient's username" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="ISBN">Search</button>
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                id="ISBN">Search</button>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </div>
                             </div>
 
-                            
+
                         </div>
                         <div class="no-gutters">
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6 ">

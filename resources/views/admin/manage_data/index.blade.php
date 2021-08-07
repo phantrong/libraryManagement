@@ -28,7 +28,7 @@
                             </div>
                             <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                                 <span>
-                                    T.books
+                                    Tổng số lượng sách
                                 </span>
                                 <span>
                                     {{ $totalBook[0]->totalBook }}
@@ -40,14 +40,14 @@
                     <div class="col-3">
                         <div class="maincontainer__dashboard-typeImg-info-box">
                             <div>
-                                <img src="https://img.icons8.com/cute-clipart/60/000000/money.png" />
+                                <img src="{{ asset('images/managecontact.png') }}" />
                             </div>
                             <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                                 <span>
-                                    C.Fine
+                                    Tổng tin nhắn
                                 </span>
                                 <span>
-                                    $88
+                                    {{ $totalContact[0]->totalContact }}
                                 </span>
                             </div>
                         </div>
@@ -56,11 +56,11 @@
                     <div class="col-3">
                         <div class="maincontainer__dashboard-typeImg-info-box">
                             <div>
-                                <img src="https://img.icons8.com/cute-clipart/60/000000/food-cart.png" />
+                                <img src="{{ asset('images/manageordertotal.png') }}" />
                             </div>
                             <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                                 <span>
-                                    C.Borrowed
+                                    Tổng số đơn
                                 </span>
                                 <span>
                                     {{ $totalOrder[0]->totalOrder }}
@@ -72,11 +72,11 @@
                     <div class="col-3">
                         <div class="maincontainer__dashboard-typeImg-info-box">
                             <div>
-                                <img src="https://img.icons8.com/clouds/60/000000/groups.png" />
+                                <img src="{{ asset('images/manageuser.png') }}" />
                             </div>
                             <div class="maincontainer__dashboard-typeImg-info-box-quantity">
                                 <span>
-                                    User
+                                    Tổng số người mượn
                                 </span>
                                 <span>
                                     {{ $totalUser[0]->totalUser }}
@@ -156,7 +156,7 @@
                             </select>
 
                             <div class="input-group mb-3" id="input__search-money">
-                                
+
                                 <textarea type="text" class="form-control" placeholder="" aria-label="Recipient's username"
                                     aria-describedby="basic-addon2" id="searchinput"></textarea>
                                 <div class="input-group-append">

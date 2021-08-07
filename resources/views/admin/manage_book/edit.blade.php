@@ -122,7 +122,9 @@
                             <div class="col-sm-12 col-12 col-md-6  col-xl-6  maincontainer__thethird-ISBN">
                                 <div class="input-group mb-3 maincontainer__thethird-ISBN-input">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Mã DDC</span>
+                                        <span class="input-group-text" id="inputGroup-sizing-default"><a
+                                                href="http://www.thuvienhaiphu.com.vn/datafile1/tl_plddc/DC027106.htm"
+                                                target="_blank">Mã DDC</a></span>
                                     </div>
                                     <input type="text" class="form-control" aria-label="Default"
                                         aria-describedby="inputGroup-sizing-default" name="category"

@@ -45,7 +45,9 @@
                                 <td>{{ $book->country }}</td>
                             </tr>
                             <tr>
-                                <td>Mã DDC</td>
+                                <td><a href="http://www.thuvienhaiphu.com.vn/datafile1/tl_plddc/DC027106.htm"
+                                        target="_blank">Mã DDC</a>
+                                </td>
                                 <td>{{ $book->category }}</td>
                             </tr>
                         </tbody>

@@ -39,7 +39,6 @@
     .dashboard__content-content-boxct .row .col-3 {
         margin-top: 15px;
     }
-
     /*ribbon*/
     .dashboard-money-content-total {
         display: flex;
@@ -92,19 +91,16 @@
     .custom-select1 {
         width: 50% !important;
     }
-
     /*asdasd*/
-
     .ribbon {
         font-size: 16px !important;
-
         width: 50%;
-
         position: relative;
         background: #ba89b6;
         color: #fff;
         text-align: center;
-        padding: 0.6em 1em; /* thay đổi cho phù hợp với kích cỡ */
+        padding: 0.6em 1em;
+        /* thay đổi cho phù hợp với kích cỡ */
         margin: 2em auto 3em;
     }
     .ribbon:before,
@@ -143,7 +139,6 @@
         right: 0;
         border-width: 1em 1em 0 0;
     }
-
     .dashboard__content-dashboardMoney {
         // box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
         background-color: white;
@@ -165,7 +160,6 @@
         color: black;
         font-size: 14px;
     }
-
     .dashboard-money-content-search-listsearch {
         position: absolute;
         top: 36px;
@@ -193,10 +187,8 @@
     .dashboard-money-content-search-listsearch-list li:hover {
         background-color: #74b2e6;
     }
-
     .chartTypeDashBoard {
         // padding: 20px;
-
         input {
             width: 195px;
             height: 37px;
@@ -229,7 +221,6 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-
         div:nth-child(2) {
             width: 30%;
             display: flex;
@@ -263,11 +254,16 @@
     padding: 0.5rem;
     position: relative;
     width: 100%;
+    img {
+        height: 60px;
+        width: 60px;
+    }
 }
 
 .maincontainer__dashboard-typeImg-info-box-quantity {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .maincontainer__dashboard-typeImg-info-box-quantity span {
@@ -300,6 +296,7 @@
     }
 }
 
+
 /* // Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
@@ -320,6 +317,7 @@
     }
 }
 
+
 /* // Medium devices (tablets, less than 992px) */
 
 @media (max-width: 991.98px) and (min-width: 768px) {
@@ -327,6 +325,7 @@
         margin-left: 0;
     }
 }
+
 
 /* // Large devices (desktops, less than 1200px) */
 

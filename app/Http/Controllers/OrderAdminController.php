@@ -32,7 +32,7 @@ class OrderAdminController extends Controller
     {
         $userIds = 1;
         $day_start = '2021-01-01';
-        $day_end = Carbon::now()->addHours(7)->toDateTimeString();
+        $day_end = Carbon::now()->addHours(7)->toDateString();
         $userFilter = '';
         if ($request->get('day_start')) {
             $day_start = $request->get('day_start');
@@ -41,7 +41,8 @@ class OrderAdminController extends Controller
             $day_end = $request->get('day_end');
         }
         if ($request->get('username')) {
-            $user = $this->userRepository->getUserByUserName($request->get('user'));
+            $userIds = [];
+            $user = $this->userRepository->getUserByUserName($request->get('username'));
             $userIds[] = $user->id;
             $userFilter = $user->name;
         } elseif ($request->get('user')) {
@@ -106,11 +107,20 @@ class OrderAdminController extends Controller
                         $time_pay = Carbon::parse($request->time_pay);
                         $order['time_pay'] = $time_pay;
                     }
-                    $order->update();
-                    $order = $this->orderRepository->updateStatus($order);
-                    return Response()->json([
-                        'success' => '1'
-                    ]);
+                    DB::beginTransaction();
+                    try {
+                        $order->update();
+                        $order = $this->orderRepository->updateStatus($order);
+                        DB::commit();
+                        return Response()->json([
+                            'success' => '1'
+                        ]);
+                    } catch (Exception $e) {
+                        DB::rollBack();
+                        return Response()->json([
+                            'success' => '0'
+                        ]);
+                    }
                 } catch (Exception $e) {
                     return Response()->json([
                         'success' => '2'
