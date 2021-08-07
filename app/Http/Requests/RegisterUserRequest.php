@@ -29,6 +29,8 @@ class RegisterUserRequest extends FormRequest
             'email' => 'required',
             'birth' => 'required',
             'address' => 'required',
+            'username' => 'required',
+            'password' => 'required'
         ];
 
         if (isset($this->password)) {
