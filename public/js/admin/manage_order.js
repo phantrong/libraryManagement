@@ -2208,7 +2208,7 @@ $(function () {
     idOrderDel = $(this).attr('attr-order');
     btnDel = $(this);
   });
-  $('#exampleModal .btn-delete').on('click', function () {
+  $('#list-order #exampleModal .btn-delete').on('click', function () {
     if (idOrderDel && btnDel) {
       var id = idOrderDel;
       var data = {

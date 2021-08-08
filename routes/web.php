@@ -72,7 +72,7 @@ Route::prefix('admin/')
             Route::post('order/changestatus', "OrderAdminController@changeStatusToBorrowing");
             Route::post('order/cancel', "OrderAdminController@cancelOrder");
             Route::post('order/edit', "OrderAdminController@editOrder");
-            Route::post('order/delete', "OrderAdminController@changeAlert");
+            Route::post('order/delete', "OrderAdminController@deleteOrder");
         });
     });
 
