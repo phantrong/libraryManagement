@@ -7,6 +7,7 @@ use App\Repositories\Order\OrderRepository;
 use Illuminate\Http\Request;
 use App\Repositories\User\UserRepository;
 use App\Repositories\Book\BookRepository;
+use Carbon\Carbon;
 
 class DataController extends Controller
 {
@@ -32,11 +33,16 @@ class DataController extends Controller
         $totalUser = $this->userRepository->getAll();
         $totalOrder = $this->orderRepository->getAll();
         $totalContact = Contact::get();
+        $dateTo = Carbon::now();
+        $dateForm = Carbon::now()->subMonth(1);
+
         return view('admin.manage_data.index', [
             'totalBook' => $totalBook,
             'totalUser' => $totalUser,
             'totalOrder' => $totalOrder,
-            'totalContact' => $totalContact
+            'totalContact' => $totalContact,
+            'dateForm' => $dateForm->format('Y-m-d'),
+            'dateTo' => $dateTo->format('Y-m-d')
         ]);
     }
 

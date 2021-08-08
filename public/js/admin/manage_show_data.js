@@ -10986,10 +10986,6 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var _require = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
@@ -11038,7 +11034,7 @@ $(function () {
           dtt = [].concat(typeCategory);
         } else dtt = res;
 
-        if (res.length != 0) typedata = Object.keys(res[0])[0]; // console.log(res);
+        if (res.length != 0) typedata = Object.keys(res[0])[0];
       },
       error: function error(jqXHR, textStatus, errorThrown) {}
     });
@@ -11066,8 +11062,7 @@ $(function () {
     }
 
     $('.dashboard-money-content-search-listsearch-list li').on('click', function () {
-      $('#searchinput').val($(this).text()); // document.querySelector('.dashboard-money-content-search-listsearch').style.display = 'none';
-
+      $('#searchinput').val($(this).text());
       $.ajaxSetup({
         beforeSend: function beforeSend(xhr, type) {
           if (!type.crossDomain) {
@@ -11140,92 +11135,55 @@ $(function () {
     error: function error(jqXHR, textStatus, errorThrown) {}
   }); //DASHBOARD MONTH
 
-  $('input[type="month"]').prev().on('click', function () {
-    if ($(this).next().prop('disabled')) {
-      $(this).next().prop('disabled', false);
-      $(this).next().next().prop('disabled', true);
-    } else {
-      $(this).next().prop('disabled', true);
-      $(this).next().next().prop('disabled', false);
-    }
-  });
-  $('#yearBoard').next().on('click', function () {
-    var datas;
-
-    if ($(this).prev().prop('disabled')) {
-      datas = {
-        type: 'month',
-        year: $(this).prev().prev().val().split('-')[0],
-        month: $(this).prev().prev().val().split('-')[1]
-      };
-    } else {
-      datas = {
-        type: 'year',
-        year: $(this).prev().val()
-      };
-    }
-
-    $.ajax({
-      type: 'POST',
-      url: '/ajax/dashBoardOfMonth',
-      data: datas,
-      success: function success(res) {
-        var values;
-        var indexs;
-
-        if (datas.type == 'month') {
-          values = new Array(4).fill(0);
-          res.map(function (value) {
-            values[value.weeks - 1] = value.total;
-          });
-          indexs = values.reduce(function (arr, value, index) {
-            return arr.concat('Tuần ' + (index + 1).toString());
-          }, []);
-        } else {
-          values = new Array(12).fill(0);
-          res.map(function (value) {
-            values[value.months - 1] = value.total;
-          });
-          indexs = values.reduce(function (arr, value, index) {
-            return arr.concat('Tháng ' + (index + 1).toString());
-          }, []);
-        }
-
-        myChart.data.labels = indexs;
-        myChart.data.datasets[0].data = values;
-        myChart.update();
-      },
-      error: function error(jqXHR, textStatus, errorThrown) {}
-    });
-  });
-  var today = new Date().toISOString().slice(0, 10).split('-');
-  $('input[type="month"]').prop('disabled', false);
-  $('input[type="month"]').val(today[0] + '-' + today[1]);
-  $('input[type="month"]').next().prop('disabled', true);
+  var dateStart = $("input[name='fromdate']").val();
+  var dataEnd = $("input[name='todate']").val();
   $.ajax({
     type: 'POST',
-    url: '/ajax/dashBoardOfMonth',
+    url: '/ajax/datefromto',
     data: {
       type: 'month',
-      year: today[0],
-      month: today[1]
+      valuefrom: dateStart,
+      valueto: dataEnd
     },
     success: function success(res) {
-      var valueWeek = new Array(4).fill(0);
-      res.map(function (value) {
-        valueWeek[value.weeks - 1] = value.total;
-      });
-      var Weeks = valueWeek.reduce(function (arr, value, index) {
-        return arr.concat('Tuần ' + (index + 1).toString());
-      }, []);
+      var dataChart = new Array();
+      var arrLabels = new Array();
+
+      for (var i = 0; i < res.countDay; i++) {
+        var date = new Date(dateStart);
+        var check = 0;
+        date.setDate(date.getDate() + i);
+
+        if (i == 0) {
+          arrLabels.push(dateStart);
+        } else if (i == res.countDay - 1) {
+          arrLabels.push(dataEnd);
+        } else {
+          arrLabels.push(' ');
+        }
+
+        res.data.map(function (value) {
+          var dateRes = new Date(value.date);
+
+          if (dateRes.getTime() === date.getTime()) {
+            dataChart.push(value.total);
+            check = 1;
+          }
+        });
+
+        if (check == 0) {
+          dataChart.push(0);
+        }
+      }
+
       var ctx = document.getElementById('myChart');
       myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: Weeks,
+          labels: arrLabels,
           datasets: [{
-            label: 'Visitpr Stats',
-            data: valueWeek,
+            label: 'Số đơn',
+            data: dataChart,
             backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
             borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
             borderWidth: 1,
@@ -11246,114 +11204,54 @@ $(function () {
 
   var type2 = 'month';
   $('input[name="todate"]').next().on('click', function () {
-    var data;
-    if ($(this).prev().val() == "" || $(this).prev().prev().prev().val() == "") alert('nhap de ??');else {
+    var dateto = $(this).prev().val();
+    var dataform = $(this).prev().prev().prev().val();
+    if (dateto == "" || dataform == "") alert('nhap de ??');else {
       $.ajax({
         type: 'POST',
         url: '/ajax/datefromto',
         data: {
-          valueto: $(this).prev().val(),
-          valuefrom: $(this).prev().prev().prev().val(),
+          valueto: dateto,
+          valuefrom: dataform,
           type: type2
         },
         success: function success(res) {
-          data = new Array(monthDiff($('input[name="todate"]').prev().prev().val(), $('input[name="todate"]').val())).fill(0);
-          var timestarts = new Date($('input[name="todate"]').prev().prev().val());
-          data = mahoa(timestarts.getFullYear() + '-' + (timestarts.getMonth() + 1), monthDiff($('input[name="todate"]').prev().prev().val(), $('input[name="todate"]').val()));
-          res.map(function (value) {
-            data[value.dates] = value.total;
-          });
-          myChart.data.labels = Object.keys(data);
-          myChart.data.datasets[0].data = Object.values(data);
+          var dataChart = new Array();
+          myChart.data.labels = new Array();
+          myChart.data.datasets[0].data = new Array();
+
+          for (var i = 0; i <= res.countDay; i++) {
+            var date = new Date(dataform);
+            var check = 0;
+            date.setDate(date.getDate() + i);
+
+            if (i == 0) {
+              myChart.data.labels.push(dataform);
+            } else if (i == res.countDay) {
+              myChart.data.labels.push(dateto);
+            } else {
+              myChart.data.labels.push(' ');
+            }
+
+            res.data.map(function (value) {
+              var dateRes = new Date(value.date);
+
+              if (dateRes.getTime() === date.getTime()) {
+                myChart.data.datasets[0].data.push(value.total);
+                check = 1;
+              }
+            });
+
+            if (check == 0) {
+              myChart.data.datasets[0].data.push(0);
+            }
+          }
+
           myChart.update();
         },
         error: function error(jqXHR, textStatus, errorThrown) {}
       });
-      $('button#yearButton').parent().css('display', 'block');
     }
-  });
-  var stt = 0;
-  var thuong = Math.floor(monthDiff($('input[name="todate"]').prev().prev().val(), $('input[name="todate"]').val()) / 14);
-  var dus = monthDiff($('input[name="todate"]').prev().prev().val(), $('input[name="todate"]').val());
-  $('button#yearButton').prev().prev().on('click', function () {
-    var kc = khoangcach2ngay($('input[name="todate"]').val(), $('input[name="todate"]').prev().prev().val());
-    var thuong = Math.floor(kc / 14);
-    var du = kc % 14;
-    if (thuong > 0) $(this).next().css('display', 'inline-block');
-    $.ajax({
-      type: 'POST',
-      url: '/ajax/datefromto',
-      data: {
-        value: thuong > 0 ? 14 : du - 1,
-        valuefrom: $('input[name="fromdate"]').val(),
-        type: 'day'
-      },
-      success: function success(res) {
-        var data = getTwoWeek($('input[name="fromdate"]').val(), thuong > 0 ? 13 : du - 1);
-        res.map(function (value) {
-          data[value.days] = value.total;
-        });
-        myChart.data.labels = Object.keys(data);
-        myChart.data.datasets[0].data = Object.values(data);
-        myChart.update();
-      },
-      error: function error(jqXHR, textStatus, errorThrown) {}
-    });
-  });
-  $('button#yearButton').prev().on('click', function () {
-    stt++;
-    var kc = khoangcach2ngay($('input[name="todate"]').val(), getDays($('input[name="fromdate"]').val(), stt * 14));
-    if (kc < 0) return;
-    var thuong = Math.floor(kc / 14);
-    var du = kc % 14;
-    $(this).prev().prev().css('display', 'inline-block');
-    $.ajax({
-      type: 'POST',
-      url: '/ajax/datefromto',
-      data: {
-        value: thuong > 0 ? 14 : du - 1,
-        valuefrom: getDays($('input[name="fromdate"]').val(), stt * 14),
-        type: 'day'
-      },
-      success: function success(res) {
-        var data = getTwoWeek(getDays($('input[name="fromdate"]').val(), stt * 14), thuong > 0 ? 13 : du - 1);
-        res.map(function (value) {
-          data[value.days] = value.total;
-        });
-        myChart.data.labels = Object.keys(data);
-        myChart.data.datasets[0].data = Object.values(data);
-        myChart.update();
-      },
-      error: function error(jqXHR, textStatus, errorThrown) {}
-    });
-  });
-  $('button#yearButton').prev().prev().prev().on('click', function () {
-    var dayonSet = getDays($('input[name="todate"]').prev().prev().val(), stt * 14);
-    var kc = khoangcach2ngay($('input[name="todate"]').val(), getDays(dayonSet, -14));
-    var thuong = Math.floor(kc / 14);
-    var du = kc % 14;
-    $(this).prev().prev().css('display', 'inline-block');
-    $.ajax({
-      type: 'POST',
-      url: '/ajax/datefromto',
-      data: {
-        value: thuong > 0 ? 14 : du - 1,
-        valuefrom: getDays(dayonSet, -14),
-        type: 'day'
-      },
-      success: function success(res) {
-        var data = getTwoWeek(getDays(dayonSet, -14), thuong > 0 ? 13 : du - 1);
-        res.map(function (value) {
-          data[value.days] = value.total;
-        });
-        myChart.data.labels = Object.keys(data);
-        myChart.data.datasets[0].data = Object.values(data);
-        myChart.update();
-      },
-      error: function error(jqXHR, textStatus, errorThrown) {}
-    });
-    stt--;
-    if (stt == 0) $(this).css('display', 'none');
   });
 }); //function ma hoa tien
 
@@ -11367,99 +11265,7 @@ var intBindStringMoney = function intBindStringMoney(e) {
   }
 
   return arr.join('').substr(1, arr.join('').length);
-}; //button onclick
-
-
-$('button#btn2').on('click', function () {
-  console.log(111111);
-  $.ajaxSetup({
-    beforeSend: function beforeSend(xhr, type) {
-      if (!type.crossDomain) {
-        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-      }
-    }
-  });
-  $.ajax({
-    type: 'POST',
-    url: '/ajax/totalMoney',
-    data: {
-      value: $('#searchinput').val(),
-      type: $('#typeofbook').val()
-    },
-    success: function success(res) {
-      console.log(intBindStringMoney(res[0]['total']));
-      $('.dashboard-money-content-total').children().children()[1].innerHTML = intBindStringMoney(res[0]['total']);
-    },
-    error: function error(jqXHR, textStatus, errorThrown) {}
-  });
-});
-
-function monthDiff(d1, d2) {
-  var a1 = new Date(d1);
-  var a2 = new Date(d2);
-  var months;
-  months = (a2.getFullYear() - a1.getFullYear()) * 12;
-  months -= a1.getMonth();
-  months += a2.getMonth();
-  return months <= 0 ? 0 : months;
-}
-
-function addMonths(now) {
-  var nows = new Date(now);
-  var current;
-
-  if (nows.getMonth() == 11) {
-    current = new Date(nows.getFullYear() + 1, 0, 1);
-  } else {
-    current = new Date(nows.getFullYear(), nows.getMonth() + 1, 1);
-  }
-
-  var rs = current.getFullYear() + '-' + (current.getMonth() + 1);
-  return rs;
-}
-
-function mahoa(rs, leng) {
-  // let rs = '2021-7';
-  var obj = _defineProperty({}, rs, 0);
-
-  for (var i = 1; i <= leng; ++i) {
-    rs = addMonths(rs);
-
-    var a = _defineProperty({}, rs, 0);
-
-    obj = _objectSpread(_objectSpread({}, obj), a);
-  }
-
-  return obj;
-}
-
-function getTwoWeek(day, leng) {
-  var a = new Date(day);
-
-  var rs = _defineProperty({}, a.getFullYear() + '-' + (a.getMonth() + 1) + '-' + a.getDate(), 0);
-
-  for (var i = 1; i <= leng; ++i) {
-    var nextDay = new Date(a);
-    nextDay.setDate(a.getDate() + i);
-
-    var b = _defineProperty({}, nextDay.getFullYear() + '-' + (nextDay.getMonth() + 1) + '-' + nextDay.getDate(), 0);
-
-    rs = _objectSpread(_objectSpread({}, rs), b);
-  }
-
-  return rs;
-}
-
-function khoangcach2ngay(str1, str2) {
-  return Math.floor((Date.parse(str1) - Date.parse(str2)) / 86400000) + 1;
-}
-
-function getDays(day, leng) {
-  var a = new Date(day);
-  var nextDay = new Date(a);
-  nextDay.setDate(a.getDate() + leng);
-  return nextDay.getFullYear() + '-' + (nextDay.getMonth() + 1) + '-' + nextDay.getDate();
-}
+};
 
 /***/ }),
 

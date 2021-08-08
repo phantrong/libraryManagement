@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Repositories\Book\BookRepository;
 use App\Models\Book;
+use Carbon\Carbon;
 use KubAT\PhpSimple\HtmlDomParser;
 
 class AjaxController extends Controller
@@ -64,10 +65,18 @@ class AjaxController extends Controller
         if ($type == 'month') {
             $datefrom = $request->valuefrom;
             $dateto = $request->valueto;
-            return DB::table('orders')->selectRaw('count(*) as total, concat(year(created_at),"-",month(created_at)) as dates')
-                ->whereBetween('created_at', [$datefrom, $dateto])
-                ->groupBy('dates')
+            $data =  DB::table('orders')->selectRaw('substr(time_borrow,1,10) as date, count(time_borrow) as total')
+                ->whereRaw('substr(time_borrow,1,10) between ? and ?', [$datefrom,  $dateto])
+                ->groupBy('time_borrow')
+                ->orderBy('date')
                 ->get();
+            $datefrom = Carbon::parse($datefrom);
+            $dateto = Carbon::parse($dateto);
+            $countDay = $dateto->diffInDays($datefrom);
+            return [
+                'countDay' => $countDay,
+                'data' => $data
+            ];
         } else {
             $datefrom = $request->valuefrom;
             $distance = $request->value;
