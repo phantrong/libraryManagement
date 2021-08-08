@@ -2252,6 +2252,10 @@ $(function () {
         if (res.data.success) {
           colOrderCancel.addClass('background-cancel');
           colOrderCancel.removeClass('background-notBorrow');
+          var statusText = colOrderCancel.find('.col-status');
+          statusText.text('Đã hủy');
+          var parent = colOrderCancel.find('.admin__order-handle');
+          parent.html('');
           $('#modal-cancel').css('display', 'none');
         }
       })["catch"](function (err) {

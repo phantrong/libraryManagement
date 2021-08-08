@@ -64,7 +64,7 @@
                 <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
                     alt="" class="no-cart-img">
                 <p class="no-cart-text">Chưa Có Sản Phẩm</p>
-                <div class="cart-submit-wrapper-2">
+                <div class=" cart-submit-wrapper">
                     <button class="cart-out btn-effect">Thoát</button>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
                     alt="" class="no-cart-img">
                 <p class="no-cart-text">Chưa Có Sản Phẩm</p>
-                <div class="cart-submit-wrapper-2">
+                <div class=" cart-submit-wrapper">
                     <button class="cart-out">Thoát</button>
                 </div>
             </div>

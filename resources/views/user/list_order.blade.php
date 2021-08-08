@@ -200,7 +200,7 @@
                                 <td scope="col" class="admin__order-col per-20">{{ $order->address }}</td>
                                 <td scope="col" class="admin__order-col per-20">{{ $order->note }}</td>
                                 @if ($order->status == $ModelOrder::STATUS_CONFIRM)
-                                    <td scope="col" class="admin__order-col per-10">Chờ xác nhận</td>
+                                    <td scope="col" class="admin__order-col per-10 col-status">Chờ xác nhận</td>
                                 @elseif ($order->status == $ModelOrder::STATUS_OVERDUE)
                                     <td scope="col" class="admin__order-col per-10">Quá hạn trả</td>
                                 @elseif ($order->status == $ModelOrder::STATUS_BORROWING)

@@ -150,7 +150,12 @@ $(function() {
                 if (res.data.success) {
                     colOrderCancel.addClass('background-cancel');
                     colOrderCancel.removeClass('background-notBorrow');
+                    let statusText = colOrderCancel.find('.col-status');
+                    statusText.text('Đã hủy');
+                    let parent = colOrderCancel.find('.admin__order-handle');
+                    parent.html('');
                     $('#modal-cancel').css('display', 'none');
+
                 }
             }).catch(err => {
                 alert('Lỗi hệ thống, không thể thực hiện!');
