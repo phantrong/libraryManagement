@@ -104,7 +104,7 @@ class AjaxController extends Controller
     public function getDaTa(Request $request)
     {
         $link = $request->link;
-
+        $link = str_replace('-', '', $link);
 
         function getLink($link)
         {

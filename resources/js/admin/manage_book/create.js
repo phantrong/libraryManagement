@@ -108,8 +108,6 @@ $(function() {
                         }
                     })
                 }
-
-
             }
         })
         //ham chuyen nhung dau co dang '&#8217' o dinh dang nao do ve chuan
