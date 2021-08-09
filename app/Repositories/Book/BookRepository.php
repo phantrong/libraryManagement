@@ -64,6 +64,7 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
     //search in show data page
     public function searchDataAjax($request)
     {
-        return $this->model->select($request)->distinct()->get();
+        $data = $this->model->select($request)->distinct()->get();
+        return $data;
     }
 }

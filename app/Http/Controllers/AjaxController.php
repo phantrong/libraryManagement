@@ -91,8 +91,12 @@ class AjaxController extends Controller
     {
         $data = [];
         $valueRequest = $request->category;
-        if ($valueRequest != 0) return  $this->bookRepository->searchDataAjax($valueRequest);
-        else return  response()
+        if ($valueRequest) {
+            $data = $this->bookRepository->searchDataAjax($valueRequest);
+            return response()
+                ->json($data);
+        }
+        return  response()
             ->json([]);
     }
 
