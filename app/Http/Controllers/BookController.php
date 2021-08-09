@@ -80,10 +80,12 @@ class BookController extends Controller
             'quantity',
             'price',
             'year_start',
-            'category'
         );
         if ($request->publisher) {
             $book['publisher'] = $request->publisher;
+        }
+        if ($request->publisher) {
+            $book['category'] = sprintf('%03d', $request->category);
         }
         if ($request->translator) {
             $book['translator'] = $request->translator;

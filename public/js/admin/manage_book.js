@@ -2188,7 +2188,7 @@ $(function () {
             var data = JSON.parse(res);
             $('#exampleFormControlTextarea1').val(decodeHtml(decodeHtmlCharCodes(data.content).trim()));
             $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth).trim()));
-            $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0, decodeHtmlCharCodes(data.publisher).indexOf('('))));
+            $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0, decodeHtmlCharCodes(data.publisher).indexOf(','))));
             $('input[name="name"]').val(decodeHtml(decodeHtmlCharCodes(data.name).trim()));
             $('input[name="image1"]').next().attr('src', data.frontImage);
             $('input[name="image1"]').next().attr('class', '');
@@ -2196,8 +2196,11 @@ $(function () {
             $('input[name="image2"]').next().attr('src', data.behindImage);
             $('input[name="image2"]').next().attr('class', '');
             $('input[name="image2"]').val(data.behindImage);
-            $('input[name="price"]').val(intBindStringMoney(data.price.slice(data.price.indexOf('$') + 1) * 23000));
-            $('input[name="year_start"]').val(decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf('(') + 1, data.publisher.trim().length - 1));
+            $('input[name="price"]').val(Math.floor(Math.random() * 500000) + 150000);
+            $('input[name="quantity"]').val(Math.floor(Math.random() * 50) + 20);
+            $('input[name="category"]').val(Math.floor(Math.random() * 999) + 0);
+            var string = decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf(',') + 1, data.publisher.trim().length);
+            $('input[name="year_start"]').val(string.substr(string.indexOf(',') + 2, 4));
           },
           error: function error(jqXHR, textStatus, errorThrown) {}
         });
@@ -2222,22 +2225,23 @@ function checkISBN(isbn) {
   isbn = isbn.replaceAll('-', '');
 
   if (isbn.length == 13) {
+    var sum1 = 0;
     var sum = 0;
+
+    for (var i = 0; i < isbn.length - 1; ++i) {
+      if (i % 2 == 0) sum1 += isbn[i] * 1;else sum += isbn[i] * 1;
+    }
+
+    if (10 - (sum1 + sum * 3) % 10 == 10) {
+      if (isbn[12] == 0) return true;else return false;
+    } else return 10 - (sum1 + sum * 3) % 10 == isbn[12] ? true : false;
+  } else if (isbn.length == 10) {
+    var _sum = 0;
     var count = 9;
 
     while (count > 0) {
-      sum += isbn[count + 2] * count;
+      _sum += isbn[count - 1] * count;
       count--;
-    }
-
-    return (sum - (isbn[12] == 'X' || isbn[12] == 'x' ? 10 : isbn[12])) % 11 == 0 ? true : false;
-  } else if (isbn.length == 10) {
-    var _sum = 0;
-    var _count = 9;
-
-    while (_count > 0) {
-      _sum += isbn[_count - 1] * _count;
-      _count--;
     }
 
     return (_sum - (isbn[9] == 'X' || isbn[9] == 'x' ? 10 : isbn[9])) % 11 == 0 ? true : false;
