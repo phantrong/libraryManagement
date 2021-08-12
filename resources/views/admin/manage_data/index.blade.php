@@ -1,6 +1,6 @@
 @extends('admin.layouts.default')
 
-@section('title', 'ManageData')
+@section('title', 'Thống kê')
 
 @section('css')
 {{-- chèn thêm link css ở đây --}}
@@ -12,8 +12,8 @@
 
     <section class="dashboard__content-header col-md-12 col-xl-12">
         <div class="dashboard__content-header-box">
-            <h1 class="dashboard__content-header-box-ct">Dash Board</h1>
-            <span><span>Home</span> / Dash Board</span>
+            <h1 class="dashboard__content-header-box-ct">Thống Kê</h1>
+            <span><span>Trang chủ</span> / Thống Kê</span>
         </div>
     </section>
 

@@ -87,21 +87,25 @@ $(function() {
                         },
                         success: function(res) {
                             let data = JSON.parse(res);
-                            $('#exampleFormControlTextarea1').val(decodeHtml(decodeHtmlCharCodes(data.content).trim()));
-                            $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth).trim()));
-                            $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0, decodeHtmlCharCodes(data.publisher).indexOf(','))));
-                            $('input[name="name"]').val(decodeHtml(decodeHtmlCharCodes(data.name).trim()));
-                            $('input[name="image1"]').next().attr('src', data.frontImage);
-                            $('input[name="image1"]').next().attr('class', '');
-                            $('input[name="image1"]').val(data.frontImage);
-                            $('input[name="image2"]').next().attr('src', data.behindImage);
-                            $('input[name="image2"]').next().attr('class', '');
-                            $('input[name="image2"]').val(data.behindImage);
-                            $('input[name="price"]').val(Math.floor(Math.random() * 500000) + 150000);
-                            $('input[name="quantity"]').val(Math.floor(Math.random() * 50) + 20);
-                            $('input[name="category"]').val(Math.floor(Math.random() * 999) + 0);
-                            let string = decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf(',') + 1, data.publisher.trim().length);
-                            $('input[name="year_start"]').val(string.substr(string.indexOf(',') + 2, 4));
+                            if (!data.auth || !data.name) {
+                                alert("Không tìm thấy sách phù hợp!");
+                            } else {
+                                $('#exampleFormControlTextarea1').val(decodeHtml(decodeHtmlCharCodes(data.content).trim()));
+                                $('input[name="auth"]').val(decodeHtml(decodeHtmlCharCodes(data.auth).trim()));
+                                $('input[name="publisher"]').val(decodeHtml(data.publisher.trim().substr(0, decodeHtmlCharCodes(data.publisher).indexOf(','))));
+                                $('input[name="name"]').val(decodeHtml(decodeHtmlCharCodes(data.name).trim()));
+                                $('input[name="image1"]').next().attr('src', data.frontImage);
+                                $('input[name="image1"]').next().attr('class', '');
+                                $('input[name="image1"]').val(data.frontImage);
+                                $('input[name="image2"]').next().attr('src', data.behindImage);
+                                $('input[name="image2"]').next().attr('class', '');
+                                $('input[name="image2"]').val(data.behindImage);
+                                $('input[name="price"]').val(Math.floor(Math.random() * 500000) + 150000);
+                                $('input[name="quantity"]').val(Math.floor(Math.random() * 50) + 20);
+                                $('input[name="category"]').val(Math.floor(Math.random() * 999) + 0);
+                                let string = decodeHtmlCharCodes(data.publisher).trim().substring(decodeHtmlCharCodes(data.publisher).trim().indexOf(',') + 1, data.publisher.trim().length);
+                                $('input[name="year_start"]').val(string.substr(string.indexOf(',') + 2, 4));
+                            }
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
 

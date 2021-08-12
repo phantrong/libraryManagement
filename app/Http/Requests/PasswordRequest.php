@@ -35,10 +35,13 @@ class PasswordRequest extends FormRequest
         }
         if ($this->username) {
             $user = DB::table('users')->where('username', $this->username)->first();
-            $email = $user->email;
-            if (!$this->email == $email) {
-                $email = Hash::make($email);
-                $rules['email'] = "same:$email";
+            if (!$user) {
+                $rules['username'] = "max:0";
+            } else {
+                $email = $user->email;
+                if ($this->email != $email) {
+                    $rules['email'] = "min:10000";
+                }
             }
         }
         return $rules;
@@ -51,7 +54,8 @@ class PasswordRequest extends FormRequest
             'password.required' => '*Bạn chưa nhập mật khẩu mới.',
             'password.min' => '*Độ dài mật khẩu nằm trong khoảng 6~24.',
             'password.confirmed' => '*Nhập lại mật khẩu không chính xác.',
-            'email.same' => '*Email không chính xác.'
+            'email.min' => '*Email hoặc tên đăng nhập không chính xác.',
+            'username.max' => '*Email hoặc tên đăng nhập không chính xác.'
         ];
     }
 }

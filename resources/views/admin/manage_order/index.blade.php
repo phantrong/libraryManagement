@@ -3,7 +3,7 @@
 
 @extends('admin.layouts.default')
 
-@section('title', 'ManageOrder')
+@section('title', 'Quản lý đơn mượn')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/manage.orderAdmin.css') }}" type="text/css">
@@ -13,8 +13,8 @@
     <div class="addbook__content" id="list-order">
         <section class="addbook__content-header col-md-12 col-xl-12">
             <div class="addbook__content-header-box">
-                <h1 class="addbook__content-header-box-ct">Order Book</h1>
-                <span><span>Home</span> / Order book</span>
+                <h1 class="addbook__content-header-box-ct">Quản lý đơn mượn</h1>
+                <span><span>Trang chủ</span> / Quản lý đơn mượn</span>
             </div>
         </section>
         <section class="orderbook__content-dashboard">

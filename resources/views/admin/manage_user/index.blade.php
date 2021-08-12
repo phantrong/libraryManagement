@@ -1,6 +1,6 @@
 @extends('admin.layouts.default')
 
-@section('title', 'ManageUser')
+@section('title', 'Quản lý người mượn')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/manage.user.css') }}" type="text/css">
@@ -10,8 +10,8 @@
 <div class="manageuser__content">
     <section class="manageuser__content-header col-md-12 2">
         <div class="manageuser__content-header-box">
-            <h1 class="manageuser__content-header-box-ct">Manage User</h1>
-            <span><span>Home</span> / User</span>
+            <h1 class="manageuser__content-header-box-ct">Quản lý người mượn</h1>
+            <span><span>Trang chủ</span> / Quản lý người mượn</span>
         </div>
     </section>
 
