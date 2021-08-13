@@ -15,18 +15,17 @@ class UploadController extends Controller
         ]);
         if ($files = $request->file('file')) {
             //store file into document folder
-            $file = $request->file->store('public/images');
-            $ext = pathinfo($file, PATHINFO_EXTENSION);
+            $info = pathinfo($_FILES['file']['name']);
+            $ext = $info['extension']; // get the extension of the file
+            $newname = md5(basename($request->file('file'))) . '.' . $ext;
 
-            $file2 = md5(basename($file)) . ".$ext";
-            $oldFile =   base_path() . "/storage/app/" . $file;
-            $newFile =   base_path() . "/storage/app/public/images/" . $file2;
-            rename($oldFile, $newFile);
+            $target = 'images/upload/' . $newname;
+            move_uploaded_file($_FILES['file']['tmp_name'], $target);
             return Response()->json([
                 "success" => true,
-                "url" => url("/storage/images/" . baseName($newFile)),
-                "fileName" => basename($file2),
-                "fileUrl" => url("/storage/images/" . baseName($newFile))
+                "url" => url("/images/upload/" . baseName($target)),
+                "fileName" => basename($newname),
+                "fileUrl" => url("/images/upload/" . baseName($target))
             ]);
         }
 
