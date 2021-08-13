@@ -178,7 +178,7 @@
                                                 <h4 class="book-name">{{ $book->name }}</h4>
                                             </a>
                                             <div class="book-item-author">
-                                                <span class="book-author-name">Author: {{ $book->auth }}</span>
+                                                <span class="book-author-name">Tác giả: {{ $book->auth }}</span>
                                             </div>
                                             <div class="book-item-action">
                                                 <p class="ddc-code">Mã DDC: <span>{{ $book->category }}</span></p>

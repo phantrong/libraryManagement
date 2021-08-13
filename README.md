@@ -1,24 +1,16 @@
-******* chú ý khi pull code về:
-- luôn chạy lại Database theo bước sau:
-+ php artisan migrate:fresh --seed
+Chức năng của website:
+●	Giao diện trang chủ đẹp, trang trọng.
+●	Có form nhập liệu, sửa, xóa.
+●	Hiển thị danh sách sách theo sắp xếp của bảng chữ cái. 
+●	Có chức năng tìm kiếm sách theo tên sách, tên tác giả, tên nhà xuất bản, mã DDC, tên dịch giả, quốc gia,... 
+●	Có chức năng quản lý cả người mượn sách của gia chủ (họ tên, ngày mượn, mượn quyển gì, hứa mượn trong bao lâu...)
+●	Có chức năng phân loại sách theo bảng phân loại thập phân Deway (DDC). 
+●	Có chức năng tính tổng giá tiền sách theo tên tác giả, nhà xuất bản, phân loại. 
+●	Có chức năng hiển thị review nội dung của từng cuốn sách.
+o	Thêm phần “Liên hệ” giúp người mượn có thể gửi lời nhắn đế cho quản trị viên( gia chủ) mà không cần đăng nhập
 
-**** code tôi thêm 15-7: 
-+ ae vào file .env: đổi tên db_name và pass để kết nối với sql của ae -> rồi chạy: php artisan config:cache
-+ rồi sang vscode chạy: php artisan migrate:fresh --seed. -> sẽ có bảng db
-+ tôi có tạo vài file login, thư sẽ để ý và cop code vào đó. folder auth là login cho người dùng, còn trong admin là cho admin
-+ mở đường dẫn login thì chỉ cần /login
+o	Thêm phân đăng kí, đăng nhập cho người dùng, người dùng sẽ đăng kí và điền đầy đủ thông tin. Giúp cho quản trị viên dễ kiểm soát người mượn hơn
 
-+giờ ae khi pull code từ develop về chỉ cần chạy: npm run development -- --watch
+o	Thêm phần “Giỏ hàng” (giỏ mượn) để lưu các cuốn sách mà người dùng sẽ muốn mượn và gửi yêu cầu Đơn mượn đế cho quản trị viên
 
-+anh em sẽ chỉ làm việc với folder resource không động đến file public:
-
-+js, css, images, view viết hết ở resource
-
-+js thì ae sẽ tạo folder trong admin rồi tạo file index,js ->vd ae tạo folder là test và trong test sẽ tạo file index.js thì gọi tên sẽ là : asset('js/admin/test.js')  
-*****ae chú ý
-
-+css thì ae sẽ viết trong folder scss và tạo file .scss. và ae chú ý là khi tạo 1 file .scss, ở trong view ae phải thêm mỗi đầu html 1 tên class riêng và trong file .scss ae sẽ viết tất cả css bọc trong class mà ae tạo (ae xem cấu trúc file scss tôi đã viết)
--> vd tạo tên test.scss -> teen gọi : asset('css/test.css')
-
-+mỗi lần ae tạo mới 1 file css, hay js ae sẽ chạy lại câu lệnh : npm run development -- --watch
-(còn sửa hay thêm thì k cần)
+o	Thêm phần thống kê đơn hàng và số sách … giúp quản trị viên dễ dàng theo dõi và quản lý tủ sách của mình
