@@ -4,7 +4,7 @@
         <div class="wrapper-nav">
             <ul class="nav_list">
                 <li><a class="home smooth nav_list_link active" href="#home">TRANG CHỦ</a></li>
-                <li><a class="content smooth nav_list_link" href="#content">TỦ SÁCH</a></li>
+                <li><a class="content smooth nav_list_link" href="#content" id="ts">TỦ SÁCH</a></li>
                 @guest
                     <li><a class="smooth nav_list_link login nav-not-logged-in" href="{{ route('user.login') }}">ĐĂNG
                             NHẬP</a></li>
