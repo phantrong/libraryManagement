@@ -41,20 +41,20 @@
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <label class="label-field">Họ và Tên</label>
                         </div>
-                        <div class="alert alert-danger">{{ $errors->first('name') }}</div>
+                        <div class="alert alert-danger" id="name">{{ $errors->first('name') }}</div>
                         <div class="input-group-item">
                             <input type="phone" class="input-field" placeholder=" " name="username"
                                 value="{{ old('username') }}" maxlength="24"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <label class=" label-field">Tên đăng nhập</label>
                         </div>
-                        <div class="alert alert-danger">{{ $errors->first('username') }}</div>
+                        <div class="alert alert-danger" id="username">{{ $errors->first('username') }}</div>
                         <div class="input-group-item">
                             <input type="password" class="input-field" placeholder=" " name="password" maxlength="24"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <label class="label-field">Mật khẩu</label>
                         </div>
-                        <div class="alert alert-danger">{{ $errors->first('password') }}</div>
+                        <div class="alert alert-danger" id="password">{{ $errors->first('password') }}</div>
                         <div class="input-group-item">
                             <input type="password" class="input-field" placeholder=" " name="password_confirmation"
                                 maxlength="24"
@@ -69,27 +69,27 @@
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <label class=" label-field">Số điện thoại</label>
                         </div>
-                        <div class="alert alert-danger">{{ $errors->first('phone') }}</div>
+                        <div class="alert alert-danger" id="phone">{{ $errors->first('phone') }}</div>
                         <div class="input-group-item">
                             <input type="email" class="input-field" placeholder=" " name="email"
                                 value="{{ old('email') }}" maxlength="50" data-type="email"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <label class=" label-field">Email</label>
                         </div>
-                        <div class="alert alert-danger">{{ $errors->first('email') }}</div>
+                        <div class="alert alert-danger" id="email">{{ $errors->first('email') }}</div>
                         <div class="input-group-item">
                             <input type="date" class="input-field" placeholder=" " name="birth" min="1900-01-01"
                                 max="2009-12-31" value="{{ old('birth') }}">
                             <label class=" label-field">Ngày sinh</label>
                         </div>
-                        <div class="alert alert-danger">{{ $errors->first('birth') }}</div>
+                        <div class="alert alert-danger" id="birth">{{ $errors->first('birth') }}</div>
                         <div class="input-group-item">
                             <input type="text" class="input-field" placeholder=" " name="address"
                                 value="{{ old('address') }}" maxlength="100"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <label class=" label-field">Địa chỉ</label>
                         </div>
-                        <div class="alert alert-danger">{{ $errors->first('address') }}</div>
+                        <div class="alert alert-danger" id="address">{{ $errors->first('address') }}</div>
                     </div>
                 </div>
                 <button type="submit" class="submit-btn mt-20">Đăng ký</button>

@@ -30,7 +30,7 @@
                     <label class="label-field">Mật khẩu</label>
                 </div>
                 @if (session('not_success'))
-                    <div class="alert alert-danger">*Thông tin đăng nhập không chính xác.</div>
+                    <div class="alert alert-danger" id>*Thông tin đăng nhập không chính xác.</div>
                 @endif
                 <div class="input-group-item">
                     <a href="{{ route('user.forgetpass') }}" class="forget-pass">Quên mật khẩu ?</a>
