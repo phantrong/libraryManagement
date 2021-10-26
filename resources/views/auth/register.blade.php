@@ -61,6 +61,7 @@
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <label class="label-field">Nhập lại mật khẩu</label>
                         </div>
+                        <div class="alert alert-danger" id="password_confirmation"></div>
                     </div>
                     <div class="col-sm-6">
                         <div class="input-group-item">
@@ -82,6 +83,7 @@
                                 max="2009-12-31" value="{{ old('birth') }}">
                             <label class=" label-field">Ngày sinh</label>
                         </div>
+                        
                         <div class="alert alert-danger" id="birth">{{ $errors->first('birth') }}</div>
                         <div class="input-group-item">
                             <input type="text" class="input-field" placeholder=" " name="address"
